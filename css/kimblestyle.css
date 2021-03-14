@@ -1,0 +1,280 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #200d54;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fredoka One", cursive;
+  flex-flow: row wrap;
+}
+#field {
+  background-image: url("images/Static-field.png");
+  width: 535px;
+  max-width: 100%;
+  max-height: 100%;
+  height: 541px;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
+  position: relative;
+}
+
+.place {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, #faf4f4 65.62%, #e0dcdc 100%);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+#red1 {
+  position: absolute;
+  left: 58px;
+  top: 140px;
+}
+#red2 {
+  position: absolute;
+  left: 78px;
+  top: 108px;
+}
+#red3 {
+  position: absolute;
+  left: 104px;
+  top: 81px;
+}
+#red4 {
+  position: absolute;
+  left: 135px;
+  top: 61px;
+}
+#blue1 {
+  position: absolute;
+  left: 364px;
+  top: 60px;
+}
+#blue2 {
+  position: absolute;
+  left: 397px;
+  top: 81px;
+}
+#blue3 {
+  position: absolute;
+  left: 422px;
+  top: 105px;
+}
+#blue4 {
+  position: absolute;
+  left: 442px;
+  top: 137px;
+}
+#yellow1 {
+  position: absolute;
+  left: 444px;
+  top: 376px;
+}
+#yellow2 {
+  position: absolute;
+  left: 421px;
+  top: 409px;
+}
+#yellow3 {
+  position: absolute;
+  left: 395px;
+  top: 435px;
+}
+#yellow4 {
+  position: absolute;
+  left: 363px;
+  top: 453px;
+}
+#green1 {
+  position: absolute;
+  left: 133px;
+  top: 452px;
+}
+#green2 {
+  position: absolute;
+  left: 101px;
+  top: 431px;
+}
+#green3 {
+  position: absolute;
+  left: 76px;
+  top: 405px;
+}
+#green4 {
+  position: absolute;
+  left: 57px;
+  top: 375px;
+}
+#goalbase {
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  color: #fff;
+}
+
+#goalred1 {
+  position: absolute;
+  left: 136px;
+  top: 139px;
+  background: #ff0000;
+  padding: 4px 0 0px 9px;
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalred2 {
+  position: absolute;
+  left: 157px;
+  top: 163px;
+  background: #ff0000;
+  padding: 4px 0 0px 9px;
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalred3 {
+  position: absolute;
+  left: 178px;
+  top: 187px;
+  background: #ff0000;
+  padding: 4px 0 0px 9px;
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalred4 {
+  position: absolute;
+  left: 200px;
+  top: 210px;
+  background: #ff0000;
+  padding: 4px 0 0px 9px;
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalblue1 {
+  position: absolute;
+  left: 364px;
+  top: 60px;
+  box-shadow: none;
+}
+#goalblue2 {
+  position: absolute;
+  left: 397px;
+  top: 81px;
+  box-shadow: none;
+}
+#goalblue3 {
+  position: absolute;
+  left: 422px;
+  top: 105px;
+  box-shadow: none;
+}
+#goalblue4 {
+  position: absolute;
+  left: 442px;
+  top: 137px;
+  box-shadow: none;
+}
+#goalyellow1 {
+  position: absolute;
+  left: 444px;
+  top: 376px;
+  box-shadow: none;
+}
+#goalyellow2 {
+  position: absolute;
+  left: 421px;
+  top: 409px;
+  box-shadow: none;
+}
+#goalyellow3 {
+  position: absolute;
+  left: 395px;
+  top: 435px;
+  box-shadow: none;
+}
+#goalyellow4 {
+  position: absolute;
+  left: 363px;
+  top: 453px;
+  box-shadow: none;
+}
+#goalgreen1 {
+  position: absolute;
+  left: 133px;
+  top: 452px;
+  box-shadow: none;
+}
+#goalgreen2 {
+  position: absolute;
+  left: 101px;
+  top: 431px;
+  box-shadow: none;
+}
+#goalgreen3 {
+  position: absolute;
+  left: 76px;
+  top: 405px;
+  box-shadow: none;
+}
+#goalgreen4 {
+  position: absolute;
+  left: 57px;
+  top: 375px;
+  box-shadow: none;
+}
+#dice {
+  background-image: url("images/Dice.png");
+  width: 80px;
+  height: 80px;
+  max-width: 100%;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 230px;
+  top: 230px;
+  text-align: center;
+  font-size: 40px;
+}
+
+/*Pieces*/
+.repiece {
+  background: #ff0000;
+  border: 2px solid #e8dede;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#redpiece1 {
+  position: absolute;
+  left: 58px;
+  top: 140px;
+}
+#redpiece2 {
+  position: absolute;
+  left: 78px;
+  top: 108px;
+}
+#redpiece3 {
+  position: absolute;
+  left: 104px;
+  top: 81px;
+}
+#redpiece4 {
+  position: absolute;
+  left: 135px;
+  top: 61px;
+}
