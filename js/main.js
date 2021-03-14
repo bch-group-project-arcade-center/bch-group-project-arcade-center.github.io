@@ -40,3 +40,41 @@ if (soundOn) {
     btnSoundOff.style.display = "none";
   });
 }
+
+/** Sharing on Facebook; To replace player and score with variables from local storage*/
+let shareBtnFB = document.getElementById("shareBtnFB");
+shareBtnFB.addEventListener("click", function () {
+  FB.ui(
+    {
+      display: "popup",
+      method: "share",
+      href: "https://bch-group-project-arcade-center.github.io/",
+      link: "https://bch-group-project-arcade-center.github.io/",
+      description: `[player] has a total of [score] points at the Arcade Center`,
+      name: "Arcade Center",
+    },
+    function (response) {}
+  );
+});
+
+/** Sharing on Twitter; To replace player and score with variables from local storage*/
+let shareBtnTwitter = document.getElementById("shareBtnTwitter");
+shareBtnTwitter.addEventListener("click", function () {
+  makeTwitterPage(
+    "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(
+        `[player] has a total of [score] points at the Arcade Center`
+      )
+  );
+});
+/**
+ * Opens a dialog box with given url
+ * @param {String} url link with tweet web intent
+ */
+function makeTwitterPage(url) {
+  window.open(
+    url,
+    "Share",
+    "width=700, height=500, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=1"
+  );
+}

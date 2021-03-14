@@ -8,6 +8,32 @@
     <title>Arcade Center</title>
   </head>
   <body>
+    <script>
+      // Facebook SDK for JavaScript - sharing on social media
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: 3892565820782418,
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v10.0",
+        });
+      };
+    </script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
+
+    <button id="shareBtnFB">Share on Facebook</button>
+    <button id="shareBtnTwitter">Share on Twitter</button>
+
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
