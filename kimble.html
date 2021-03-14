@@ -4,11 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
     <title>Kimble</title>
+    <link rel="stylesheet" href="kimblestyle.css" />
   </head>
   <body>
-    <script src="./js/main.js"></script>
-    <script src="./js/kimble.js"></script>
+    <div class="container">
+      <section id="field">
+        <div id="homebase">
+          <div id="red1" class="place"></div>
+          <div id="red2" class="place"></div>
+          <div id="red3" class="place"></div>
+          <div id="red4" class="place"></div>
+          <div id="blue1" class="place"></div>
+          <div id="blue2" class="place"></div>
+          <div id="blue3" class="place"></div>
+          <div id="blue4" class="place"></div>
+          <div id="yellow1" class="place"></div>
+          <div id="yellow2" class="place"></div>
+          <div id="yellow3" class="place"></div>
+          <div id="yellow4" class="place"></div>
+          <div id="green1" class="place"></div>
+          <div id="green2" class="place"></div>
+          <div id="green3" class="place"></div>
+          <div id="green4" class="place"></div>
+        </div>
+        <div id="goalbase">
+          <div id="goalred1" class="place">1</div>
+          <div id="goalred2" class="place">2</div>
+          <div id="goalred3" class="place">3</div>
+          <div id="goalred4" class="place">4</div>
+          <div id="goalblue1" class="place"></div>
+          <div id="goalblue2" class="place"></div>
+          <div id="goalblue3" class="place"></div>
+          <div id="goalblue4" class="place"></div>
+          <div id="goalyellow1" class="place"></div>
+          <div id="goalyellow2" class="place"></div>
+          <div id="goalyellow3" class="place"></div>
+          <div id="goalyellow4" class="place"></div>
+          <div id="goalgreen1" class="place"></div>
+          <div id="goalgreen2" class="place"></div>
+          <div id="goalgreen3" class="place"></div>
+          <div id="goalgreen4" class="place"></div>
+        </div>
+
+        <div id="pieces">
+          <div class="place">
+            <div
+              id="redpiece1"
+              class="repiece"
+              draggable="true"
+              ondragstart="event.dataTransfer.setData('text/plain',null)"
+            ></div>
+          </div>
+          <div
+            id="redpiece2"
+            class="repiece"
+            draggable="true"
+            ondragstart="event.dataTransfer.setData('text/plain',null)"
+          ></div>
+          <div
+            id="redpiece3"
+            class="repiece"
+            draggable="true"
+            ondragstart="event.dataTransfer.setData('text/plain',null)"
+          ></div>
+          <div
+            id="redpiece4"
+            class="repiece"
+            draggable="true"
+            ondragstart="event.dataTransfer.setData('text/plain',null)"
+          ></div>
+        </div>
+        <div id="dice"></div>
+      </section>
+    </div>
+    <script src="kimblejs.js"></script>
   </body>
 </html>
