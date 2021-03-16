@@ -1,0 +1,346 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color-1: #4c11ac;
+  --primary-color-2: #8f6cf2;
+  --primary-color-3: #200d54;
+  --main-font-color: white;
+  --menu-header-font: "Baloo Da 2", cursive;
+  --content-font: "Baloo Paaji 2", cursive;
+}
+
+body {
+  background-color: var(--primary-color-1);
+}
+
+/* Header and navigation */
+
+header {
+  min-height: 100px;
+  max-height: 15vh;
+  /* min-width: 500px; */
+  background-color: var(--primary-color-1);
+  color: var(--main-font-color);
+  font-family: var(--menu-header-font);
+  display: flex;
+}
+
+.logo {
+  width: 200px;
+  padding: 25px;
+  flex: 1;
+  z-index: 2;
+  background-color: var(--primary-color-1);
+}
+
+nav {
+  /* min-width: 400px; */
+  font-family: var(--menu-header-font);
+  font-size: x-large;
+  text-align: right;
+  background-color: var(--primary-color-1);
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  position: relative;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--main-font-color);
+  /* padding-top: 30px; */
+  /* padding-left: 35px; */
+}
+
+#mobileButton {
+  display: none;
+}
+
+.fa-chevron-down {
+  font-size: large;
+}
+
+.menu_leaderboard {
+  /* margin-left: 50px; */
+}
+
+.menu_games:hover .dropdown-content {
+  visibility: visible;
+}
+
+.dropdown-content {
+  position: absolute;
+  width: 200px;
+  height: 280px;
+  background-color: var(--primary-color-1);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--content-font);
+  font-size: large;
+  right: 0;
+  top: 70px;
+  padding: 0px;
+  margin: 0;
+  text-align: right;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.dropdown-content li {
+  display: block;
+  padding: 1.5rem 2rem 0.5rem 0.5rem;
+}
+
+.dropdown-content-mobile {
+  display: none;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.section_divider {
+  height: 10px;
+  width: 100%;
+  background-color: var(--primary-color-2);
+}
+/* Main content area */
+
+main {
+  background-color: var(--primary-color-3);
+  color: var(--main-font-color);
+  font-family: var(--content-font);
+  flex: 18fr;
+  background-image: url(/images/index/test_space_invader_transparency10.png);
+}
+
+.section_header_wrapper h1 span {
+  background: #221d60;
+}
+
+.section_header_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--menu-header-font);
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+section {
+  opacity: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.box {
+  background-color: var(--primary-color-2);
+  width: 450px;
+  height: 220px;
+  border-radius: 25px;
+  border-color: var(--primary-color-2);
+  border-width: 3px;
+  border-style: solid;
+  color: var(--main-font-color);
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 0px 10px rgb(104, 101, 101);
+  box-shadow: inset 0 0 150px var(--primary-color-2);
+  /* transition: all 0.5s; */
+}
+
+.box:hover {
+  box-shadow: inset 0 0 500px var(--primary-color-2);
+}
+
+.big_box {
+  background-color: var(--primary-color-2);
+  width: 80%;
+  height: 600px;
+  border-radius: 25px;
+  border-color: var(--primary-color-2);
+  border-width: 3px;
+  border-style: solid;
+  color: var(--main-font-color);
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 0px 10px rgb(104, 101, 101);
+}
+
+
+.card1 {
+  background-size: 150%;
+  background-position-x: -80px;
+  background-image: url(https://cdn.globalauctionplatform.com/41bc8b56-664a-4b07-9273-a65001689645/7781f344-876a-456f-c9db-1fc002e77d80/540x360.jpg);
+}
+
+.card2 {
+  background-size: 90%;
+  background-position-x: 70px;
+
+  background-image: url(/images/index/cyclone_pixel.png);
+  background-repeat: no-repeat;
+}
+
+.card3 {
+  background-size: 130%;
+  background-position-x: -60px;
+  background-position-y: -50px;
+  background-image: url(/images/index/jackpot_pixel.png);
+}
+
+.card4 {
+  background-size: 100%;
+  background-position-x: 0px;
+  background-image: url(/images/index/kimble_pixel.png);
+}
+
+/* Currently unused and would require some adjustments to make it work when hovering over the card to show a quick description. */
+/* .box_highlight {
+  position: relative;
+  height: 60%;
+  display: block;
+  bottom: 60px;
+  visibility: visible;
+  font-size: 1.2rem;
+  margin: 0 auto;
+} */
+
+/* Footer */
+
+footer {
+  height: 15vh;
+  background-color: var(--primary-color-1);
+  color: var(--main-font-color);
+  font-family: var(--content-font);
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.left_box {
+  flex: 1;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.footer_left_top {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_leftdown {
+  font-size: xxx-large;
+  padding-right: 10px;
+}
+
+.right_box {
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 2rem;
+  padding-top: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--content-font);
+}
+
+.footer_menu {
+  list-style: none;
+}
+
+/* Adaptions for mobile */
+
+@media (max-width: 576px) {
+  #mobileButton {
+    display: block;
+  }
+
+  #large_screen_menu {
+    visibility: hidden;
+  }
+
+  nav.responsive ul {
+    display: block;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 70px;
+  }
+
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .box {
+    width: 80%;
+  }
+
+  .dropdown-content {
+    top: 100px;
+    background-color: aqua;
+  }
+
+  .dropdown-content-mobile {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background-color: var(--primary-color-1);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--content-font);
+    font-size: large;
+    right: 0;
+    top: 70px;
+    padding-right: 20px;
+    margin: 0;
+    text-align: right;
+    z-index: 1;
+  }
+
+  .dropdown-content-mobile li {
+    display: block;
+  }
+
+  .show {
+    visibility: visible;
+  }
+
+  #mobile-menu-leaderbord {
+    font-weight: bold;
+  }
+  #mobile-menu-games {
+    font-weight: bold;
+  }
+}
