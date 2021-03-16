@@ -278,3 +278,23 @@ body {
   left: 135px;
   top: 61px;
 }
+
+/*Boardpieces*/
+#redstart {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ff0000 0%,
+    rgba(255, 0, 0, 0.79) 100%
+  );
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  position: absolute;
+  left: 140px;
+  top: 100px;
+}
+
+#place2 {
+  position: absolute;
+  left: 180px;
+  top: 79px;
+}
