@@ -41,29 +41,25 @@ if (soundOn) {
   });
 }
 
-/** Sharing on Facebook; To replace player and score with variables from local storage*/
+let currentURL = window.location.href;
+
+//** Sharing on Facebook; To replace player and score with variables from local storage*/
 let shareBtnFB = document.getElementById("shareBtnFB");
 shareBtnFB.addEventListener("click", function () {
-  FB.ui(
-    {
-      display: "popup",
-      method: "share",
-      href: "https://bch-group-project-arcade-center.github.io/",
-      link: "https://bch-group-project-arcade-center.github.io/",
-      description: `[player] has a total of [score] points at the Arcade Center`,
-      name: "Arcade Center",
-    },
-    function (response) {}
+  makePopupPage(
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      currentURL
+    )}&amp;src=sdkpreparse`
   );
 });
 
 /** Sharing on Twitter; To replace player and score with variables from local storage*/
 let shareBtnTwitter = document.getElementById("shareBtnTwitter");
 shareBtnTwitter.addEventListener("click", function () {
-  makeTwitterPage(
+  makePopupPage(
     "https://twitter.com/intent/tweet?text=" +
       encodeURIComponent(
-        `[player] has a total of [score] points at the Arcade Center`
+        `Try to beat my high score of [score] on ${currentURL}`
       )
   );
 });
@@ -71,7 +67,7 @@ shareBtnTwitter.addEventListener("click", function () {
  * Opens a dialog box with given url
  * @param {String} url link with tweet web intent
  */
-function makeTwitterPage(url) {
+function makePopupPage(url) {
   window.open(
     url,
     "Share",
