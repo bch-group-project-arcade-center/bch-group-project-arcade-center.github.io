@@ -29,3 +29,9 @@ tableMaker(cycloneGameScoreArray, 'cycloneGameTable');
 
 //Jackpot game fetching from localStorage and displaying in leaderboard
 
+let jackpotGameScoreString = JSON.parse(indexLocalStorage.getItem("jackpotGame"));
+let jackpotGameScoreArray = jackpotGameScoreString.sort((a, b) => {
+    return b.gameScore - a.gameScore;
+});
+
+tableMaker(jackpotGameScoreArray, 'jackpotGameTable');
