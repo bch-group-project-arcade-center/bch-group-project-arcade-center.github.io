@@ -10,6 +10,7 @@
   --primary-color-3: #200d54;
   --main-font-color: white;
   --menu-header-font: "Baloo Da 2", cursive;
+  --game-button-font: "Baloo Da 2", cursive;
   --content-font: "Baloo Paaji 2", cursive;
   --background-url: url(/images/index/test_space_invader_transparency10.png);
 
@@ -19,7 +20,7 @@ body {
   background-color: var(--primary-color-1);
 }
 
-/* Header and navigation */
+/********** Header and navigation *************/
 
 header {
   min-height: 100px;
@@ -115,7 +116,7 @@ nav a {
   width: 100%;
   background-color: var(--primary-color-2);
 }
-/* Main content area */
+/************* Main content area *************/
 
 main {
   background-color: var(--primary-color-3);
@@ -175,10 +176,12 @@ section {
   box-shadow: inset 0 0 500px var(--primary-color-2);
 } */
 
+/* Big box is the container for the game area */
+
 .big_box {
   background-color: var(--primary-color-3);
   width: 100%;
-  height: 600px;
+  min-height: 600px;
   border-radius: 25px;
   border-color: var(--primary-color-2);
   border-width: 3px;
@@ -186,11 +189,35 @@ section {
   color: var(--main-font-color);
   /* margin: 1rem; */
   padding: 1rem;
-  display: block;
-  /* align-items: flex-start;
-  justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
   text-align: center;
   box-shadow: 0px 0px 10px rgb(104, 101, 101);
+  margin: 0 auto;
+}
+
+.big_box_header {
+position: relative;
+width: 100%;
+flex: 1;
+align-items: flex-start;
+justify-content: flex-start;
+/* margin: 0 auto; */
+}
+
+.big_box_body {
+  width: 100%;
+  flex: 5;
+}
+
+.big_box_footer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* NOT USED IN GAME PAGES */
@@ -223,7 +250,126 @@ section {
 }
 */
 
-/* Footer */
+
+/* ------- Button styles ----------
+These are the styles of the game page buttons: start game, stop game, save score, see leaderboard, information-instructions, popup close.
+*/
+.gamepage_button {
+  /* position:relative; */
+  background-color: var(--primary-color-2);
+  width: 200px;
+  height: 40px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  color: var(--main-font-color);
+  padding-top: 5px;
+  margin: 10px;
+  display: flex;
+  align-items:center;
+  justify-content:space-evenly;
+  font-family: var(--game-button-font);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.info_button {
+    position:absolute;
+    top:0;
+    background-color: var(--primary-color-2);
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    color: var(--main-font-color);
+    padding-top: 5px;
+    margin: 10px;
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+    font-family: var(--game-button-font);
+    font-weight: bolder;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.popup_close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--primary-color-2);
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 3px;
+  border-style: solid;
+  color: var(--main-font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button_hover:hover {
+  background-color: var(--primary-color-1);
+}
+/* -------- Here ends the button styles -----------*/
+
+/* -----Popup windows stlyes: small for results and large for instructions ------ */
+.popup_base{
+  background-color: var(--primary-color-3);
+  border-radius: 25px;
+  border-color: white;
+  border-width: 3px;
+  border-style: solid;
+  color: var(--main-font-color);
+  /* margin: 1rem; */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content:space-around;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgb(104, 101, 101);
+  /* margin: 0 auto; */
+}
+
+.pop_small {
+  position: relative;
+  /* top:-25%; */
+  left: 20%;
+  width: 60%;
+  min-height: 300px;
+  visibility: visible;
+}
+
+.pop_large {
+  position: fixed;
+  top: 24%;
+  left: 12.5%;
+  width: 75%;
+  min-height: 515px;
+  max-height: 515px;
+  visibility: flex;
+  /* overflow-y: auto; */
+}
+
+#small_pop {
+  /* change the value of display to 'flex' to show the small popup */
+  display: none;
+}
+
+#large_pop {
+    /* change the value of display to 'none' to show the small popup */
+  display: none;
+}
+/* -------- Here ends the button styles -----------*/
+
+/****************** Footer **************/
 
 footer {
   height: 15vh;

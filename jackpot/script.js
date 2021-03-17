@@ -1,4 +1,9 @@
+let score = 0;
+let numOfGames = 0;
+
 function jackpot() {
+    numOfGames++;
+    let thisRound = 0;
     const WHEEL_COUNT = 3;
     const RESULT_OPTIONS = 6; // Counting from 0
 
@@ -89,35 +94,43 @@ function jackpot() {
     setTimeout(() => {
         if (zeroCounter === WHEEL_COUNT) {
             // If all numbers are 0s, announce jackpot
-            alert("Congratulations, you won the jackpot of 300 coins!");
+            score += 300;
+            thisRound = 300;
         } else if (oneCounter === WHEEL_COUNT) {
             // If all numbers are 1s, announce smaller jackpot
-            alert("Congratulations, you won 100 coins");
+            score += 100;
+            thisRound = 100;
         } else if (twoCounter === WHEEL_COUNT || threeCounter === WHEEL_COUNT) {
             // If all numbers are all 2s or all 3s, annnouce prize
-            alert("You win 15 coins");
+            score += 15;
+            thisRound = 15;
         } else if (fourCounter === WHEEL_COUNT || fiveCounter === WHEEL_COUNT) {
             // If all numbers are all 4s or all 5s, annnouce prize
-            alert("You win 8 coins");
+            score += 8;
+            thisRound = 8;
         } else if (sixCounter === 2) {
             // If there are 2 pokeballs, announce prize
-            alert("You win 6 coins");
+            score += 6;
+            thisRound = 6;
         } else if (sixCounter === 1) {
             // If there is 1 pokeballs, announce prize
-            alert("You win 2 coins");
+            score += 2;
+            thisRound = 2;
         } else {
             // If player doesn't win anything, tell them to try again
-            alert("Sorry, try again!");
+            thisRound = 0;
         }
+        document.getElementById("totalScore").textContent = `Score: ${parseFloat (score / numOfGames).toFixed(2)}`;
+        document.getElementById("score").textContent = `${score} coins won in ${numOfGames} games`;
+        document.getElementById("roundResult").textContent = `You won ${thisRound} coins this round`;
+        
     }, 3000);
+
 }
 
 // Start game when lever is down
-document.querySelector("#lever").addEventListener("change", () => {
-    let x = document.querySelector("#lever").value;
-    if (x < 20) {
+document.getElementById("lever").addEventListener("click", () => {
         jackpot();
-    }
 });
 
 // Function to pick result class depending on number
@@ -146,3 +159,58 @@ const result = (num) => {
             break;
     }
 };
+
+
+// quit game and save sores
+let quit = document.getElementById("quit");
+let gameResultTitile = document.getElementById("resultTitle");
+let gameResultScore = document.getElementById("final-score");
+let playerNameInput = document.getElementById("playerName");
+let btnSaveNameScore = document.getElementById("SaveNameScore");
+let btnSaveScore = document.getElementById("saveScore");
+let overLay = document.getElementById("overlay");
+let btnClose = document.getElementById("close");
+
+quit.addEventListener("click", () => {
+    overLay.style.visibility = 'visible';
+    gameResultTitile.textContent = 'Do you wish to quit?';
+    
+    if (numOfGames > 0 && (parseFloat(score / numOfGames).toFixed(2))>0) {
+        btnSaveScore.style.visibility = "visible";
+        gameResultScore.textContent = `Score: ${parseFloat(score / numOfGames).toFixed(2)}`;
+    }
+});
+
+btnClose.addEventListener("click", () => {
+    overLay.style.visibility = 'hidden';
+    scoreSaveMsg.style.visibility = "hidden";
+})
+
+//saving the score
+btnSaveScore.addEventListener("click", () => {
+    btnSaveScore.style.visibility = "hidden";
+    playerNameInput.style.visibility = "visible";
+    btnSaveNameScore.style.visibility = "visible";
+});
+
+btnSaveNameScore.addEventListener("click", () => {
+    let scoreToBeSaved = {
+        playerName: playerNameInput.value,
+        gameDate: new Date(),
+        gameScore: parseFloat(score / numOfGames).toFixed(2)
+    };
+    let jackpotLeadBorad = JSON.parse(localStorage.getItem("jackpotGame"));
+
+    if (localStorage.getItem("jackpotGame") !== null) {
+        jackpotLeadBorad.push(scoreToBeSaved);
+        localStorage.setItem("jackpotGame", JSON.stringify(jackpotLeadBorad));
+    } else {
+        let newBoard = [];
+        newBoard.push(scoreToBeSaved);
+        localStorage.setItem("jackpotGame", JSON.stringify(newBoard));
+    }
+    playerNameInput.style.visibility = "hidden";
+    btnSaveNameScore.style.visibility = "hidden";
+    scoreSaveMsg.style.visibility = "visible";
+});
+
