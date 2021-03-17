@@ -8,6 +8,7 @@ document.addEventListener(
   function (event) {
     // store a ref. on the dragged elem
     dragged = event.target;
+    console.log(dragged);
     // make it half transparent
     event.target.style.opacity = 0.5;
   },
@@ -161,3 +162,39 @@ form.addEventListener("submit", StopRefresh);
 /*2 moves on 6 dice*/
 /* if (dicenumber>0) {
 } */
+/**
+ * Given a player object, set draggable property of each pieces belonging to player to true, making the pieces draggable.
+ * @param {obj} player a player object
+ */
+function enableDrag(player) {
+  // if player piece is an array
+  player.pieces.forEach((piece) => {
+    document.getElementById(piece.id).draggable = true;
+  });
+}
+
+/**
+ * Given a player object, set draggable property of each pieces belonging to player to false.
+ * @param {obj} player a player object
+ */
+function disableDrag(player) {
+  player.pieces.forEach((piece) => {
+    document.getElementById(piece.id).draggable = false;
+  });
+}
+
+let turn = 0;
+let currentPlayerIndex = 0;
+
+let nextBtn;
+
+nextBtn.addEventListener("click", newTurn(turn));
+
+function newTurn(turn) {
+  // Disable drag for previous player
+  disableDrag(activePlayer[currentPlayerIndex]);
+  // Calculate who's turn it is
+  currentPlayerIndex = turn % activePlayer.length;
+  // Enable drag for current player
+  enableDrag(activePlayer[currentPlayerIndex]);
+}
