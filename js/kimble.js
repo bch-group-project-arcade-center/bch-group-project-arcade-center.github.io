@@ -8,6 +8,8 @@ document.addEventListener(
   function (event) {
     // store a ref. on the dragged elem
     dragged = event.target;
+    console.log(dragged);
+
     // make it half transparent
     event.target.style.opacity = 0.5;
   },
@@ -66,21 +68,14 @@ document.addEventListener(
     if (event.target.className == "place") {
       event.target.style.background = "";
 
-      dragged.parentNode.removeChild(dragged);
-      event.target.appendChild(dragged);
+      if (dragged.draggable) {
+        dragged.parentNode.removeChild(dragged);
+        event.target.appendChild(dragged);
+      }
     }
   },
   false
 );
-
-let dicenumber = 0;
-let press = document.getElementById("dice");
-const PresstheDice = () => {
-  dicenumber = Math.floor(Math.random() * 6) + 1;
-  console.log(dicenumber);
-  press.textContent = dicenumber;
-};
-press.addEventListener("click", PresstheDice);
 
 /*Conditions*/
 
@@ -96,6 +91,9 @@ let kimblestartbutton = document.querySelector("button");
 let result = document.getElementById("result");
 let form = document.querySelector("form");
 let turns = document.getElementById("turns");
+let turn = 0;
+let currentPlayerIndex;
+let currentPlayer;
 
 const ShowPopupplayers = () => {
   document.getElementById("popup-players").style.display = "block";
@@ -107,21 +105,45 @@ const GetPlayers = () => {
     nickname: `${document.getElementById("player1").value}`,
     color: document.getElementById("color1").value,
     arrowturn: document.getElementById("color1").value + "turn",
+    piecesId: [
+      `${document.getElementById("color1").value}piece1`,
+      `${document.getElementById("color1").value}piece2`,
+      `${document.getElementById("color1").value}piece3`,
+      `${document.getElementById("color1").value}piece4`,
+    ],
   };
   player2 = {
     nickname: document.getElementById("player2").value,
     color: document.getElementById("color2").value,
-    arrowturn: document.getElementById("color1").value + "turn",
+    arrowturn: document.getElementById("color2").value + "turn",
+    piecesId: [
+      `${document.getElementById("color2").value}piece1`,
+      `${document.getElementById("color2").value}piece2`,
+      `${document.getElementById("color2").value}piece3`,
+      `${document.getElementById("color2").value}piece4`,
+    ],
   };
   player3 = {
     nickname: document.getElementById("player3").value,
     color: document.getElementById("color3").value,
-    arrowturn: document.getElementById("color1").value + "turn",
+    arrowturn: document.getElementById("color3").value + "turn",
+    piecesId: [
+      `${document.getElementById("color3").value}piece1`,
+      `${document.getElementById("color3").value}piece2`,
+      `${document.getElementById("color3").value}piece3`,
+      `${document.getElementById("color3").value}piece4`,
+    ],
   };
   player4 = {
     nickname: document.getElementById("player4").value,
     color: document.getElementById("color4").value,
-    arrowturn: document.getElementById("color1").value + "turn",
+    arrowturn: document.getElementById("color4").value + "turn",
+    piecesId: [
+      `${document.getElementById("color4").value}piece1`,
+      `${document.getElementById("color4").value}piece2`,
+      `${document.getElementById("color4").value}piece3`,
+      `${document.getElementById("color4").value}piece4`,
+    ],
   };
   console.log(player1, player2);
   let allplayers = [];
@@ -146,12 +168,12 @@ const GetPlayers = () => {
     );
   } else {
     document.getElementById("popup-players").style.display = "none";
-    turns.classList.add(player1.arrowturn);
   }
 };
 const StopRefresh = (event) => {
   event.preventDefault();
   GetPlayers();
+  newTurn();
 };
 
 form.addEventListener("submit", StopRefresh);
@@ -161,3 +183,55 @@ form.addEventListener("submit", StopRefresh);
 /*2 moves on 6 dice*/
 /* if (dicenumber>0) {
 } */
+
+/**
+ * Controls what happens when a new turn starts
+ */
+function newTurn() {
+  if (currentPlayerIndex) {
+    disableDrag(currentPlayer);
+  }
+  currentPlayerIndex = turn % activeplayers.length;
+  currentPlayer = activeplayers[currentPlayerIndex];
+  console.log(currentPlayerIndex);
+  console.log(currentPlayer);
+  enableDrag(currentPlayer);
+  turns.classList.add(currentPlayer.arrowturn);
+}
+
+document.getElementById("nextTurn").addEventListener("click", () => {
+  turn++;
+  newTurn();
+});
+
+/**
+ * Given a player object, set draggable property of each pieces belonging to player to true, making the pieces draggable.
+ * @param {obj} player a player object
+ */
+function enableDrag(player) {
+  // if player piece is an array
+  player.piecesId.forEach((id) => {
+    document.getElementById(id).draggable = true;
+  });
+}
+
+/**
+ * Given a player object, set draggable property of each pieces belonging to player to false.
+ * @param {obj} player a player object
+ */
+function disableDrag(player) {
+  player.piecesId.forEach((id) => {
+    document.getElementById(id).draggable = false;
+  });
+}
+
+/********************** Dice roll functionality **********************/
+
+let press = document.getElementById("dice");
+const PresstheDice = () => {
+  let dicenumber = Math.floor(Math.random() * 6) + 1;
+  console.log(dicenumber);
+  press.textContent = dicenumber;
+  turns.classList.remove(currentPlayer.arrowturn);
+};
+press.addEventListener("click", PresstheDice);
