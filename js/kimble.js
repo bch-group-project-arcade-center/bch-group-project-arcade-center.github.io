@@ -75,10 +75,12 @@ document.addEventListener(
 
 let dicenumber = 0;
 let press = document.getElementById("dice");
+
 const PresstheDice = () => {
   dicenumber = Math.floor(Math.random() * 6) + 1;
   console.log(dicenumber);
   press.textContent = dicenumber;
+  FirstMove();
 };
 press.addEventListener("click", PresstheDice);
 
@@ -111,17 +113,17 @@ const GetPlayers = () => {
   player2 = {
     nickname: document.getElementById("player2").value,
     color: document.getElementById("color2").value,
-    arrowturn: document.getElementById("color1").value + "turn",
+    arrowturn: document.getElementById("color2").value + "turn",
   };
   player3 = {
     nickname: document.getElementById("player3").value,
     color: document.getElementById("color3").value,
-    arrowturn: document.getElementById("color1").value + "turn",
+    arrowturn: document.getElementById("color3").value + "turn",
   };
   player4 = {
     nickname: document.getElementById("player4").value,
     color: document.getElementById("color4").value,
-    arrowturn: document.getElementById("color1").value + "turn",
+    arrowturn: document.getElementById("color4").value + "turn",
   };
   console.log(player1, player2);
   let allplayers = [];
@@ -147,6 +149,7 @@ const GetPlayers = () => {
   } else {
     document.getElementById("popup-players").style.display = "none";
     turns.classList.add(player1.arrowturn);
+    FirstMove();
   }
 };
 const StopRefresh = (event) => {
@@ -157,7 +160,14 @@ const StopRefresh = (event) => {
 form.addEventListener("submit", StopRefresh);
 
 /*Game Start*/
-
-/*2 moves on 6 dice*/
-/* if (dicenumber>0) {
-} */
+/*dice*/
+const FirstMove = () => {
+  console.log(dicenumber);
+  if (dicenumber > 1 && dicenumber < 6) {
+    console.log("next turn for" + activeplayers[1]);
+    turns.classList.remove(player1.arrowturn);
+    turns.classList.add(activeplayers[1].arrowturn);
+  } else {
+    /*GameStart();*/
+  }
+};
