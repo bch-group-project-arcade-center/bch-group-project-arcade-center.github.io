@@ -1,4 +1,4 @@
-var dragged;
+let dragged;
 
 /* events fired on the draggable target */
 document.addEventListener("drag", function (event) {}, false);
@@ -81,3 +81,64 @@ const PresstheDice = () => {
   press.textContent = dicenumber;
 };
 press.addEventListener("click", PresstheDice);
+
+/*Conditions*/
+
+/*how many players in the game*/
+let player1, player2, player3, player4;
+
+let activeplayers = [];
+let redpices = document.querySelectorAll(".repiece");
+let bluepices = document.querySelectorAll(".bluepiece");
+let yellowpices = document.querySelectorAll(".yellowpiece");
+let greenpices = document.querySelectorAll(".greenpiece");
+let kimblestartbutton = document.querySelector("button");
+let result = document.getElementById("result");
+
+const ShowPopupplayers = () => {
+  document.getElementById("popup-players").style.display = "block";
+};
+document.onload = ShowPopupplayers();
+
+const GetPlayers = (event) => {
+  event.preventDefault();
+  player1 = {
+    nickname: `${document.getElementById("player1").value}`,
+    color: document.getElementById("color1").value,
+  };
+  player2 = {
+    nickname: document.getElementById("player2").value,
+    color: document.getElementById("color2").value,
+  };
+  player3 = {
+    nickname: document.getElementById("player3").value,
+    color: document.getElementById("color3").value,
+  };
+  player4 = {
+    nickname: document.getElementById("player4").value,
+    color: document.getElementById("color4").value,
+  };
+  console.log(player1, player2);
+  let allplayers = [];
+  allplayers.push(player1, player2, player3, player4);
+  console.log(allplayers);
+  activeplayers = allplayers.filter((el) => {
+    return el.nickname != "";
+  });
+
+  console.log(activeplayers);
+  activeplayers.forEach((el) => {
+    if ((el.color = (el - 1).color)) {
+      console.log("duplicated item " + el.color);
+    }
+  });
+
+  if (activeplayers.length < 2) {
+    result.textContent = `You need minimum 2 players`;
+  }
+
+  /* document.getElementById("popup-players").style.display = "none"; */
+};
+kimblestartbutton.addEventListener("click", GetPlayers);
+
+/*colors of pieces*/

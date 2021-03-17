@@ -14,6 +14,17 @@ body {
   font-family: "Fredoka One", cursive;
   flex-flow: row wrap;
 }
+
+#popup-players {
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 2rem;
+  display: none;
+}
 #field {
   background-image: url("images/Static-field.png");
   width: 535px;
