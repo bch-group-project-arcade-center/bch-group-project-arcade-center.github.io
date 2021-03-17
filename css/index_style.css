@@ -11,6 +11,7 @@
   --main-font-color: white;
   --menu-header-font: "Baloo Da 2", cursive;
   --content-font: "Baloo Paaji 2", cursive;
+  --background-url: url(/images/index/test_space_invader_transparency10.png);
 }
 
 body {
@@ -120,7 +121,7 @@ main {
   color: var(--main-font-color);
   font-family: var(--content-font);
   flex: 18fr;
-  background-image: url(/images/index/test_space_invader_transparency10.png);
+  background-image: var(--background-url);;
 }
 
 .section_header_wrapper h1 span {
