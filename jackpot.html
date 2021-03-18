@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackpot</title>
-    <link rel="stylesheet" href="css/gamepage_style.css">
+    <link rel="stylesheet" href="css/jackpotStyle.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
@@ -106,9 +106,41 @@
             <section>
                 
                     <div class="big_box">
-                        <h2>Jackpot</h2>
-                        <h3>test h3</h3>
-                        <p>Game container box</p>       
+                        <!--chanhe below-->
+                        <div class="jackpotcontainer">
+                            <div id="scoreHolder">
+                                <h2 id="totalScore"></h2>
+                                <h3 id="score"></h3>
+                                <p id="roundResult"></p>
+                             </div>
+                            <div class="slot-machine">
+                                <div id="wheels">
+                                    <div class="wheel result-0"></div>
+                                    <div class="wheel result-1"></div>
+                                    <div class="wheel result-2"></div>
+                                </div>
+                                <div class="user-input">
+                                    <input class="lever" type="button" name="lever" id="quit" value="Quit" />
+                                    <input class="lever" type="button" name="lever" id="lever" value="Spin" />
+                                </div>
+                            </div>
+                        </div>
+                        <section id="overlay">
+                            <div class="popup_base pop_small">
+                                <button href="#" id="close" class="btn-text">X</button>
+                                <h2 id="resultTitle">Game Over</h2>
+                                <p id="final-score"></p>
+                                <button class="btn-text" id="saveScore">Save score</button>
+                                <form id="saveScoreForm">
+                                    <input type="text" name="playerName" id="playerName" placeholder="Enter your name" required />
+                                    <input class="btn-text" type="button" value="Save score" id="SaveNameScore" />
+                                </form>
+                                <p id="scoreSaveMsg">Score saved!</p>
+                                
+                            </div>
+                        </section>
+
+                        <!--chanhe above-->      
                     </div>
                 
             </section>
@@ -154,9 +186,9 @@
     </footer>
     <!-- <div class="section_divider"><i class="far fa-copyright"></i></div> -->
     
-    <script src="js/index_script.js"></script>
-    <script src="js/gamepage_script.js"></script>
+    <!--<script src="js/index_script.js"></script>-->
+    <!--<script src="js/gamepage_script.js"></script>-->
     <!-- <script src="./js/main.js"></script> -->
-    <!-- <script src="./js/jackpot.js"></script> -->
+    <script src="./js/jackpot.js"></script>
 </body>
 </html>
