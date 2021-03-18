@@ -13,7 +13,6 @@
   --game-button-font: "Baloo Da 2", cursive;
   --content-font: "Baloo Paaji 2", cursive;
   --background-url: url(/images/index/test_space_invader_transparency10.png);
-
 }
 
 body {
@@ -191,7 +190,7 @@ section {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   text-align: center;
   box-shadow: 0px 0px 10px rgb(104, 101, 101);
@@ -199,12 +198,12 @@ section {
 }
 
 .big_box_header {
-position: relative;
-width: 100%;
-flex: 1;
-align-items: flex-start;
-justify-content: flex-start;
-/* margin: 0 auto; */
+  position: relative;
+  width: 100%;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* margin: 0 auto; */
 }
 
 .big_box_body {
@@ -250,7 +249,6 @@ justify-content: flex-start;
 }
 */
 
-
 /* ------- Button styles ----------
 These are the styles of the game page buttons: start game, stop game, save score, see leaderboard, information-instructions, popup close.
 */
@@ -267,33 +265,33 @@ These are the styles of the game page buttons: start game, stop game, save score
   padding-top: 5px;
   margin: 10px;
   display: flex;
-  align-items:center;
-  justify-content:space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
   font-family: var(--game-button-font);
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .info_button {
-    position:absolute;
-    top:0;
-    background-color: var(--primary-color-2);
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
-    border-color: white;
-    border-width: 5px;
-    border-style: solid;
-    color: var(--main-font-color);
-    padding-top: 5px;
-    margin: 10px;
-    display: flex;
-    align-items:center;
-    justify-content:space-evenly;
-    font-family: var(--game-button-font);
-    font-weight: bolder;
-    cursor: pointer;
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  background-color: var(--primary-color-2);
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  color: var(--main-font-color);
+  padding-top: 5px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: var(--game-button-font);
+  font-weight: bolder;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .popup_close {
@@ -320,7 +318,7 @@ These are the styles of the game page buttons: start game, stop game, save score
 /* -------- Here ends the button styles -----------*/
 
 /* -----Popup windows stlyes: small for results and large for instructions ------ */
-.popup_base{
+.popup_base {
   background-color: var(--primary-color-3);
   border-radius: 25px;
   border-color: white;
@@ -332,7 +330,7 @@ These are the styles of the game page buttons: start game, stop game, save score
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
   text-align: center;
   box-shadow: 0px 0px 10px rgb(104, 101, 101);
   /* margin: 0 auto; */
@@ -364,7 +362,7 @@ These are the styles of the game page buttons: start game, stop game, save score
 }
 
 #large_pop {
-    /* change the value of display to 'none' to show the small popup */
+  /* change the value of display to 'none' to show the small popup */
   display: none;
 }
 /* -------- Here ends the button styles -----------*/

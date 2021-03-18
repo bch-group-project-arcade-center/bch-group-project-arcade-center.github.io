@@ -7,13 +7,7 @@ let btnClose = document.getElementById("close");
 let btnStart = document.getElementById("start");
 let btnStop = document.getElementById("stop");
 let audioBg, audioEnd;
-let audioBgEasy = new Audio("./music/bg-easy.mp3");
-let audioBgMedium = new Audio("./music/bg-medium.mp3");
-let audioBgHard = new Audio("./music/bg-hard.mp3");
-let audioBadEnd = new Audio("./music/bad-end.mp3");
-let audioGoodEnd = new Audio("./music/good-end.mp3");
-let audioGreatEnd = new Audio("./music/great-end.mp3");
-let audioLvlChange = new Audio("./music/click.mp3");
+// let audioLvlChange = new Audio("./music/click.mp3");
 let levels = document.querySelectorAll("input[type=radio]");
 let sessionStorage = window.sessionStorage;
 //group project additions
@@ -30,7 +24,8 @@ let highscore = sessionStorage.getItem("highscore")
 // Display highscore
 displayHighscore.textContent = highscore;
 // Get sound option from session storage, unless sound is set to false, set sound on
-let soundOn = sessionStorage.getItem("sound") == "false" ? false : true;
+// let soundOn = sessionStorage.getItem("sound") == "false" ? false : true;
+let soundOn = false;
 
 let btnSoundOn = document.getElementById("soundOn");
 let btnSoundOff = document.getElementById("soundOff");
@@ -68,21 +63,18 @@ function startGame() {
       minSpeed = 250;
       maxSkip = 5;
       speedUp = 20;
-      audioBg = audioBgEasy;
       break;
     case "1":
       speed = 1000;
       minSpeed = 200;
       maxSkip = 3;
       speedUp = 30;
-      audioBg = audioBgMedium;
       break;
     case "2":
       speed = 900;
       minSpeed = 150;
       maxSkip = 1;
       speedUp = 40;
-      audioBg = audioBgHard;
       break;
   }
 
@@ -149,7 +141,7 @@ function startGame() {
 
   function showGameOver() {
     // Stop background music
-    audioBg.pause();
+    // audioBg.pause();
     // Stop timeout
     clearTimeout(timer);
     // Make overlay visible
@@ -157,15 +149,12 @@ function startGame() {
     // Check users score, set ending audio and assign end text
     switch (true) {
       case score < 10:
-        audioEnd = audioBadEnd;
         endText = "If you don't SPLASH, you won't evolve.";
         break;
       case score > 9 && score < 20:
-        audioEnd = audioGoodEnd;
         endText = "HARDEN for now, things will get better.";
         break;
       case score > 19:
-        audioEnd = audioGreatEnd;
         endText = "Never let your EMBER burn out.";
     }
 
@@ -235,7 +224,7 @@ btnSoundOn.addEventListener("click", () => {
   // Set sound on to false
   soundOn = false;
   // Pause bg music if playing
-  if (audioBg) audioBg.pause();
+  // if (audioBg) audioBg.pause();
   // Hide sound on btn
   btnSoundOn.style.display = "none";
   // Show sound off btn
@@ -246,7 +235,7 @@ btnSoundOn.addEventListener("click", () => {
 btnSoundOff.addEventListener("click", () => {
   soundOn = true;
   // Resume bg music if paused
-  if (audioBg) audioBg.play();
+  // if (audioBg) audioBg.play();
   // Show sound on btn
   btnSoundOn.style.display = "block";
   // Hide sound off btn
