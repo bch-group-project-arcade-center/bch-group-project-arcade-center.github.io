@@ -10,10 +10,85 @@
       rel="stylesheet"
     />
     <title>Kimble</title>
-    <link rel="stylesheet" href="kimblestyle.css" />
+    <link rel="stylesheet" href="css/kimblestyle.css">
   </head>
   <body>
     <div class="container">
+      <section id="popup-players">
+        <form>
+          <div>
+            <label for="player1">Nickname of player1</label>
+            <input
+              type="text"
+              name="player1"
+              id="player1"
+              maxlength="200"
+              required
+            />
+          </div>
+          <div>
+            <label for="color1">Choose color</label>
+            <select name="color1" id="color1" required>
+              <option value="" selected disabled hidden>Select</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
+              <option value="green">Green</option>
+            </select>
+          </div>
+          <div>
+            <label for="player2">Nickname of player2</label>
+            <input
+              type="text"
+              name="player2"
+              id="player2"
+              maxlength="200"
+              required
+            />
+          </div>
+          <div>
+            <label for="color2">Choose color</label>
+            <select name="color2" id="color2" required>
+              <option value="" selected disabled hidden>Select</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
+              <option value="green">Green</option>
+            </select>
+          </div>
+          <div>
+            <label for="player3">Nickname of player3</label>
+            <input type="text" name="player3" id="player3" maxlength="200" />
+          </div>
+          <div>
+            <label for="color3">Choose color</label>
+            <select name="color3" id="color3">
+              <option value="" selected disabled hidden>Select</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
+              <option value="green">Green</option>
+            </select>
+          </div>
+          <div>
+            <label for="player4">Nickname of player4</label>
+            <input type="text" name="player4" id="player4" maxlength="200" />
+          </div>
+          <div>
+            <label for="color4">Choose color</label>
+            <select name="color4" id="color4">
+              <option value="" selected disabled hidden>Select</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
+              <option value="green">Green</option>
+            </select>
+          </div>
+          <button type="submit">Play Game</button>
+          <p id="result"></p>
+        </form>
+      </section>
+      <section id="turns"></section>
       <section id="field">
         <div id="homebase">
           <div id="red1" class="place"></div>
@@ -38,20 +113,19 @@
           <div id="goalred2" class="place">2</div>
           <div id="goalred3" class="place">3</div>
           <div id="goalred4" class="place">4</div>
-          <div id="goalblue1" class="place"></div>
-          <div id="goalblue2" class="place"></div>
-          <div id="goalblue3" class="place"></div>
-          <div id="goalblue4" class="place"></div>
-          <div id="goalyellow1" class="place"></div>
-          <div id="goalyellow2" class="place"></div>
-          <div id="goalyellow3" class="place"></div>
-          <div id="goalyellow4" class="place"></div>
-          <div id="goalgreen1" class="place"></div>
-          <div id="goalgreen2" class="place"></div>
-          <div id="goalgreen3" class="place"></div>
-          <div id="goalgreen4" class="place"></div>
+          <div id="goalblue1" class="place">1</div>
+          <div id="goalblue2" class="place">2</div>
+          <div id="goalblue3" class="place">3</div>
+          <div id="goalblue4" class="place">4</div>
+          <div id="goalyellow1" class="place">1</div>
+          <div id="goalyellow2" class="place">2</div>
+          <div id="goalyellow3" class="place">3</div>
+          <div id="goalyellow4" class="place">4</div>
+          <div id="goalgreen1" class="place">1</div>
+          <div id="goalgreen2" class="place">2</div>
+          <div id="goalgreen3" class="place">3</div>
+          <div id="goalgreen4" class="place">4</div>
         </div>
-
         <div id="pieces">
           <div
             id="redpiece1"
@@ -134,59 +208,58 @@
             draggable="true"
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
-
           <div
-            id="greenenpiece2"
+            id="greenpiece2"
             class="greenpiece"
             draggable="true"
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
           <div
             id="greenpiece3"
-            class="greenrepiece"
+            class="greenpiece"
             draggable="true"
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
           <div
             id="greenpiece4"
-            class="greenrepiece"
+            class="greenpiece"
             draggable="true"
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
         </div>
         <div id="boardplaces">
-          <div id="redstart" class="place"></div>
+          <div id="redstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
           <div id="place2" class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
-          <div class="place"></div>
+          <div id="place3" class="place"></div>
+          <div id="place4" class="place"></div>
+          <div id="place5" class="place"></div>
+          <div id="place6" class="place"></div>
+          <div id="place7" class="place"></div>
+          <div id="bluestart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="place9" class="place"></div>
+          <div id="place10" class="place"></div>
+          <div id="place11" class="place"></div>
+          <div id="place12" class="place"></div>
+          <div id="place13" class="place"></div>
+          <div id="place14" class="place"></div>
+          <div id="yellowstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="place16" class="place"></div>
+          <div id="place17" class="place"></div>
+          <div id="place18" class="place"></div>
+          <div id="place19" class="place"></div>
+          <div id="place20"  class="place"></div>
+          <div id="place21"  class="place"></div>
+          <div id="greenstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="place23"  class="place"></div>
+          <div id="place24"  class="place"></div>
+          <div id="place25"  class="place"></div>
+          <div id="place26"  class="place"></div>
+          <div id="place27" class="place"></div>
+          <div id="place28" class="place"></div>
         </div>
         <div id="dice"></div>
       </section>
     </div>
-    <script src="kimblejs.js"></script>
+    <script src="js/kimble.js"></script>
   </body>
 </html>
