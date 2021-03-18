@@ -2,6 +2,7 @@ let circles = document.querySelectorAll(".circle");
 let displayScore = document.getElementById("score");
 let displayHighscore = document.getElementById("highscore");
 let overlay = document.getElementById("overlay");
+let popup = document.querySelector(".popup_base");
 let finalScore = document.getElementById("final-score");
 let btnClose = document.getElementById("close");
 let btnStart = document.getElementById("start");
@@ -146,6 +147,7 @@ function startGame() {
     clearTimeout(timer);
     // Make overlay visible
     overlay.style.visibility = "visible";
+    popup.style.visibility = "visible";
     // Check users score, set ending audio and assign end text
     switch (true) {
       case score < 10:
@@ -198,7 +200,7 @@ function startGame() {
     // Add event listener to close button
     btnClose.addEventListener("click", () => {
       // Store sound setting
-      sessionStorage.setItem("sound", `${soundOn}`);
+      // sessionStorage.setItem("sound", `${soundOn}`);
       // Store score if it's greater than current highscore
       if (score > highscore) sessionStorage.setItem("highscore", `${score}`);
       // Hide save score btn
