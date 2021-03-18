@@ -4,8 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color-1: #4c11ac;
+  --primary-color-2: #8f6cf2;
+  --primary-color-3: #200d54;
+  --main-font-color: white;
+  --menu-header-font: "Baloo Da 2", cursive;
+  --content-font: "Baloo Paaji 2", cursive;
+  --background-url: url(/images/index/test_space_invader_transparency10.png);
+}
+
 body {
-  background-color: #200d54;
+  background-color: var(--primary-color-3);
 }
 
 .container {
@@ -14,6 +24,26 @@ body {
   align-items: center;
   font-family: "Fredoka One", cursive;
   flex-flow: row wrap;
+}
+
+select#color1,
+select#color2,
+select#color3,
+select#color4 {
+  /* position: relative; */
+  background-color: var(--primary-color-2);
+  width: 200px;
+  height: 40px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  color: var(--main-font-color);
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: var(--game-button-font);
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 #field {
@@ -269,7 +299,7 @@ body {
   box-shadow: none;
 }
 #dice {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/Dice.svg");
+  background-image: url("/bch-group-project-arcade-center.github.io/images/Dice.png");
   width: 80px;
   height: 80px;
   max-width: 100%;
