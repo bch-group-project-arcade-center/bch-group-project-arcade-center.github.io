@@ -168,6 +168,8 @@ const GetPlayers = () => {
     );
   } else {
     document.getElementById("popup-players").style.display = "none";
+    //turns.classList.add(player1.arrowturn);
+    //FirstMove();
   }
 };
 const StopRefresh = (event) => {
@@ -177,12 +179,6 @@ const StopRefresh = (event) => {
 };
 
 form.addEventListener("submit", StopRefresh);
-
-/*Game Start*/
-
-/*2 moves on 6 dice*/
-/* if (dicenumber>0) {
-} */
 
 /**
  * Controls what happens when a new turn starts
@@ -198,11 +194,12 @@ function newTurn() {
   enableDrag(currentPlayer);
   turns.classList.add(currentPlayer.arrowturn);
 }
-
-document.getElementById("nextTurn").addEventListener("click", () => {
+/*moved this function to pressthedice
+/* document.getElementById("nextTurn").addEventListener("click", () => {
   turn++;
+  turns.classList.remove(currentPlayer.arrowturn);
   newTurn();
-});
+}); */
 
 /**
  * Given a player object, set draggable property of each pieces belonging to player to true, making the pieces draggable.
@@ -226,12 +223,34 @@ function disableDrag(player) {
 }
 
 /********************** Dice roll functionality **********************/
-
+let dicenumber;
 let press = document.getElementById("dice");
 const PresstheDice = () => {
-  let dicenumber = Math.floor(Math.random() * 6) + 1;
+  dicenumber = Math.floor(Math.random() * 6) + 1;
   console.log(dicenumber);
   press.textContent = dicenumber;
+  turn++;
   turns.classList.remove(currentPlayer.arrowturn);
+  newTurn();
+  FromHomeBase();
 };
 press.addEventListener("click", PresstheDice);
+
+/*Game Start*/
+/*dice*/
+const FromHomeBase = () => {
+  console.log(dicenumber);
+  if (
+    dicenumber > 0 &&
+    dicenumber <
+      6 /* &&
+    currentPlayer.piecesId.some((el) => {
+      el.parentNode.id == "pieces";
+    }) */
+  ) {
+    console.log("hello");
+  } else {
+    turns.classList.remove(currentPlayer.arrowturn);
+    enableDrag(currentPlayer);
+  }
+};
