@@ -47,6 +47,8 @@
   let btnSaveScore = document.getElementById("saveScore");
   let overLay = document.getElementById("overlay");
   let btnClose = document.getElementById("close");
+  let playerNameForm = document.getElementById("playerName");
+  let btnNameSaver = document.getElementById("SaveNameScore");
   
   highScoreTitle.textContent = `High score ${highscore}`;
   scoreTitle.textContent = `Score ${score}`;
@@ -189,7 +191,8 @@
   
   btnClose.addEventListener("click", () => {
       overLay.style.visibility = 'hidden';
-      
+      btnSaveNameScore.style.display = "none";
+      playerNameForm.style.display = "none";
       btnSaveScore.style.display = "none";
       location.reload();
   });
