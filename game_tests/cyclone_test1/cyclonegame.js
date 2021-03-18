@@ -1,3 +1,4 @@
+
 /**        START OF EXTRA CODE TO STYLE BULBS        */
 /**
  * You don't have to care about this fn unless you want to
@@ -38,15 +39,15 @@
       : 0;
   
   //elements
-  let highScoreTitle = document.getElementById("highScoreTitle");
-  let scoreTitle = document.getElementById("scoreTitle");
-  let gameResultTitile = document.getElementById("resultTitle");
-  let gameResultScore = document.getElementById("final-score");
-  let playerNameInput = document.getElementById("playerName");
-  let btnSaveNameScore = document.getElementById("SaveNameScore");
-  let btnSaveScore = document.getElementById("saveScore");
-  let overLay = document.getElementById("overlay");
-  let btnClose = document.getElementById("close");
+  let highScoreTitle = document.getElementById("CG_highScoreTitle");
+  let scoreTitle = document.getElementById("CG_scoreTitle");
+  let gameResultTitile = document.getElementById("CG_resultTitle");
+  let gameResultScore = document.getElementById("CG_final-score");
+  let playerNameInput = document.getElementById("CG_playerName");
+  let btnSaveNameScore = document.getElementById("CG_SaveNameScore");
+  let btnSaveScore = document.getElementById("CG_saveScore");
+  let overLay = document.getElementById("CG_overlay");
+  let btnClose = document.getElementById("CG_close");
   
   highScoreTitle.textContent = `High score ${highscore}`;
   scoreTitle.textContent = `Score ${score}`;
@@ -55,22 +56,22 @@
   // Game code
   const cycloneArcade = () => {
     // Prevent start button from being pressed again
-    document.getElementById("start-btn").disabled = true;
+    document.getElementById("CG_start-btn").disabled = true;
     // Allow user to press the stop button
-    document.getElementById("stop-btn").disabled = false;
+    document.getElementById("CG_stop-btn").disabled = false;
   
     // Randomly select winning bulb
     const CHOSEN_BULB_INDEX = Math.round(Math.random() * NUMBER_OF_BULBS);
   
     let counter = 0;
-    let bulbContainer = document.querySelector("#bulbs");
+    let bulbContainer = document.querySelector("#CG_bulbs");
   
     // Create bulbs
     while (counter < NUMBER_OF_BULBS) {
       // Create a bulb
       const newBulb = document.createElement("div");
       // Assign class bulb to newly created div
-      newBulb.className = "bulb";
+      newBulb.className = "CG_bulb";
       // Add bulb to bulbs div
       bulbContainer.appendChild(newBulb);
       // Move on to next bulb
@@ -78,25 +79,25 @@
     }
   
     // Assign list of bulbs to a variable
-    const bulbs = document.querySelectorAll(".bulb");
+    const bulbs = document.querySelectorAll(".CG_bulb");
     // invoke the fn on the class bulb elements to create the effect
     arrangeBulbsInACircle(bulbs);
     // Select chosen bulb
-    bulbs[CHOSEN_BULB_INDEX].classList.add("chosen");
+    bulbs[CHOSEN_BULB_INDEX].classList.add("CG_chosen");
     // Reset counter
     counter = 0;
     //Switch on first bulb
-      bulbs[counter].classList.add("active");
+      bulbs[counter].classList.add("CG_active");
   
     const startInterval = setInterval(() => {
       // switch off the current bulb
-      bulbs[counter].classList.remove("active");
+      bulbs[counter].classList.remove("CG_active");
   
       // Go to next bulb until last bulb index is reached then reset counter
       counter < NUMBER_OF_BULBS - 1 ? counter++ : (counter = 0);
   
       // Switch on current bulb
-      bulbs[counter].classList.add("active");
+      bulbs[counter].classList.add("CG_active");
     }, BLINKING_SPEED);
   
     const stopInterval = () => {
@@ -158,7 +159,7 @@
     };
   
     // Stop interval when stop button is pressed
-      document.getElementById("stop-btn").addEventListener("click", stopInterval);
+      document.getElementById("CG_stop-btn").addEventListener("click", stopInterval);
       
       
   };
@@ -195,5 +196,5 @@
   });
   
   // Start game code when start button is pressed
-  document.getElementById("start-btn").addEventListener("click", cycloneArcade);
+  document.getElementById("CG_start-btn").addEventListener("click", cycloneArcade);
   

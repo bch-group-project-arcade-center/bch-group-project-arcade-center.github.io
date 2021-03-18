@@ -1,0 +1,258 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+/* body {
+  font-family: "Press Start 2P", cursive;
+  background-color: blueviolet;
+  color: white;
+  
+} */
+
+/* .container {
+  
+ 
+  margin: 0 auto;
+  
+} */
+#game {
+  position: relative;
+  text-align: center;
+  /* margin-left: -80px; */
+}
+
+#bulbs {
+  top: 230px;
+  margin: 0 auto;
+  right: 15px;
+  height: 500px;
+  width: 500px;
+  left: -60px;
+  position: relative;
+}
+
+/* Original bulb class */
+/* .bulb {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: blue;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out;
+  -o-transition: background-color 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
+} */
+
+/* NEW CSS */
+.bulb {
+  display: inline-block;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: lightslategrey;
+  margin: 2rem;
+
+  -webkit-transition: background-color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out;
+  -o-transition: background-color 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
+  
+}
+
+/* Original bulb chosen class */
+.bulb.chosen {
+  border: 3px solid red;
+  background-color: red;
+  box-shadow: 0 0 20px 5px red;;
+}
+
+/* Original bulb active class */
+/* .bulb.active {
+  background-color: yellow;
+} */
+
+/* NEW CSS */
+.bulb.active {
+  background-color: #FFF35C;
+  box-shadow: 0 0 40px 5px #FFF35C;
+}
+
+/*--------------NEW CSS for elments before/after the selected bulb--------------*/
+.bulb.chosen::before, .bulb.chosen::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 60px;
+  width: 10px;
+  border-radius: 10px;
+  background-color: #426DFB;
+  box-shadow: 0 0 20px 5px #2356FF;
+}
+
+.bulb.chosen::before {
+  right: 60px;
+  bottom: -15px;
+}
+
+.bulb.chosen::after {
+  left: 60px;
+  bottom: -15px;
+}
+/* ------ ends here ------- */
+
+
+.user-input {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.user-input label {
+  display: block;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+#blink-speed {
+  direction: rtl;
+}
+
+/*group project addition */
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 220px;
+  left: 5%;
+  height: 300px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  z-index:2;
+}
+/* COPY OF ORIGINAL OVERLAY SETTINGS
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  z-index:2;
+} */
+
+.popup {
+  background-color: #200d54;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 3px;
+  border-style: solid;
+  width: 90vw;
+  height: 25vh;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 2%;
+  color: rgb(255, 255, 255);
+}
+/* COPY OF POPUP ORIGINAL SETTINGS
+.popup {
+  background-color: white;
+  border-radius: 15px;
+  width: 90vw;
+  height: 50vh;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 2%;
+  color: black;
+} */
+
+#close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  /* border-radius: 25px; */
+  /* border-color: white; */
+  /* border-width: 3px; */
+  background-color: #200d54;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* COPY OF CLOSE ORIGINAL SETTINGS
+#close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: white;
+  font-size: 1.5rem;
+} */
+
+.btn-text {
+  font-family: "Baloo Da 2", cursive;
+  padding:5px;
+  color: rgb(255, 255, 255);
+  background-color: #8f6cf2;
+  width: 100px;
+  height: 40px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* COPY OF BTN-TEXT ORIGINAL SETTINGS
+.btn-text {
+  font-family: "Press Start 2P", cursive;
+  padding:5px;
+  color: white;
+} */
+
+.btn-text:hover {
+  background-color: #4c11ac;
+}
+
+#saveScore{
+  padding:5px;
+  visibility: hidden;
+}
+
+#playerName{
+  font-family: "Press Start 2P", cursive;
+  padding:5px;
+  visibility: hidden;
+}
+
+#SaveNameScore{
+  padding:5px;
+  visibility: hidden;
+}
+
+#scoreSaveMsg{
+  visibility: hidden;
+}
