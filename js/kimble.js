@@ -209,6 +209,7 @@ function enableDrag(player) {
   // if player piece is an array
   player.piecesId.forEach((id) => {
     document.getElementById(id).draggable = true;
+    document.getElementById(id).style.cursor = "pointer";
   });
 }
 
@@ -219,6 +220,7 @@ function enableDrag(player) {
 function disableDrag(player) {
   player.piecesId.forEach((id) => {
     document.getElementById(id).draggable = false;
+    document.getElementById(id).style.cursor = "default";
   });
 }
 
