@@ -181,7 +181,7 @@ section {
 .big_box {
   background-color: var(--primary-color-3);
   width: 100%;
-  min-height: 600px;
+  min-height: 400px;
   border-radius: 25px;
   border-color: var(--primary-color-2);
   border-width: 3px;
@@ -354,6 +354,7 @@ These are the styles of the game page buttons: start game, stop game, save score
   width: 75%;
   min-height: 515px;
   max-height: 515px;
+  /* visibility: flex; */
   visibility: hidden;
   overflow-y: auto;
 }
@@ -362,6 +363,7 @@ These are the styles of the game page buttons: start game, stop game, save score
   /* change the value of display to 'flex' to show the small popup */
   display: none;
 }
+
 /* --- NOT IN USE ATM ---
 #large_pop {
   display: none;
@@ -422,6 +424,8 @@ footer a {
 .footer_menu {
   list-style: none;
 }
+
+
 
 /* Adaptions for mobile */
 
