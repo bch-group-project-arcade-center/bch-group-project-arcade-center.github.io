@@ -17,7 +17,7 @@ body {
 }
 
 #field {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/Static-field.png");
+background-image: url("/images/Static-field.png");
   width: 535px;
   max-width: 100%;
   max-height: 100%;
@@ -27,6 +27,39 @@ body {
   background-size: cover;
   position: relative;
 }
+
+#popup-players {
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 2rem;
+  display: none;
+}
+#turns {
+  position: relative;
+  left: 320px;
+  top: -115px;
+  width: 110px;
+  height: 186px;
+  z-index: 999;
+}
+.redturn {
+  background-image: url("/images/redturnkimble.png");
+  background-size: cover;
+}
+.blueturn {
+  background-image: url("/images/blueturnkimble.png");
+}
+.yellowturn {
+  background-image: url("/images/yellowturnkimble.png");
+}
+.greenturn {
+  background-image: url("/images/greenturnkimble.png");
+}
+
 
 .place {
   width: 2rem;
@@ -269,7 +302,9 @@ body {
   box-shadow: none;
 }
 #dice {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/Dice.svg");
+
+  background-image: url("/images/Dice.svg");
+
   width: 80px;
   height: 80px;
   max-width: 100%;
@@ -285,7 +320,7 @@ body {
 
 /*Pieces*/
 .repiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/redpiece.png");
+  background-image: url("/images/redpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -317,7 +352,7 @@ body {
   top: 61px;
 }
 .bluepiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/bluepiece1.png");
+  background-image: url("/images/bluepiece1.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -351,7 +386,7 @@ body {
 }
 
 .yellowpiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/yellowpiece.png");
+  background-image: url("/images/yellowpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -385,7 +420,7 @@ body {
 }
 
 .greenpiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/greenpiece.png");
+  background-image: url("/images/greenpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
