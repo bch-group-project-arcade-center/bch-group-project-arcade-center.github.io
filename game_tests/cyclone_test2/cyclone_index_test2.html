@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Center</title>
-    <link rel="stylesheet" href="css/index_style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cyclonegame_style_test2.css" />
+    
+    <link rel="stylesheet" href="css/gamepage_style.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
@@ -17,11 +17,11 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    
+    <title>Cyclone Arcade</title>
+  </head>
 
-
-</head>
-<body>
-
+  <body>
     <header id="top">
         <div class="logo">
             <a href="./index.html#top"><img src="images/index/arcade_center_logo.svg" alt="Arcade Center Logo"></a>
@@ -65,7 +65,7 @@
             <div id="mobile-menu" class="dropdown-content-mobile">
                 <ul>
                     <li id="mobile-menu-leaderbord" class="dropdown-category mobile-dropdown-item">
-                        <a href="#">Leaderbord</a>
+                        <a href="leaderboard.html">Leaderbord</a>
                     </li>
 
                     <li id="mobile-menu-games" class="dropdown-category mobile-dropdown-item">
@@ -81,11 +81,11 @@
                             </li>
                             
                             <li class="mobile-dropdown-item">
-                                <a href="jackpot.html">Jackpot</a>
+                                <a href="/games/jackpot/index.html">Jackpot</a>
                             </li>
                             
                             <li class="mobile-dropdown-item">
-                                <a href="kimble.html">Kimble</a>
+                                <a href="/games/kimble/index.html">Kimble</a>
                             </li>
                         <!-- </ul> -->
 
@@ -96,84 +96,38 @@
             
         </nav>
     </header>
-    <div class="section_divider"></div>
-    
-    <main>
-            <div class="section_header_wrapper">
-                <h1> <span>Arcade Games</span> </h1>
-            </div>
-            
-            <section>
-                <a href="cyclonegame.html">
-                    <div class="box card1">
-                        <!-- Evaluate if a description is needed or not.-->
-                        <!-- <div class="box_highlight">
-                            This is a short description. How long can this go?      
-                        </div> -->
-                        <h2>Cyclone Arcade</h2>        
-                    </div>
-                </a>
-                
-                <a href="speedgame.html">
-                    <div class="box card2">
-                        <h2>How Fast Are You?</h2>
-                    </div>
-                </a>
-                
-                <a href="jackpot.html">
-                    <div class="box card3">
-                        <h2>Jackpot</h2>
-                    </div>
-                </a>
-                
-                <a href="kimble.html">
-                    <div class="box card4">
-                        <h2>Kimble</h2>
-                    </div>
-                </a>
-            </section>
-            
-    </main>
-    <div class="section_divider"></div>
-    <footer>
-        <div class="left_box">
-            <div class="footer_left_top">
-                <H3><a href="about.html">About</a></H3>
-                <H3><a href="contact.html">Contact</a></H3>
-            </div>
-            <div class="footer_leftdown">
-                <a href="https://twitter.com/arcade_center" target="_blank"><i class="fab fa-twitter-square"></i></a>    <a href="https://www.facebook.com/arcadecenterfun/" target="_blank"><i class="fab fa-facebook-square"></i></a> <a href="contact.html"><i class="fas fa-envelope-square"></i></a>
-                
-            </div>
-        </div>
-        <div class="right_box">
-            <div class="footer_right">
-                <H3><a href="./index.html#top">Games</a></H3>
-                <ul>
-                    <li class="footer_menu">
-                        <a href="cyclonegame.html">Cyclone Arcade</a>
-                    </li>
-                    
-                    <li class="footer_menu">
-                        <a href="speedgame.html">How fast are you?</a>
-                    </li>
-                    
-                    <li class="footer_menu">
-                        <a href="jackpot.html">Jackpot</a>
-                    </li>
-                    
-                    <li class="footer_menu">
-                        <a href="kimble.html">Kimble</a>
-                    </li>
-                </ul>
-                <H3><a href="/leaderboard/index.html">Leaderbord</a></H3>
-                
-            </div>
-        </div>
 
-    </footer>
-    <!-- <div class="section_divider"><i class="far fa-copyright"></i></div> -->
-    
-    <script src="js/index_script.js"></script>
-</body>
+
+
+
+    <div class="container">
+      <section id="game">
+        <h1>Cyclone Arcade Game</h1>
+        <br>
+        <h3 id="highScoreTitle"></h3>
+        <h3 id="scoreTitle"></h3>
+        <br>
+        <section id="overlay">
+        <div class="popup">
+            <button href="#" id="close" class="btn-text">X</button>
+            <h2 id="resultTitle">Game Over</h2>
+            <p id="final-score"></p>
+            <p>Every win gives +1 score and every loss takes -1 score</p>
+            <button class="btn-text" id="saveScore">Save score</button>
+            <form id="saveScoreForm">
+                <input type="text" name="playerName" id="playerName" placeholder="Enter your name" required />
+                <input class="btn-text" type="button" value="Save score" id="SaveNameScore" />
+            </form>
+            <p id="scoreSaveMsg">Score saved!</p>
+        </div>
+        </section>
+        <button class="btn-text btn" id="start-btn">start</button>
+        <button class="btn-text btn" id="stop-btn" disabled>stop</button>
+       
+        <div id="bulbs"></div>
+      </section>
+    </div>
+
+    <script src="cyclonegame_test2.js"></script>
+  </body>
 </html>
