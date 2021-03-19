@@ -1,37 +1,16 @@
-/**************** Setting Buttons ****************/
+.big_box_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/**************** Setting  ****************/
 
 .settings {
   display: flex;
   flex-direction: row-reverse;
   margin: 1rem;
   justify-content: center;
-}
-.icon {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.btn-icon {
-  background-color: transparent;
-  border: none;
-}
-
-#soundOn {
-  display: none;
-}
-
-#soundOff {
-  display: none;
-}
-
-.btn-icon-cog {
-  transition: transform 0.2s ease-in-out;
-  display: none;
-}
-
-.btn-icon-cog:hover {
-  transform: rotate(30deg);
 }
 
 .user-input {
@@ -108,48 +87,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
-#close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: none;
-  background-color: white;
-  font-size: 1.5rem;
-}
-
-.btn-text:hover {
-  color: rgba(0, 0, 0, 0.7);
-}
-
 @media (max-width: 576px) {
-  html {
-    font-size: 14px;
-  }
-  .container {
-    justify-content: start;
-    margin-top: 5vh;
-  }
-  .settings {
-    flex-flow: row wrap;
-    width: 50%;
-    justify-content: center;
-    margin: 1rem;
-  }
-
-  .btn-icon {
-    margin: 0.5rem;
-  }
-
-  .btn-icon-cog {
+  .user-input {
     display: block;
-  }
-
-  .levels-setting {
-    display: none;
-  }
-
-  .responsive {
-    display: block;
+    margin: 0 1rem;
   }
 }
 
