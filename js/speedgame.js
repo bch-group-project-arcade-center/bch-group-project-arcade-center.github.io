@@ -181,3 +181,13 @@ function startGame() {
 
 // Add event listener to start button
 btnStart.addEventListener("click", startGame);
+
+/** Sharing on Twitter **/
+let shareBtnTwitter = document.getElementById("shareBtnTwitter");
+shareBtnTwitter.addEventListener("click", function () {
+  let message = highscore ? `my score of ${highscore}` : "me";
+  makePopupPage(
+    "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(`Try to beat ${message} on ${currentURL}`)
+  );
+});

@@ -226,3 +226,16 @@ btnSaveNameScore.addEventListener("click", () => {
   btnSaveNameScore.style.visibility = "hidden";
   scoreSaveMsg.style.visibility = "visible";
 });
+
+/** Sharing on Twitter **/
+let shareBtnTwitter = document.getElementById("shareBtnTwitter");
+shareBtnTwitter.addEventListener("click", function () {
+  let message =
+    score / numOfGames
+      ? `my score of ${parseFloat(score / numOfGames).toFixed(2)}`
+      : "me";
+  makePopupPage(
+    "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(`Try to beat ${message} on ${currentURL}`)
+  );
+});
