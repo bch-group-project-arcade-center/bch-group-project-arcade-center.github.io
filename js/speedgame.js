@@ -15,7 +15,7 @@ let localStorage = window.localStorage;
 let playerNameInput = document.getElementById("playerName");
 let btnSaveNameScore = document.getElementById("SaveNameScore");
 let btnSaveScore = document.getElementById("saveScore");
-
+let score;
 // Get highscore from session storage
 let highscore = sessionStorage.getItem("highscore")
   ? parseInt(sessionStorage.getItem("highscore"))
@@ -26,8 +26,8 @@ displayHighscore.textContent = highscore;
 
 function startGame() {
   let lastActive, active, endText, speed, minSpeed, maxSkip, speedUp, timer;
-  let score = 0;
   let counter = 0;
+  score = 0;
 
   // Check level setting
   document.querySelectorAll("input[type=radio]").forEach((level) => {
@@ -185,7 +185,7 @@ btnStart.addEventListener("click", startGame);
 /** Sharing on Twitter **/
 let shareBtnTwitter = document.getElementById("shareBtnTwitter");
 shareBtnTwitter.addEventListener("click", function () {
-  let message = highscore ? `my score of ${highscore}` : "me";
+  let message = score ? `my score of ${score}` : "me";
   makePopupPage(
     "https://twitter.com/intent/tweet?text=" +
       encodeURIComponent(`Try to beat ${message} on ${currentURL}`)
