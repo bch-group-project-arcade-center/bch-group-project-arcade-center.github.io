@@ -118,39 +118,27 @@
                     <section id="game">    
                         <section id="overlay">
                             <div class="popup">
-                                <button href="#" id="close" class="btn-text">X</button>
+                                <button href="#" id="close" class="popup_close button_hover">X</button>
                                 <h2 id="resultTitle">Game Over</h2>
                                 <p id="final-score"></p>
                                 <p>Every win gives +1 score and every loss takes -1 score</p>
-                                <!-- social sharing -->
-                                <div id="fb-root"></div>
-                                <script
-                                  async
-                                  defer
-                                  crossorigin="anonymous"
-                                  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0"
-                                  nonce="TA0G6YbE"
-                                ></script>
-                                <div class="social_sharing">
-                                    <button id="shareBtnFB">Share on Facebook</button>
-                                    <button id="shareBtnTwitter">Share on Twitter</button>
-                                </div>
-                                <!-- social sharing ends -->
-                                
-                                <script src="./js/main.js"></script>
-                                <button class="btn-text" id="saveScore">Save score</button>
+                                <button class="gamepage_button button_hover" id="saveScore">Save score</button>
                                 <form id="saveScoreForm">
                                     <input type="text" name="playerName" id="playerName" placeholder="Enter your name" required />
-                                    <input class="btn-text" type="button" value="Save score" id="SaveNameScore" />
+                                    <input class="gamepage_button button_hover" type="button" value="Save score" id="SaveNameScore" />
                                 </form>
                                 <p id="scoreSaveMsg">Score saved!</p>
-                                <a href="leaderboard.html#top"><button class="btn-text2 btn" id="see_leaderboard">See leaderboard</button>
+                                <a href="leaderboard.html#top"><button class="gamepage_button button_hover" id="see_leaderboard">See leaderboard</button>
                                 </a>
+                                <div class="share-btn">
+                                    <button id="shareBtnFB" class="share-fb"><i class="fab fa-facebook"></i> Share</button>
+                                    <button id="shareBtnTwitter" class="share-twitter"><i class="fab fa-twitter"></i> Share</button>
+                                  </div>
                                     
                             </div>
                         </section>
-                        <button class="btn-text btn" id="start-btn">start</button>
-                        <button class="btn-text btn" id="stop-btn" disabled>stop</button>
+                        <button class="btn-text2 button_hover" id="start-btn">start</button>
+                        <button class="btn-text2 button_hover" id="stop-btn" disabled>stop</button>
                         
                         <div id="bulbs"></div>
                     </section>

@@ -1,8 +1,7 @@
 * {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* body {
@@ -64,50 +63,19 @@
   -moz-transition: background-color 0.1s ease-out;
   -o-transition: background-color 0.1s ease-out;
   transition: background-color 0.1s ease-out;
-  
 }
 
 /* Original bulb chosen class */
 .bulb.chosen {
-  border: 3px solid red;
   background-color: red;
-  box-shadow: 0 0 20px 5px red;;
+  box-shadow: 0 0 20px 5px red;
 }
 
-/* Original bulb active class */
-/* .bulb.active {
-  background-color: yellow;
-} */
-
-/* NEW CSS */
 .bulb.active {
-  background-color: #FFF35C;
-  box-shadow: 0 0 40px 5px #FFF35C;
-}
+  background-color: #fff35c;
 
-/*--------------NEW CSS for elments before/after the selected bulb--------------*/
-.bulb.chosen::before, .bulb.chosen::after {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 60px;
-  width: 10px;
-  border-radius: 10px;
-  background-color: #426DFB;
-  box-shadow: 0 0 20px 5px #2356FF;
+  box-shadow: 0 0 40px 5px #fff35c;
 }
-
-.bulb.chosen::before {
-  right: 60px;
-  bottom: -15px;
-}
-
-.bulb.chosen::after {
-  left: 60px;
-  bottom: -15px;
-}
-/* ------ ends here ------- */
-
 
 .user-input {
   display: inline-block;
@@ -139,7 +107,7 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  z-index:2;
+  z-index: 2;
 }
 /* COPY OF ORIGINAL OVERLAY SETTINGS
 #overlay {
@@ -188,66 +156,9 @@ input[type="number"] {
   color: black;
 } */
 
-#close {
-  position: absolute;
-  max-width: 20px;
-  max-height: 20px;
-  top: 0;
-  right: 10px;
-  border: none;
-  /* border-radius: 25px; */
-  /* border-color: white; */
-  /* border-width: 3px; */
-  background-color: #200d54;
-  font-size: 1.5rem;
-  cursor: pointer;
-  text-align: right;
-}
-/* COPY OF CLOSE ORIGINAL SETTINGS
-#close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: none;
-  background-color: white;
-  font-size: 1.5rem;
-} */
-
-.social_sharing {
-  padding-top: 10px;
-}
-
-#shareBtnFB {
-  padding: 4px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-#shareBtnTwitter {
-  padding: 4px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.btn-text {
-  font-family: "Baloo Da 2", cursive;
-  padding:5px;
-  color: rgb(255, 255, 255);
-  background-color: #8f6cf2;
-  width: 100px;
-  height: 40px;
-  border-radius: 25px;
-  border-color: white;
-  border-width: 5px;
-  border-style: solid;
-  margin: 10px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 .btn-text2 {
   font-family: "Baloo Da 2", cursive;
-  padding:5px;
+  padding: 5px;
   color: rgb(255, 255, 255);
   background-color: #8f6cf2;
   width: 200px;
@@ -261,33 +172,22 @@ input[type="number"] {
   cursor: pointer;
 }
 
-/* COPY OF BTN-TEXT ORIGINAL SETTINGS
-.btn-text {
+#saveScore {
+  padding: 5px;
+  visibility: hidden;
+}
+
+#playerName {
   font-family: "Press Start 2P", cursive;
-  padding:5px;
-  color: white;
-} */
-
-.btn-text:hover {
-  background-color: #4c11ac;
-}
-
-#saveScore{
-  padding:5px;
+  padding: 5px;
   visibility: hidden;
 }
 
-#playerName{
-  font-family: "Press Start 2P", cursive;
-  padding:5px;
+#SaveNameScore {
+  padding: 5px;
   visibility: hidden;
 }
 
-#SaveNameScore{
-  padding:5px;
-  visibility: hidden;
-}
-
-#scoreSaveMsg{
+#scoreSaveMsg {
   visibility: hidden;
 }
