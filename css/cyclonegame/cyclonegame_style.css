@@ -28,8 +28,8 @@
   top: 230px;
   margin: 0 auto;
   right: 15px;
-  height: 500px;
-  width: 500px;
+  height: 100px;
+  width: 100px;
   left: -60px;
   position: relative;
 }
@@ -130,10 +130,10 @@ input[type="number"] {
 
 #overlay {
   background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 220px;
+  position: absolute;
+  top: 0px;
   left: 5%;
-  height: 300px;
+  /* height: 550px; */
   width: 90%;
   display: flex;
   align-items: center;
@@ -162,7 +162,7 @@ input[type="number"] {
   border-width: 3px;
   border-style: solid;
   width: 90vw;
-  height: 25vh;
+  min-height: 35vh;
   max-width: 600px;
   display: flex;
   justify-content: center;
@@ -190,8 +190,10 @@ input[type="number"] {
 
 #close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  max-width: 20px;
+  max-height: 20px;
+  top: 0;
+  right: 10px;
   border: none;
   /* border-radius: 25px; */
   /* border-color: white; */
@@ -199,6 +201,7 @@ input[type="number"] {
   background-color: #200d54;
   font-size: 1.5rem;
   cursor: pointer;
+  text-align: right;
 }
 /* COPY OF CLOSE ORIGINAL SETTINGS
 #close {
@@ -210,12 +213,44 @@ input[type="number"] {
   font-size: 1.5rem;
 } */
 
+.social_sharing {
+  padding-top: 10px;
+}
+
+#shareBtnFB {
+  padding: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#shareBtnTwitter {
+  padding: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .btn-text {
   font-family: "Baloo Da 2", cursive;
   padding:5px;
   color: rgb(255, 255, 255);
   background-color: #8f6cf2;
   width: 100px;
+  height: 40px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  margin: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-text2 {
+  font-family: "Baloo Da 2", cursive;
+  padding:5px;
+  color: rgb(255, 255, 255);
+  background-color: #8f6cf2;
+  width: 200px;
   height: 40px;
   border-radius: 25px;
   border-color: white;
