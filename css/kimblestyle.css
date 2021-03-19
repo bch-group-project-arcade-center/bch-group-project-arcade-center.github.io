@@ -4,8 +4,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color-1: #4c11ac;
+  --primary-color-2: #8f6cf2;
+  --primary-color-3: #200d54;
+  --main-font-color: white;
+  --popup-color: #72c0f8f2;
+  --goalred-color: #ff0000;
+  --goalblue-color: #100bf4;
+  --goalgreen-color: #008000;
+  --goalyellow-color: #ffc700;
+  --menu-header-font: "Baloo Da 2", cursive;
+  --content-font: "Baloo Paaji 2", cursive;
+  --kimble-font: "Fredoka One", cursive;
+  --background-url: url(/images/index/test_space_invader_transparency10.png);
+}
+
 body {
-  background-color: #200d54;
+  background-color: var(--primary-color-3);
 }
 
 .container {
@@ -16,6 +32,67 @@ body {
   flex-flow: row wrap;
 }
 
+/*POP-UP*/
+
+label {
+  margin: 10px;
+}
+
+.red {
+  background: var(--goalred-color);
+}
+
+.blue {
+  background: var(--goalblue-color);
+}
+
+.yellow {
+  background: var(--goalyellow-color);
+}
+
+.green {
+  background: var(--goalgreen-color);
+}
+
+select#color1,
+select#color2,
+select#color3,
+select#color4 {
+  /* position: relative; */
+  background-color: rgba(30, 6, 250, 0.698);
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  border-color: var(--main-font-color);
+  border-width: 2px;
+  border-style: solid;
+  color: var(--main-font-color);
+  align-items: center;
+  justify-content: left;
+  font-family: var(--kimble-font);
+  margin: 10px;
+}
+
+input#player1,
+input#player2,
+input#player3,
+input#player4 {
+  border-radius: 5px;
+  border-style: none;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+#popup-players {
+  min-height: 400px;
+  visibility: visible;
+  background: var(--popup-color);
+  border-radius: 50px;
+  padding: 1.5rem;
+  z-index: 1;
+  position: absolute;
+}
+
 #field {
   background-image: url("/images/Static-field.png");
   width: 535px;
@@ -24,10 +101,16 @@ body {
   height: 541px;
   background-repeat: no-repeat;
   /* background-position: center; */
-  background-size: cover;
-  position: relative;
+  position: absolute;
 }
 
+#turns {
+  position: relative;
+  left: 320px;
+  top: -115px;
+  width: 110px;
+  height: 186px;
+  z-index: 999;
 #popup-players {
   background-color: #fff;
   border-radius: 25px;
@@ -37,7 +120,7 @@ body {
   -o-border-radius: 25px;
   padding: 2rem;
   display: none;
-}
+  }
 #popup-winner {
   background-color: #fff;
   border-radius: 25px;
@@ -48,6 +131,7 @@ body {
   padding: 2rem;
   display: none;
 }
+  
 #startnewgame {
   padding: 1rem;
 }
@@ -67,6 +151,9 @@ body {
 }
 
 .redturn {
+
+  background-image: url("/images/redturnkimble.png");
+  background-size: cover;
   box-shadow: 0 0 30px 2px #ff0000;
   border: 2px solid #ff0000;
   border-radius: 16px;
@@ -108,7 +195,7 @@ body {
   height: 2rem;
   border-radius: 50%;
   background: radial-gradient(50% 50% at 50% 50%, #faf4f4 65.62%, #e0dcdc 100%);
-  border: 1px solid #ffffff;
+  border: 1px solid var(--main-font-color);
   box-sizing: border-box;
   box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.25);
 }
@@ -195,15 +282,15 @@ body {
 }
 #goalbase {
   font-size: 20px;
-  border: 1px solid #ffffff;
-  color: #fff;
+  border: 1px solid var(--main-font-color);
+  color: var(--main-font-color);
 }
 
 #goalred1 {
   position: absolute;
   left: 136px;
   top: 139px;
-  background: #ff0000;
+  background: var(--goalred-color);
   padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
@@ -212,7 +299,7 @@ body {
   position: absolute;
   left: 157px;
   top: 163px;
-  background: #ff0000;
+  background: var(--goalred-color);
   padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
@@ -221,7 +308,7 @@ body {
   position: absolute;
   left: 178px;
   top: 187px;
-  background: #ff0000;
+  background: var(--goalred-color);
   padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
@@ -230,7 +317,7 @@ body {
   position: absolute;
   left: 200px;
   top: 210px;
-  background: #ff0000;
+  background: var(--goalred-color);
   padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
@@ -239,7 +326,7 @@ body {
   position: absolute;
   left: 368px;
   top: 143px;
-  background: #100bf4;
+  background: var(--goalblue-color);
   padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
@@ -248,7 +335,7 @@ body {
   position: absolute;
   left: 345px;
   top: 168px;
-  background: #100bf4;
+  background: var(--goalblue-color);
   padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
@@ -257,7 +344,7 @@ body {
   position: absolute;
   left: 322px;
   top: 190px;
-  background: #100bf4;
+  background: var(--goalblue-color);
   padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
@@ -266,7 +353,7 @@ body {
   position: absolute;
   left: 299px;
   top: 213px;
-  background: #100bf4;
+  background: var(--goalblue-color);
   padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
@@ -275,7 +362,7 @@ body {
   position: absolute;
   left: 360px;
   top: 373px;
-  background: #ffc700;
+  background: var(--goalyellow-color);
   padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
@@ -284,7 +371,7 @@ body {
   position: absolute;
   left: 337px;
   top: 351px;
-  background: #ffc700;
+  background: var(--goalyellow-color);
   padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
@@ -293,7 +380,7 @@ body {
   position: absolute;
   left: 314px;
   top: 329px;
-  background: #ffc700;
+  background: var(--goalyellow-color);
   padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
@@ -302,7 +389,7 @@ body {
   position: absolute;
   left: 290px;
   top: 306px;
-  background: #ffc700;
+  background: var(--goalyellow-color);
   padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
@@ -311,7 +398,7 @@ body {
   position: absolute;
   left: 134px;
   top: 366px;
-  background: #008000;
+  background: var(--goalgreen-color);
   padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
@@ -320,7 +407,7 @@ body {
   position: absolute;
   left: 156px;
   top: 343px;
-  background: #008000;
+  background: var(--goalgreen-color);
   padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
@@ -329,7 +416,7 @@ body {
   position: absolute;
   left: 179px;
   top: 321px;
-  background: #008000;
+  background: var(--goalgreen-color);
   padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
@@ -338,7 +425,7 @@ body {
   position: absolute;
   left: 200px;
   top: 298px;
-  background: #008000;
+  background: var(--goalgreen-color);
   padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
@@ -362,7 +449,7 @@ body {
 /*Pieces*/
 
 .repiece {
-  background-image: url("/images/redpiece.png");
+  background-image: url("/bch-group-project-arcade-center.github.io/images/redpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -394,7 +481,7 @@ body {
   top: 61px;
 }
 .bluepiece {
-  background-image: url("/images/bluepiece1.png");
+  background-image: url("/bch-group-project-arcade-center.github.io/images/bluepiece1.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -428,7 +515,7 @@ body {
 }
 
 .yellowpiece {
-  background-image: url("/images/yellowpiece.png");
+  background-image: url("/bch-group-project-arcade-center.github.io/images/yellowpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -462,7 +549,7 @@ body {
 }
 
 .greenpiece {
-  background-image: url("/images/greenpiece.png");
+  background-image: url("/bch-group-project-arcade-center.github.io/images/greenpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -504,20 +591,33 @@ body {
     #ff0000 0%,
     rgba(255, 0, 0, 0.79) 100%
   );
-  border: 1px solid #ffffff;
+  border: 1px solid var(--main-font-color);
   box-sizing: border-box;
   position: absolute;
   left: 140px;
   top: 100px;
 }
 
-#redstart img {
-  display: inline-block;
-  width: auto;
-  margin-left: 5px;
-  margin-top: 5px;
+.material-icons {
+  color: var(--main-font-color);
 }
 
+.spanrotate1 {
+  transform: rotate(324deg);
+}
+.spanrotate2 {
+  transform: rotate(54deg);
+}
+.spanrotate3 {
+  transform: rotate(139deg);
+}
+.spanrotate4 {
+  transform: rotate(228deg);
+}
+
+#redstart.material-icons {
+  transform: rotate(321deg);
+}
 #place2 {
   position: absolute;
   left: 180px;
@@ -563,12 +663,8 @@ body {
   top: 139px;
 }
 
-#bluestart img {
-  display: inline-block;
-  width: auto;
-  margin-left: 5px;
-  margin-top: 5px;
-  transform: rotate(90deg);
+#bluestart.span.material-icons {
+  transform: rotate(45deg);
 }
 
 #place9 {
@@ -615,12 +711,8 @@ body {
   top: 407px;
 }
 
-#yellowstart img {
-  display: inline-block;
-  width: auto;
-  margin-left: 5px;
-  margin-top: 5px;
-  transform: rotate(180deg);
+#yellowstart.material-icons {
+  transform: rotate(141deg);
 }
 
 #place16 {
@@ -664,12 +756,8 @@ body {
   top: 375px;
 }
 
-#greenstart img {
-  display: inline-block;
-  width: auto;
-  margin-left: 5px;
-  margin-top: 5px;
-  transform: rotate(270deg);
+#greenstart.material-icons {
+  transform: rotate(225deg);
 }
 
 #place23 {
@@ -711,6 +799,16 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  #popup-players {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    justify-items: center;
+    left: auto;
+    top: auto;
+  }
 }
 
 @media (max-width: 576px) {
@@ -719,5 +817,33 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  #popup-players {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    justify-items: center;
+    left: auto;
+    top: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    min-width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #popup-players {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    justify-items: center;
+    left: auto;
+    top: auto;
   }
 }
