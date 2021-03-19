@@ -87,24 +87,25 @@
 }
 
 .lever {
+  text-transform: uppercase;
   width: 70px;
   height: 70px;
   padding: 5px;
   border-radius: 50%;
-  background-color: green;
+  background-color: limegreen;
   box-shadow: 2px -1px 5px 5px rgba(0, 0, 0, 0.4),
     inset 2px 0px 5px 3px rgba(47, 31, 0, 0.7);
   outline: none;
 }
 .lever:hover {
-  background-color: rgb(110, 248, 248);
+  background-color: lime;
 }
 
 #quit {
-  background-color: burlywood;
+  background-color: rgb(201, 0, 0);
 }
 #quit:hover {
-  background-color: yellow;
+  background-color: red;
 }
 
 #overlay {
