@@ -10,10 +10,17 @@
       rel="stylesheet"
     />
     <title>Kimble</title>
-    <link rel="stylesheet" href="css/kimblestyle.css">
+    <link rel="stylesheet" href="css/kimblestyle.css" />
   </head>
   <body>
     <div class="container">
+      <section id="playersboard">
+        <div>Active Players</div>
+      </section>
+      <section id="popup-winner">
+        <h2 id="winnertext"></h2>
+        <button id="startnewgame">Start new game</button>
+      </section>
       <section id="popup-players">
         <form>
           <div>
@@ -88,7 +95,7 @@
           <p id="result"></p>
         </form>
       </section>
-      <section id="turns"></section>
+
       <section id="field">
         <div id="homebase">
           <div id="red1" class="place"></div>
@@ -216,53 +223,55 @@
           ></div>
           <div
             id="greenpiece3"
-
-            class="greenrepiece"
+            class="greenpiece"
             draggable="false"
-
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
           <div
             id="greenpiece4"
-   class="greenrepiece"
+            class="greenpiece"
             draggable="false"
-
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
         </div>
         <div id="boardplaces">
-          <div id="redstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="redstart" class="place"></div>
           <div id="place2" class="place"></div>
           <div id="place3" class="place"></div>
           <div id="place4" class="place"></div>
           <div id="place5" class="place"></div>
           <div id="place6" class="place"></div>
           <div id="place7" class="place"></div>
-          <div id="bluestart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="bluestart" class="place">
+            <img src="images/arrow_start.png" alt="arrow" />
+          </div>
           <div id="place9" class="place"></div>
           <div id="place10" class="place"></div>
           <div id="place11" class="place"></div>
           <div id="place12" class="place"></div>
           <div id="place13" class="place"></div>
           <div id="place14" class="place"></div>
-          <div id="yellowstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="yellowstart" class="place">
+            <img src="images/arrow_start.png" alt="arrow" />
+          </div>
           <div id="place16" class="place"></div>
           <div id="place17" class="place"></div>
           <div id="place18" class="place"></div>
           <div id="place19" class="place"></div>
-          <div id="place20"  class="place"></div>
-          <div id="place21"  class="place"></div>
-          <div id="greenstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
-          <div id="place23"  class="place"></div>
-          <div id="place24"  class="place"></div>
-          <div id="place25"  class="place"></div>
-          <div id="place26"  class="place"></div>
+          <div id="place20" class="place"></div>
+          <div id="place21" class="place"></div>
+          <div id="greenstart" class="place">
+            <img src="images/arrow_start.png" alt="arrow" />
+          </div>
+          <div id="place23" class="place"></div>
+          <div id="place24" class="place"></div>
+          <div id="place25" class="place"></div>
+          <div id="place26" class="place"></div>
           <div id="place27" class="place"></div>
           <div id="place28" class="place"></div>
         </div>
         <div id="dice"></div>
       </section>
-      <button id="nextTurn">Next</button>
     </div>
     <script src="js/kimble.js"></script>
   </body>

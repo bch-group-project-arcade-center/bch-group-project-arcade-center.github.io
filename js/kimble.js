@@ -11,10 +11,22 @@ document.addEventListener(
     console.log(dragged);
 
     // make it half transparent
-    event.target.style.opacity = 0.5;
+    event.target.style.opacity = 0.7;
   },
   false
 );
+/* document.addEventListener(
+  "touchstart",
+  function (event) {
+    // store a ref. on the dragged elem
+    dragged = event.target;
+    console.log(dragged);
+
+    // make it half transparent
+    event.target.style.opacity = 0.7;
+  },
+  false
+); */
 
 document.addEventListener(
   "dragend",
@@ -23,9 +35,20 @@ document.addEventListener(
     event.target.style.opacity = "";
     event.target.style.left = "-1px";
     event.target.style.top = "-1px";
+    CheckWinner();
   },
   false
 );
+/* document.addEventListener(
+  "touchend",
+  function (event) {
+    // reset the transparency
+    event.target.style.opacity = "";
+    event.target.style.left = "-1px";
+    event.target.style.top = "-1px";
+  },
+  false
+); */
 
 /* events fired on the drop targets */
 document.addEventListener(
@@ -47,6 +70,16 @@ document.addEventListener(
   },
   false
 );
+/* document.addEventListener(
+  "touchmove",
+  function (event) {
+    // highlight potential drop target when the draggable element enters it
+    if (event.target.className == "place") {
+      event.target.style.background = "purple";
+    }
+  },
+  false
+); */
 
 document.addEventListener(
   "dragleave",
@@ -90,10 +123,11 @@ let greenpices = document.querySelectorAll(".greenpiece");
 let kimblestartbutton = document.querySelector("button");
 let result = document.getElementById("result");
 let form = document.querySelector("form");
-let turns = document.getElementById("turns");
-let turn = 0;
+let startnewgame = document.querySelector("#startnewgame");
+let turn = 1;
 let currentPlayerIndex;
 let currentPlayer;
+let firstTurn = true;
 
 const ShowPopupplayers = () => {
   document.getElementById("popup-players").style.display = "block";
@@ -111,7 +145,16 @@ const GetPlayers = () => {
       `${document.getElementById("color1").value}piece3`,
       `${document.getElementById("color1").value}piece4`,
     ],
+    boardcolor: () =>
+      player1.color == "red"
+        ? "#ff000082"
+        : player1.color == "blue"
+        ? "#090fd582"
+        : player1.color == "green"
+        ? "#076c2382"
+        : "#ffc70082",
   };
+
   player2 = {
     nickname: document.getElementById("player2").value,
     color: document.getElementById("color2").value,
@@ -122,6 +165,14 @@ const GetPlayers = () => {
       `${document.getElementById("color2").value}piece3`,
       `${document.getElementById("color2").value}piece4`,
     ],
+    boardcolor: () =>
+      player1.color == "red"
+        ? "#ff000082"
+        : player1.color == "blue"
+        ? "#090fd582"
+        : player1.color == "green"
+        ? "#076c2382"
+        : "#ffc70082",
   };
   player3 = {
     nickname: document.getElementById("player3").value,
@@ -133,6 +184,14 @@ const GetPlayers = () => {
       `${document.getElementById("color3").value}piece3`,
       `${document.getElementById("color3").value}piece4`,
     ],
+    boardcolor: () =>
+      player1.color == "red"
+        ? "#ff000082"
+        : player1.color == "blue"
+        ? "#090fd582"
+        : player1.color == "green"
+        ? "#076c2382"
+        : "#ffc70082",
   };
   player4 = {
     nickname: document.getElementById("player4").value,
@@ -144,6 +203,14 @@ const GetPlayers = () => {
       `${document.getElementById("color4").value}piece3`,
       `${document.getElementById("color4").value}piece4`,
     ],
+    boardcolor: () =>
+      player1.color == "red"
+        ? "#ff000082"
+        : player1.color == "blue"
+        ? "#090fd582"
+        : player1.color == "green"
+        ? "#076c2382"
+        : "#ffc70082",
   };
   console.log(player1, player2);
   let allplayers = [];
@@ -168,14 +235,30 @@ const GetPlayers = () => {
     );
   } else {
     document.getElementById("popup-players").style.display = "none";
-    //turns.classList.add(player1.arrowturn);
-    //FirstMove();
+    press.classList.add(player1.arrowturn);
+    enableDrag(player1);
+    CreatePlayersBoard();
+    document.querySelector(
+      "#playersboard div:nth-child(2)"
+    ).style.background = `${player1.boardcolor()}`;
   }
 };
+
+/*players Board*/
+let playersboard = document.getElementById("playersboard");
+
+const CreatePlayersBoard = () => {
+  playersboard.style.display = "block";
+  //let div = document.createElement("div");
+  for (let i = 0; i < activeplayers.length; i++) {
+    playersboard.innerHTML += `<div>${activeplayers[i].nickname}</div>`;
+  }
+  //let document.querySelectorAll("#playersboard div");
+};
+
 const StopRefresh = (event) => {
   event.preventDefault();
   GetPlayers();
-  newTurn();
 };
 
 form.addEventListener("submit", StopRefresh);
@@ -184,22 +267,21 @@ form.addEventListener("submit", StopRefresh);
  * Controls what happens when a new turn starts
  */
 function newTurn() {
-  if (currentPlayerIndex) {
+  if (!firstTurn) {
     disableDrag(currentPlayer);
+    currentPlayerIndex = turn % activeplayers.length;
+    let currentdivIndex = currentPlayerIndex + 2;
+    currentPlayer = activeplayers[currentPlayerIndex];
+    enableDrag(currentPlayer);
+    press.classList.add(currentPlayer.arrowturn);
+    document.querySelector(
+      `#playersboard div:nth-child(${currentdivIndex})`
+    ).style.background = currentPlayer.boardcolor();
+  } else {
+    firstTurn = false;
+    currentPlayer = player1;
   }
-  currentPlayerIndex = turn % activeplayers.length;
-  currentPlayer = activeplayers[currentPlayerIndex];
-  console.log(currentPlayerIndex);
-  console.log(currentPlayer);
-  enableDrag(currentPlayer);
-  turns.classList.add(currentPlayer.arrowturn);
 }
-/*moved this function to pressthedice
-/* document.getElementById("nextTurn").addEventListener("click", () => {
-  turn++;
-  turns.classList.remove(currentPlayer.arrowturn);
-  newTurn();
-}); */
 
 /**
  * Given a player object, set draggable property of each pieces belonging to player to true, making the pieces draggable.
@@ -229,30 +311,53 @@ let dicenumber;
 let press = document.getElementById("dice");
 const PresstheDice = () => {
   dicenumber = Math.floor(Math.random() * 6) + 1;
-  console.log(dicenumber);
+
   press.textContent = dicenumber;
   turn++;
-  turns.classList.remove(currentPlayer.arrowturn);
+  press.classList.remove(currentPlayer?.arrowturn);
+  document.querySelector(`#playersboard div`).style.background = "none";
   newTurn();
-  FromHomeBase();
+
+  //FirstMove();
 };
 press.addEventListener("click", PresstheDice);
 
 /*Game Start*/
-/*dice*/
-const FromHomeBase = () => {
+const CheckWinner = () => {
+  let winner = [];
+
+  currentPlayer.piecesId.forEach((el) => {
+    if (document.getElementById(el).parentNode.parentNode.id == "goalbase") {
+      winner.push(el);
+      if (winner.length == 4) {
+        document.getElementById("popup-winner").style.display = "block";
+        document.getElementById("winnertext").textContent =
+          "You WON! CONGRATULATIONS";
+      }
+      console.log("Already in win pos: ", winner.length);
+    }
+  });
+};
+
+startnewgame.addEventListener("click", function () {
+  window.location.reload();
+});
+
+const EatMe = () => {};
+
+/**  const FirstMove = () => {
   console.log(dicenumber);
   if (
     dicenumber > 0 &&
-    dicenumber <
-      6 /* &&
-    currentPlayer.piecesId.some((el) => {
-      el.parentNode.id == "pieces";
-    }) */
+    dicenumber < 6 &&
+    currentPlayer.piecesId.every((el) => {
+      document.getElementById(el).parentNode.id == "pieces";
+    })
   ) {
-    console.log("hello");
+    disableDrag(currentPlayer);
+    console.log("continue");
   } else {
-    turns.classList.remove(currentPlayer.arrowturn);
+    press.classList.remove(currentPlayer.arrowturn);
     enableDrag(currentPlayer);
   }
-};
+}; */
