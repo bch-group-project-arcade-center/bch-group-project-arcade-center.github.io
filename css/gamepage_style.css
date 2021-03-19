@@ -73,10 +73,6 @@ nav a {
   font-size: large;
 }
 
-.menu_leaderboard {
-  /* margin-left: 50px; */
-}
-
 .menu_games:hover .dropdown-content {
   visibility: visible;
 }
@@ -108,6 +104,11 @@ nav a {
   display: none;
   visibility: hidden;
   z-index: 1;
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-color-2);
+  color: var(--primary-color-3);
 }
 
 .section_divider {
@@ -342,6 +343,10 @@ These are the styles of the game page buttons: start game, stop game, save score
   background-color: #1da1f2;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* -------- Here ends the button styles -----------*/
 
 /* -----Popup windows stlyes: small for results and large for instructions ------ */
@@ -374,14 +379,15 @@ These are the styles of the game page buttons: start game, stop game, save score
 
 .pop_large {
   position: fixed;
-  top: 24%;
-  left: 12.5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 75%;
-  min-height: 515px;
-  max-height: 515px;
-
+  max-width: 1100px;
+  height: 515px;
+  height: 515px;
   visibility: hidden;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 
   /* visibility: flex; */
   /* overflow-y: auto; */
@@ -391,6 +397,7 @@ These are the styles of the game page buttons: start game, stop game, save score
   /* change the value of display to 'flex' to show the small popup */
   display: none;
 }
+
 /* --- NOT IN USE ATM ---
 #large_pop {
   display: none;
@@ -399,6 +406,12 @@ These are the styles of the game page buttons: start game, stop game, save score
 /* This class is added to the large popup to display it */
 .show {
   visibility: visible;
+}
+
+#back_to_games a {
+  color: white;
+  text-decoration: none;
+  z-index: 2;
 }
 
 /* -------- Here ends the button styles -----------*/

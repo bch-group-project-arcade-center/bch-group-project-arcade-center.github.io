@@ -166,12 +166,14 @@
                             <button class="circle inactive" value="2"></button>
                             <button class="circle inactive" value="3"></button>
                           </div>
+                          <div class="buttons">
+                            <button class="gamepage_button button_hover" id="start" type="submit">Start</button>
+                            <button class="gamepage_button button_hover" id="stop" type="submit">Stop</button>
+                          </div>
                         </div>
                         <div class="big_box_footer">
-                          <div class="buttons">
-                            <button class="btn-txt gamepage_button" id="start" type="submit">Start</button>
-                            <button class="btn-txt gamepage_button" id="stop" type="submit">Stop</button>
-                          </div>
+                          
+                          <h3 id="back_to_games"><a href="./index.html#top"><< Back to Games</a></h3>
 
                         </div>
                       </div>      
@@ -183,12 +185,14 @@
                           <h2>Game Over</h2>
                           <p id="final-score"></p>
                           <!--Group project additions--> 
-                          <button class="btn-text" id="saveScore" >Save score</button>
+                          <button class="gamepage_button button_hover" id="saveScore" >Save score</button>
                           <form id="saveScoreForm">
                             <input type="text" name="playerName" id="playerName" placeholder="Enter your name" required/>
-                            <input class="btn-text" type="button" value="Save score" id="SaveNameScore"/>
+                            <input class="gamepage_button button_hover" type="button" value="Save score" id="SaveNameScore"/>
                           </form>
                           <p id="scoreSaveMsg">Score saved!</p>
+                          <a href="leaderboard.html#top"><button class="gamepage_button button_hover" id="see_leaderboard">See leaderboard</button>
+                          </a>
                           <div class="share-btn">
                             <button id="shareBtnFB" class="share-fb"><i class="fab fa-facebook"></i> Share</button>
                             <button id="shareBtnTwitter" class="share-twitter"><i class="fab fa-twitter"></i> Share</button>

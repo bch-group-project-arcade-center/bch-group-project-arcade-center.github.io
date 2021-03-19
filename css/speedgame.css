@@ -47,6 +47,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  justify-items: center;
+}
+
+.button {
+  align-self: center;
 }
 
 button:focus {
@@ -62,8 +67,6 @@ button:focus {
 #start,
 #stop {
   grid-area: "a";
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
   cursor: pointer;
 }
 
