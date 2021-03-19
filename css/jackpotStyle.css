@@ -26,7 +26,7 @@
   padding: 10px;
   max-width: 600px;
   margin: auto;
-  background: #747474;
+  background: goldenrod;
   border-radius: 30px 30px 0 0;
   box-shadow: 5px -3px 10px 10px rgba(0, 0, 0, 0.4),
     inset 5px 0px 8px 5px rgba(47, 31, 0, 0.7);
@@ -81,8 +81,7 @@
   padding-top: 20px;
   border-radius: 0 0 15px 15px;
   transform-origin: top;
-
-  background: #868686;
+  background: gold;
   box-shadow: inset 8px 5px 20px 5px rgba(44, 29, 0, 0.6),
     10px -5px 15px 2px rgba(0, 0, 0, 0.3);
 }
@@ -92,7 +91,7 @@
   height: 70px;
   padding: 5px;
   border-radius: 50%;
-  background-color: rgb(28, 194, 245);
+  background-color: green;
   box-shadow: 2px -1px 5px 5px rgba(0, 0, 0, 0.4),
     inset 2px 0px 5px 3px rgba(47, 31, 0, 0.7);
   outline: none;
@@ -117,25 +116,6 @@
   justify-content: center;
   z-index: 2;
   visibility: hidden;
-}
-
-.popup {
-  background-color: white;
-  border-radius: 15px;
-  width: 90vw;
-  height: 50vh;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  padding: 2%;
-  color: black;
-}
-
-.btn-text:hover {
-  color: rgba(0, 0, 0, 0.7);
 }
 
 #saveScore {
@@ -164,66 +144,6 @@
   .wheel {
     width: 90px;
     height: 160px;
-  }
-  #mobileButton {
-    display: block;
-  }
-
-  #large_screen_menu {
-    visibility: hidden;
-  }
-
-  nav.responsive ul {
-    display: block;
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 70px;
-  }
-
-  section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
-  .box {
-    width: 80%;
-  }
-
-  .dropdown-content {
-    top: 100px;
-    background-color: aqua;
-  }
-
-  .dropdown-content-mobile {
-    position: absolute;
-    width: 200px;
-    height: 300px;
-    background-color: var(--primary-color-1);
-    display: flex;
-    flex-direction: column;
-    font-family: var(--content-font);
-    font-size: large;
-    right: 0;
-    top: 70px;
-    padding-right: 20px;
-    margin: 0;
-    text-align: right;
-    z-index: 1;
-  }
-
-  .dropdown-content-mobile li {
-    display: block;
-  }
-
-  .show {
-    visibility: visible;
   }
 
   #mobile-menu-leaderbord {
