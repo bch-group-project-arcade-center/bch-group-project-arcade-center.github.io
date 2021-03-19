@@ -391,6 +391,7 @@ These are the styles of the game page buttons: start game, stop game, save score
   /* change the value of display to 'flex' to show the small popup */
   display: none;
 }
+
 /* --- NOT IN USE ATM ---
 #large_pop {
   display: none;
@@ -399,6 +400,12 @@ These are the styles of the game page buttons: start game, stop game, save score
 /* This class is added to the large popup to display it */
 .show {
   visibility: visible;
+}
+
+#back_to_games a {
+  color: white;
+  text-decoration: none;
+  z-index: 2;
 }
 
 /* -------- Here ends the button styles -----------*/
