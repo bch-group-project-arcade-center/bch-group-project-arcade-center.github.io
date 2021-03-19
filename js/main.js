@@ -40,37 +40,3 @@ if (soundOn) {
     btnSoundOff.style.display = "none";
   });
 }
-
-let currentURL = window.location.href;
-
-//** Sharing on Facebook; To replace player and score with variables from local storage*/
-let shareBtnFB = document.getElementById("shareBtnFB");
-shareBtnFB.addEventListener("click", function () {
-  makePopupPage(
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      currentURL
-    )}&amp;src=sdkpreparse`
-  );
-});
-
-/** Sharing on Twitter; To replace player and score with variables from local storage*/
-let shareBtnTwitter = document.getElementById("shareBtnTwitter");
-shareBtnTwitter.addEventListener("click", function () {
-  makePopupPage(
-    "https://twitter.com/intent/tweet?text=" +
-      encodeURIComponent(
-        `Try to beat my high score of [score] on ${currentURL}`
-      )
-  );
-});
-/**
- * Opens a dialog box with given url
- * @param {String} url link with tweet web intent
- */
-function makePopupPage(url) {
-  window.open(
-    url,
-    "Share",
-    "width=700, height=500, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=1"
-  );
-}

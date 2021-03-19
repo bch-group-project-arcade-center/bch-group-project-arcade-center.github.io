@@ -315,6 +315,33 @@ These are the styles of the game page buttons: start game, stop game, save score
 .button_hover:hover {
   background-color: var(--primary-color-1);
 }
+
+.share-btn button {
+  margin: 1rem;
+  border-radius: 3px;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  font-weight: 600;
+}
+
+.share-btn button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.share-btn button:active {
+  transform: scale(0.95);
+}
+
+.share-fb {
+  background-color: #4267b2;
+}
+
+.share-twitter {
+  background-color: #1da1f2;
+}
+
 /* -------- Here ends the button styles -----------*/
 
 /* -----Popup windows stlyes: small for results and large for instructions ------ */
@@ -358,7 +385,6 @@ These are the styles of the game page buttons: start game, stop game, save score
 
   /* visibility: flex; */
   /* overflow-y: auto; */
-
 }
 
 #small_pop {
