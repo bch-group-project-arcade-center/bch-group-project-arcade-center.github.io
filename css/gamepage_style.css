@@ -73,10 +73,6 @@ nav a {
   font-size: large;
 }
 
-.menu_leaderboard {
-  /* margin-left: 50px; */
-}
-
 .menu_games:hover .dropdown-content {
   visibility: visible;
 }
@@ -340,6 +336,10 @@ These are the styles of the game page buttons: start game, stop game, save score
 
 .share-twitter {
   background-color: #1da1f2;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* -------- Here ends the button styles -----------*/
