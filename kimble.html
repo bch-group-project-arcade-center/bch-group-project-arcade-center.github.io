@@ -12,10 +12,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <title>Kimble</title>
-    <link rel="stylesheet" href="css/kimblestyle.css">
+    <link rel="stylesheet" href="css/kimblestyle.css" />
   </head>
   <body>
     <div class="container">
+      <section id="playersboard">
+        <div>Active Players</div>
+      </section>
+      <section id="popup-winner">
+        <h2 id="winnertext"></h2>
+        <button id="startnewgame">Start new game</button>
+      </section>
       <section id="popup-players">
         <form>
           <div>
@@ -80,7 +87,7 @@
           </div>
         </form>
       </section>
-      <section id="turns"></section>
+
       <section id="field">
         <div id="homebase">
           <div id="red1" class="place"></div>
@@ -208,17 +215,14 @@
           ></div>
           <div
             id="greenpiece3"
-
             class="greenpiece"
             draggable="false"
-
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
           <div
             id="greenpiece4"
    class="greenpiece"
             draggable="false"
-
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
         </div>
