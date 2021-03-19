@@ -352,11 +352,13 @@ These are the styles of the game page buttons: start game, stop game, save score
   top: 24%;
   left: 12.5%;
   width: 75%;
+  /* max-width: 1200px; */
   min-height: 515px;
   max-height: 515px;
   /* visibility: flex; */
   visibility: hidden;
   overflow-y: auto;
+  z-index: 5;
 }
 
 #small_pop {
@@ -372,6 +374,12 @@ These are the styles of the game page buttons: start game, stop game, save score
 /* This class is added to the large popup to display it */
 .show {
   visibility: visible;
+}
+
+#back_to_games a {
+  color: white;
+  text-decoration: none;
+  z-index: 2;
 }
 
 /* -------- Here ends the button styles -----------*/
