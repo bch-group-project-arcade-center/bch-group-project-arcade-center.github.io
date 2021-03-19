@@ -44,7 +44,7 @@
             <ul id="large_screen_menu">
                 <li>
                     <div class="menu_leaderboard">
-                        <a href="leaderboard.html">Leaderbord</a>
+                        <a href="leaderboard.html">Leaderboard</a>
                     </div>                    
                 </li>
                 
@@ -119,16 +119,12 @@
             <section>
                 
                     <div class="big_box">
+
+                      <div class="big_box_header" >
+                        <div id="info_button" class="info_button button_hover">i</div>
+                      </div>
+                      <div class="big_box_body">
                         <div class="settings">
-                            <button class="btn-icon" id="soundOn">
-                              <i class="icon icon-volume-high"></i>
-                            </button>
-                            <button class="btn-icon" id="soundOff">
-                              <i class="icon icon-volume-off"></i>
-                            </button>
-                            <button class="btn-icon btn-icon-cog" id="btnSettings">
-                              <i class="icon icon-cog-outline"></i>
-                            </button>
                             <form class="levels-setting">
                               <div class="user-input">
                                 <input
@@ -173,16 +169,20 @@
                             <button class="circle inactive" value="2"></button>
                             <button class="circle inactive" value="3"></button>
                           </div>
+                        </div>
+                        <div class="big_box_footer">
                           <div class="buttons">
                             <button class="btn-txt gamepage_button" id="start" type="submit">Start</button>
                             <button class="btn-txt gamepage_button" id="stop" type="submit">Stop</button>
                           </div>
-                        </div>      
+
+                        </div>
+                      </div>      
                     </div>
                     <!--  -->
                     <section id="overlay">
                         <div class="popup_base pop_small">
-                          <button href="#" id="close" class="btn-text">X</button>
+                          <button href="#" id="close" class="popup_close button_hover">X</button>
                           <h2>Game Over</h2>
                           <p id="final-score"></p>
                           <!--Group project additions--> 
@@ -193,7 +193,25 @@
                           </form>
                           <p id="scoreSaveMsg">Score saved!</p>
                         </div>
+                        <div id="large_pop" class="popup_base pop_large">
+                          <div id="close_popup" class="popup_close button_hover">X</div>
+
+                          <div class="popup_title">
+                              <h3 id="score"> How to play?</h3>
+                          </div>
+
+                          <div class="popup_message">
+                              <h4>Game objective:</h4>
+                              <p id="popup_message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia in ipsum quos repudiandae dignissimos rem, tempore magnam facilis sapiente rerum, assumenda harum pariatur natus, fugiat minus magni fuga. Officiis, voluptatem.</p>
+
+                              <h4>Instructions:</h4>
+
+                              <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque quod quaerat ducimus dolor assumenda magni exercitationem adipisci expedita, sapiente repellendus optio dicta doloremque excepturi voluptatum consectetur deserunt. Iusto, autem inventore.</p>
+                          </div>
+
+                </div>
                       </section>
+                      
                 
             </section>
             
@@ -231,7 +249,7 @@
                         <a href="kimble.html">Kimble</a>
                     </li>
                 </ul>
-                <H3><a href="leaderboard.html">Leaderbord</a></H3>
+                <H3><a href="leaderboard.html">Leaderboard</a></H3>
                 
             </div>
         </div>
@@ -239,9 +257,7 @@
     </footer>
     <!-- <div class="section_divider"><i class="far fa-copyright"></i></div> -->
     
-    <!-- <script src="js/index_script.js"></script> -->
-    <!-- <script src="js/gamepage_script.js"></script> -->
-    <!-- <script src="./js/main.js"></script> -->
+    <script src="js/index_script.js"></script>
     <script src="./js/speedgame.js"></script>
 
 </body>

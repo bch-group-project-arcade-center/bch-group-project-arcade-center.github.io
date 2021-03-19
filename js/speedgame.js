@@ -7,8 +7,7 @@ let finalScore = document.getElementById("final-score");
 let btnClose = document.getElementById("close");
 let btnStart = document.getElementById("start");
 let btnStop = document.getElementById("stop");
-let audioBg, audioEnd;
-// let audioLvlChange = new Audio("./music/click.mp3");
+
 let levels = document.querySelectorAll("input[type=radio]");
 let sessionStorage = window.sessionStorage;
 //group project additions
@@ -24,28 +23,6 @@ let highscore = sessionStorage.getItem("highscore")
 
 // Display highscore
 displayHighscore.textContent = highscore;
-// Get sound option from session storage, unless sound is set to false, set sound on
-// let soundOn = sessionStorage.getItem("sound") == "false" ? false : true;
-let soundOn = false;
-
-let btnSoundOn = document.getElementById("soundOn");
-let btnSoundOff = document.getElementById("soundOff");
-
-// Display volume icon matching soundOn
-if (soundOn) {
-  // Show sound on btn
-  btnSoundOn.style.display = "block";
-} else {
-  // Show sound off btn
-  btnSoundOff.style.display = "block";
-}
-
-// Play click sound whenever level is changed if sound is on
-levels.forEach((level) => {
-  level.addEventListener("change", () => {
-    if (soundOn) audioLvlChange.play();
-  });
-});
 
 function startGame() {
   let lastActive, active, endText, speed, minSpeed, maxSkip, speedUp, timer;
@@ -78,9 +55,6 @@ function startGame() {
       speedUp = 40;
       break;
   }
-
-  // Start background music if sound is on
-  if (soundOn) audioBg.play();
 
   // Hide start button
   btnStart.style.display = "none";
@@ -142,13 +116,12 @@ function startGame() {
 
   function showGameOver() {
     // Stop background music
-    // audioBg.pause();
     // Stop timeout
     clearTimeout(timer);
     // Make overlay visible
     overlay.style.visibility = "visible";
     popup.style.visibility = "visible";
-    // Check users score, set ending audio and assign end text
+    // Check users score and assign end text
     switch (true) {
       case score < 10:
         endText = "If you don't SPLASH, you won't evolve.";
@@ -159,9 +132,6 @@ function startGame() {
       case score > 19:
         endText = "Never let your EMBER burn out.";
     }
-
-    // Play ending audio if sound is on
-    if (soundOn) audioEnd.play();
 
     // Display player's final score
     finalScore.textContent = `Your final score is ${score}. ${endText}`;
@@ -199,8 +169,6 @@ function startGame() {
 
     // Add event listener to close button
     btnClose.addEventListener("click", () => {
-      // Store sound setting
-      // sessionStorage.setItem("sound", `${soundOn}`);
       // Store score if it's greater than current highscore
       if (score > highscore) sessionStorage.setItem("highscore", `${score}`);
       // Hide save score btn
@@ -213,33 +181,3 @@ function startGame() {
 
 // Add event listener to start button
 btnStart.addEventListener("click", startGame);
-
-// Toggle levels setting on click
-document
-  .getElementById("btnSettings")
-  .addEventListener("click", () =>
-    document.querySelector(".levels-setting").classList.toggle("responsive")
-  );
-
-// If sound is on...
-btnSoundOn.addEventListener("click", () => {
-  // Set sound on to false
-  soundOn = false;
-  // Pause bg music if playing
-  // if (audioBg) audioBg.pause();
-  // Hide sound on btn
-  btnSoundOn.style.display = "none";
-  // Show sound off btn
-  btnSoundOff.style.display = "block";
-});
-
-// If sound if off...
-btnSoundOff.addEventListener("click", () => {
-  soundOn = true;
-  // Resume bg music if paused
-  // if (audioBg) audioBg.play();
-  // Show sound on btn
-  btnSoundOn.style.display = "block";
-  // Hide sound off btn
-  btnSoundOff.style.display = "none";
-});
