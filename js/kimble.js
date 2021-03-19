@@ -153,6 +153,150 @@ const GetPlayers = () => {
         : player1.color == "green"
         ? "#076c2382"
         : "#ffc70082",
+    homebasePos: () =>
+      player1.color == "red"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player1.color == "blue"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player1.color == "green"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : [
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("top"),
+            },
+          ],
   };
 
   player2 = {
@@ -166,13 +310,157 @@ const GetPlayers = () => {
       `${document.getElementById("color2").value}piece4`,
     ],
     boardcolor: () =>
-      player1.color == "red"
+      player2.color == "red"
         ? "#ff000082"
-        : player1.color == "blue"
+        : player2.color == "blue"
         ? "#090fd582"
-        : player1.color == "green"
+        : player2.color == "green"
         ? "#076c2382"
         : "#ffc70082",
+    homebasePos: () =>
+      player2.color == "red"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player2.color == "blue"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player2.color == "green"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : [
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("top"),
+            },
+          ],
   };
   player3 = {
     nickname: document.getElementById("player3").value,
@@ -185,13 +473,157 @@ const GetPlayers = () => {
       `${document.getElementById("color3").value}piece4`,
     ],
     boardcolor: () =>
-      player1.color == "red"
+      player3.color == "red"
         ? "#ff000082"
-        : player1.color == "blue"
+        : player3.color == "blue"
         ? "#090fd582"
-        : player1.color == "green"
+        : player3.color == "green"
         ? "#076c2382"
         : "#ffc70082",
+    homebasePos: () =>
+      player3.color == "red"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player3.color == "blue"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player3.color == "green"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : [
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("top"),
+            },
+          ],
   };
   player4 = {
     nickname: document.getElementById("player4").value,
@@ -204,13 +636,157 @@ const GetPlayers = () => {
       `${document.getElementById("color4").value}piece4`,
     ],
     boardcolor: () =>
-      player1.color == "red"
+      player4.color == "red"
         ? "#ff000082"
-        : player1.color == "blue"
+        : player4.color == "blue"
         ? "#090fd582"
-        : player1.color == "green"
+        : player4.color == "green"
         ? "#076c2382"
         : "#ffc70082",
+    homebasePos: () =>
+      player4.color == "red"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("red4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player4.color == "blue"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("blue4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : player4.color == "green"
+        ? [
+            {
+              left: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("green4")
+              ).getPropertyValue("top"),
+            },
+          ]
+        : [
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow1")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow2")
+              ).getPropertyValue("top"),
+            },
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow3")
+              ).getPropertyValue("top"),
+            },
+
+            {
+              left: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("left"),
+              top: getComputedStyle(
+                document.getElementById("yellow4")
+              ).getPropertyValue("top"),
+            },
+          ],
   };
   console.log(player1, player2);
   let allplayers = [];
@@ -271,6 +847,9 @@ function newTurn() {
     disableDrag(currentPlayer);
     currentPlayerIndex = turn % activeplayers.length;
     let currentdivIndex = currentPlayerIndex + 2;
+    document.querySelector(
+      `#playersboard div:nth-child(${currentdivIndex})`
+    ).style.background = "none";
     currentPlayer = activeplayers[currentPlayerIndex];
     enableDrag(currentPlayer);
     press.classList.add(currentPlayer.arrowturn);
@@ -315,7 +894,7 @@ const PresstheDice = () => {
   press.textContent = dicenumber;
   turn++;
   press.classList.remove(currentPlayer?.arrowturn);
-  document.querySelector(`#playersboard div`).style.background = "none";
+
   newTurn();
 
   //FirstMove();
@@ -342,6 +921,16 @@ const CheckWinner = () => {
 startnewgame.addEventListener("click", function () {
   window.location.reload();
 });
+
+const GoHome = () => {
+  currentPlayer.piecesId.forEach((el) => {
+    el.style.left != currentPlayer.homebasePos;
+  });
+
+  const intersection = currentPlayer.piecesId.filter((element) =>
+    currentPlayer.homebaseID.includes(element)
+  );
+};
 
 const EatMe = () => {};
 
