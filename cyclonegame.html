@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/cyclonegame/gamepage_style_ver_cyclonegame.css" />
     
+    <link rel="stylesheet" href="css/cyclonegame/gamepage_style_ver_cyclonegame.css" />
     <link rel="stylesheet" href="css/cyclonegame/cyclonegame_style.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -122,12 +122,31 @@
                                 <h2 id="resultTitle">Game Over</h2>
                                 <p id="final-score"></p>
                                 <p>Every win gives +1 score and every loss takes -1 score</p>
+                                <!-- social sharing -->
+                                <div id="fb-root"></div>
+                                <script
+                                  async
+                                  defer
+                                  crossorigin="anonymous"
+                                  src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0"
+                                  nonce="TA0G6YbE"
+                                ></script>
+                                <div class="social_sharing">
+                                    <button id="shareBtnFB">Share on Facebook</button>
+                                    <button id="shareBtnTwitter">Share on Twitter</button>
+                                </div>
+                                <!-- social sharing ends -->
+                                
+                                <script src="./js/main.js"></script>
                                 <button class="btn-text" id="saveScore">Save score</button>
                                 <form id="saveScoreForm">
                                     <input type="text" name="playerName" id="playerName" placeholder="Enter your name" required />
                                     <input class="btn-text" type="button" value="Save score" id="SaveNameScore" />
                                 </form>
                                 <p id="scoreSaveMsg">Score saved!</p>
+                                <a href="leaderboard.html#top"><button class="btn-text2 btn" id="see_leaderboard">See leaderboard</button>
+                                </a>
+                                    
                             </div>
                         </section>
                         <button class="btn-text btn" id="start-btn">start</button>
@@ -162,6 +181,7 @@
                     </div>
 
                     <div class="big_box_footer">
+                        <h3 id="back_to_games"><a href="./index.html#top"><< Back to Games</a></h3>
                         <!-- <button class="btn-text btn" id="start-btn">start</button>
                         <button class="btn-text btn" id="stop-btn" disabled>stop</button> -->
                     </div>            

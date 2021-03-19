@@ -109,6 +109,11 @@ nav a {
   z-index: 1;
 }
 
+.dropdown-item:hover {
+  background-color: var(--primary-color-2);
+  color: var(--primary-color-3);
+}
+
 .section_divider {
   height: 10px;
   width: 100%;
@@ -150,6 +155,7 @@ section {
 .box {
   background-color: var(--primary-color-2);
   width: 450px;
+  min-width: 350px;
   height: 220px;
   border-radius: 25px;
   border-color: var(--primary-color-2);
@@ -165,21 +171,30 @@ section {
   /* transition: all 0.5s; */
 }
 
+.card_name {
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+
 .box:hover {
   box-shadow: inset 0 0 500px var(--primary-color-2);
 }
 
 .card1 {
-  background-size: 150%;
-  background-position-x: -80px;
-  background-image: url(https://cdn.globalauctionplatform.com/41bc8b56-664a-4b07-9273-a65001689645/7781f344-876a-456f-c9db-1fc002e77d80/540x360.jpg);
+  background-size: 100%;
+  background-position-x: -435px;
+  background-position-y: -35px;
+  background-image: url(/images/index/cyclone_card_image.png);
+
+  /* background-image: url(/images/index/cyclone_pixel_dark.png); */
 }
 
 .card2 {
-  background-size: 90%;
-  background-position-x: 70px;
+  background-size: 105%;
+  background-position-y: -50px;
 
-  background-image: url(/images/index/cyclone_pixel.png);
+  background-image: url(/images/index/speed_game_bg.png);
   background-repeat: no-repeat;
 }
 
@@ -187,13 +202,14 @@ section {
   background-size: 130%;
   background-position-x: -60px;
   background-position-y: -50px;
-  background-image: url(/images/index/jackpot_pixel.png);
+  background-image: url(/images/index/jackpot_pixel_blue.png);
 }
 
 .card4 {
   background-size: 100%;
   background-position-x: 0px;
-  background-image: url(/images/index/kimble_pixel.png);
+  background-position-y: -45px;
+  background-image: url(/images/index/kimble_bg_whiteboard.png);
 }
 
 /* Currently unused and would require some adjustments to make it work when hovering over the card to show a quick description. */
@@ -255,6 +271,47 @@ footer a {
 .footer_menu {
   list-style: none;
 }
+
+
+#space-invader {
+  display: none;
+  box-shadow: 0 0 0 1em red,
+  0 1em 0 1em red,
+  -2.5em 1.5em 0 .5em red,
+  2.5em 1.5em 0 .5em red,
+  -3em -3em 0 0 red,
+  3em -3em 0 0 red,
+  -2em -2em 0 0 red,
+  2em -2em 0 0 red,
+  -3em -1em 0 0 red,
+  -2em -1em 0 0 red,
+  2em -1em 0 0 red,
+  3em -1em 0 0 red,
+  -4em 0 0 0 red,
+  -3em 0 0 0 red,
+  3em 0 0 0 red,
+  4em 0 0 0 red,
+  -5em 1em 0 0 red,
+  -4em 1em 0 0 red,
+  4em 1em 0 0 red,
+  5em 1em 0 0 red,
+  -5em 2em 0 0 red,
+  5em 2em 0 0 red,
+  -5em 3em 0 0 red,
+  -3em 3em 0 0 red,
+  3em 3em 0 0 red,
+  5em 3em 0 0 red,
+  -2em 4em 0 0 red,
+  -1em 4em 0 0 red,
+  1em 4em 0 0 red,
+  2em 4em 0 0 red;
+  background: red;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  margin: 50px 0 70px 65px;
+}
+
 
 /* Adaptions for mobile */
 

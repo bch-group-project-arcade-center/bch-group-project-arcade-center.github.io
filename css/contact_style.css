@@ -188,15 +188,12 @@
 
   #signature {
     font-weight: bold;
-    word-spacing: 10px;
-    text-decoration: none;
   }
 
-  #signature a {
-    text-decoration: none;
-  }
-
-
+table a {
+  color: white;
+  text-decoration: none;
+}
 
   .big_box {
     background-color: var(--primary-color-3);
@@ -215,10 +212,21 @@
     text-align: center;
     box-shadow: 0px 0px 10px rgb(104, 101, 101);
   }
-  
-  /* NOT USED IN GAME PAGES */
-  /*  
-  .card1 {
+
+  .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        font-size: 20px;
+    }
+
+    table td {
+        padding: 5px;
+    }
+
+    /* NOT USED IN GAME PAGES */
+    /*  
+    .card1 {
     background-size: 150%;
     background-position-x: -80px;
     background-image: url(https://cdn.globalauctionplatform.com/41bc8b56-664a-4b07-9273-a65001689645/7781f344-876a-456f-c9db-1fc002e77d80/540x360.jpg);
