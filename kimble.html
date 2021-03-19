@@ -9,6 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>Kimble</title>
     <link rel="stylesheet" href="css/kimblestyle.css">
   </head>
@@ -17,7 +19,7 @@
       <section id="popup-players">
         <form>
           <div>
-            <label for="player1">Nickname of player1</label>
+            <label for="player1">Player1</label>
             <input
               type="text"
               name="player1"
@@ -25,19 +27,17 @@
               maxlength="200"
               required
             />
-          </div>
-          <div>
-            <label for="color1">Choose color</label>
+            <label for="color1"></label>
             <select name="color1" id="color1" required>
               <option value="" selected disabled hidden>Select</option>
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-              <option value="yellow">Yellow</option>
-              <option value="green">Green</option>
+              <option class = "red" value="red"></option>
+              <option class = "blue" value="blue"></option>
+              <option class = "yellow" value="yellow"></option>
+              <option class= "green" value="green"></option>
             </select>
           </div>
           <div>
-            <label for="player2">Nickname of player2</label>
+            <label for="player2">Player2</label>
             <input
               type="text"
               name="player2"
@@ -45,47 +45,39 @@
               maxlength="200"
               required
             />
-          </div>
-          <div>
-            <label for="color2">Choose color</label>
+            <label for="color2"></label>
             <select name="color2" id="color2" required>
               <option value="" selected disabled hidden>Select</option>
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-              <option value="yellow">Yellow</option>
-              <option value="green">Green</option>
+              <option class = "red" value="red"></option>
+              <option class = "blue" value="blue"></option>
+              <option class = "yellow" value="yellow"></option>
+              <option class= "green" value="green"></option>
             </select>
           </div>
           <div>
-            <label for="player3">Nickname of player3</label>
+            <label for="player3">Player3</label>
             <input type="text" name="player3" id="player3" maxlength="200" />
-          </div>
-          <div>
-            <label for="color3">Choose color</label>
+            <label for="color3"></label>
             <select name="color3" id="color3">
               <option value="" selected disabled hidden>Select</option>
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-              <option value="yellow">Yellow</option>
-              <option value="green">Green</option>
+              <option class = "red" value="red"></option>
+              <option class = "blue" value="blue"></option>
+              <option class = "yellow" value="yellow"></option>
+              <option class= "green" value="green"></option>
             </select>
           </div>
           <div>
-            <label for="player4">Nickname of player4</label>
+            <label for="player4">Player4</label>
             <input type="text" name="player4" id="player4" maxlength="200" />
-          </div>
-          <div>
-            <label for="color4">Choose color</label>
+            <label for="color4"></label>
             <select name="color4" id="color4">
               <option value="" selected disabled hidden>Select</option>
-              <option value="red">Red</option>
-              <option value="blue">Blue</option>
-              <option value="yellow">Yellow</option>
-              <option value="green">Green</option>
+              <option class = "red" value="red"></option>
+              <option class = "blue" value="blue"></option>
+              <option class = "yellow" value="yellow"></option>
+              <option class= "green" value="green"></option>
             </select>
           </div>
-          <button type="submit">Play Game</button>
-          <p id="result"></p>
         </form>
       </section>
       <section id="turns"></section>
@@ -217,42 +209,42 @@
           <div
             id="greenpiece3"
 
-            class="greenrepiece"
+            class="greenpiece"
             draggable="false"
 
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
           <div
             id="greenpiece4"
-   class="greenrepiece"
+   class="greenpiece"
             draggable="false"
 
             ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
         </div>
         <div id="boardplaces">
-          <div id="redstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="redstart" class="place"><span class="material-icons spanrotate1">forward</span></div>
           <div id="place2" class="place"></div>
           <div id="place3" class="place"></div>
           <div id="place4" class="place"></div>
           <div id="place5" class="place"></div>
           <div id="place6" class="place"></div>
           <div id="place7" class="place"></div>
-          <div id="bluestart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="bluestart" class="place"><span class="material-icons spanrotate2">forward</span></div>
           <div id="place9" class="place"></div>
           <div id="place10" class="place"></div>
           <div id="place11" class="place"></div>
           <div id="place12" class="place"></div>
           <div id="place13" class="place"></div>
           <div id="place14" class="place"></div>
-          <div id="yellowstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="yellowstart" class="place"><span class="material-icons spanrotate3">forward</span></div>
           <div id="place16" class="place"></div>
           <div id="place17" class="place"></div>
           <div id="place18" class="place"></div>
           <div id="place19" class="place"></div>
           <div id="place20"  class="place"></div>
           <div id="place21"  class="place"></div>
-          <div id="greenstart" class="place"><img src="images/arrow_start.png" alt="arrow"></div>
+          <div id="greenstart" class="place"><span class="material-icons spanrotate4">forward</span></div>
           <div id="place23"  class="place"></div>
           <div id="place24"  class="place"></div>
           <div id="place25"  class="place"></div>
@@ -262,7 +254,6 @@
         </div>
         <div id="dice"></div>
       </section>
-      <button id="nextTurn">Next</button>
     </div>
     <script src="js/kimble.js"></script>
   </body>
