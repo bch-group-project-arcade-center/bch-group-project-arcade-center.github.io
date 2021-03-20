@@ -78,6 +78,8 @@
               <option class= "green" value="green"></option>
             </select>
           </div>
+          <button type="submit">Play Game</button>
+          <p id="result"></p>
         </form>
       </section>
       <section id="turns"></section>
@@ -210,9 +212,7 @@
             id="greenpiece3"
 
             class="greenpiece"
-            draggable="false"
-
-            ondragstart="event.dataTransfer.setData('text/plain',null)"
+            draggable="false" ondragstart="event.dataTransfer.setData('text/plain',null)"
           ></div>
           <div
             id="greenpiece4"
@@ -253,8 +253,16 @@
           <div id="place28" class="place"></div>
         </div>
         <div id="dice"></div>
+        <div id="cube">
+          <div id="cube1"></div>
+          <div id="cube2"></div>
+          <div id="cube3"></div>
+          <div id="cube4"></div>
+          <div id="cube5"></div>
+          <div id="cube6"></div>
+        </div>
       </section>
     </div>
-    <script src="js/kimble.js"></script>
+    <script src="js/kimble1.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 let dragged;
 
 /* events fired on the draggable target */
-document.addEventListener("drag", function (event) {}, false);
+document.addEventListener("drag", function (event) { }, false);
 
 document.addEventListener(
   "dragstart",
@@ -224,12 +224,24 @@ function disableDrag(player) {
 
 /********************** Dice roll functionality **********************/
 let dicenumber;
-let press = document.getElementById("dice");
+let press = document.getElementById("dice")
+let dicecube = document.getElementById("cube");
+let cube1 = document.getElementById("cube1");
+let cube2 = document.getElementById("cube2");
+let cube3 = document.getElementById("cube3");
+let cube4 = document.getElementById("cube4");
+let cube5 = document.getElementById("cube5");
+let cube6 = document.getElementById("cube6");
+
 const PresstheDice = () => {
   dicenumber = Math.floor(Math.random() * 6) + 1;
   console.log(dicenumber);
-  press.textContent = dicenumber;
-  turn++;
+  if (dicenumber == 1) {
+    dicecube.style.display = "none";
+    cube1.style.display = "block";
+    //press.textContent = cube1;
+    turn++;
+  };
   turns.classList.remove(currentPlayer.arrowturn);
   newTurn();
   FromHomeBase();
@@ -243,7 +255,7 @@ const FromHomeBase = () => {
   if (
     dicenumber > 0 &&
     dicenumber <
-      6 /* &&
+    6 /* &&
     currentPlayer.piecesId.some((el) => {
       el.parentNode.id == "pieces";
     }) */
