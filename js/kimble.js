@@ -128,6 +128,7 @@ let turn = 1;
 let currentPlayerIndex;
 let currentPlayer;
 let firstTurn = true;
+let field = document.getElementById("field");
 
 const ShowPopupplayers = () => {
   document.getElementById("popup-players").style.display = "block";
@@ -811,6 +812,7 @@ const GetPlayers = () => {
     );
   } else {
     document.getElementById("popup-players").style.display = "none";
+    field.style.bottom = "0";
     press.classList.add(player1.arrowturn);
     enableDrag(player1);
     CreatePlayersBoard();
@@ -824,7 +826,7 @@ const GetPlayers = () => {
 let playersboard = document.getElementById("playersboard");
 
 const CreatePlayersBoard = () => {
-  playersboard.style.display = "block";
+  playersboard.style.display = "flex";
   //let div = document.createElement("div");
   for (let i = 0; i < activeplayers.length; i++) {
     playersboard.innerHTML += `<div>${activeplayers[i].nickname}</div>`;
@@ -846,19 +848,21 @@ function newTurn() {
   if (!firstTurn) {
     disableDrag(currentPlayer);
     currentPlayerIndex = turn % activeplayers.length;
-    let currentdivIndex = currentPlayerIndex + 2;
     document.querySelector(
       `#playersboard div:nth-child(${currentdivIndex})`
     ).style.background = "none";
+    currentdivIndex = currentPlayerIndex + 2;
     currentPlayer = activeplayers[currentPlayerIndex];
     enableDrag(currentPlayer);
     press.classList.add(currentPlayer.arrowturn);
+
     document.querySelector(
       `#playersboard div:nth-child(${currentdivIndex})`
     ).style.background = currentPlayer.boardcolor();
   } else {
     firstTurn = false;
     currentPlayer = player1;
+    currentdivIndex = 2;
   }
 }
 
