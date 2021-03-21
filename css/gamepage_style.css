@@ -295,6 +295,25 @@ These are the styles of the game page buttons: start game, stop game, save score
   z-index: 2;
 }
 
+#soundSettings {
+  right: 0;
+  z-index: 0;
+}
+.sound-button {
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+#soundOn,
+#soundOff {
+  display: none;
+}
+
 .popup_close {
   position: absolute;
   right: 10px;

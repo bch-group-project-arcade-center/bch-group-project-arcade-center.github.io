@@ -5,17 +5,8 @@
  */
 function enableSoundSetting(btnSoundOn, btnSoundOff) {
   let soundOn = true;
-  /* 
-// Get sound option from session storage, unless sound is set to false, set sound on
-let soundOn = localStorage.getItem("sound") == "false" ? false : true;
-    // Display volume icon matching soundOn
-if (soundOn) {
-    // Show sound on btn
-    btnSoundOn.style.display = "block";
-  } else {
-    // Show sound off btn
-    btnSoundOff.style.display = "block";
-  } */
+
+  // Get sound option from session storage, unless sound is set to false, set sound on
 
   // If sound is on...
   btnSoundOn.addEventListener("click", () => {

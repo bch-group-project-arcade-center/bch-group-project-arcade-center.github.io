@@ -52,3 +52,49 @@ function makePopupPage(url) {
     "width=700, height=500, toolbar=0, scrollbars=1 ,location=0 ,statusbar=0,menubar=0, resizable=1"
   );
 }
+
+/*** Sound Settings ***/
+let btnSoundOn = document.getElementById("soundOn");
+let btnSoundOff = document.getElementById("soundOff");
+let audioWin = new Audio("./music/player-wins.mp3");
+let audioLose = new Audio("./music/player-loses.wav");
+
+let soundOn = localStorage.getItem("sound") == "false" ? false : true;
+// Display volume icon matching soundOn
+if (soundOn) {
+  // Show sound on btn
+  btnSoundOn.style.display = "block";
+} else {
+  // Show sound off btn
+  btnSoundOff.style.display = "block";
+}
+
+btnSoundOn.addEventListener("click", () => {
+  // Set sound on to false
+  soundOn = false;
+  // Pause bg music if playing
+  if (audioBg) audioBg.pause();
+  // Hide sound on btn
+  btnSoundOn.style.display = "none";
+  // Show sound off btn
+  btnSoundOff.style.display = "block";
+  // Save setting to local storage
+  localStorage.setItem("sound", "false");
+});
+
+// If sound if off...
+btnSoundOff.addEventListener("click", () => {
+  soundOn = true;
+  // Resume bg music if paused
+  if (audioBg) audioBg.play();
+  // Show sound on btn
+  btnSoundOn.style.display = "block";
+  // Hide sound off btn
+  btnSoundOff.style.display = "none";
+  // Save setting to local storage
+  localStorage.setItem("sound", "true");
+});
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  if (audioBg && soundOn) audioBg.play();
+});

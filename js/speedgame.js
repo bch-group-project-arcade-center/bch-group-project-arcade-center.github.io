@@ -21,6 +21,12 @@ let highscore = sessionStorage.getItem("highscore")
   ? parseInt(sessionStorage.getItem("highscore"))
   : 0;
 
+// Bg Music
+let audioBg = new Audio("./music/speedgame/title-screen.mp3");
+let audioBgEasy = new Audio("./music/speedgame/easy.mp3");
+let audioBgMedium = new Audio("./music/speedgame/medium.mp3");
+let audioBgHard = new Audio("./music/speedgame/hard.mp3");
+
 // Display highscore
 displayHighscore.textContent = highscore;
 
@@ -34,6 +40,8 @@ function startGame() {
     if (level.checked == true) levelSet = level.value;
   });
 
+  if (soundOn) audioBg.pause();
+
   // Set speed, minSpeed, maxSkip, bg music
   switch (levelSet) {
     case "0":
@@ -41,21 +49,26 @@ function startGame() {
       minSpeed = 250;
       maxSkip = 5;
       speedUp = 20;
+      audioBg = audioBgEasy;
       break;
     case "1":
       speed = 1000;
       minSpeed = 200;
       maxSkip = 3;
       speedUp = 30;
+      audioBg = audioBgMedium;
       break;
     case "2":
       speed = 900;
       minSpeed = 150;
       maxSkip = 1;
       speedUp = 40;
+      audioBg = audioBgHard;
       break;
   }
 
+  // Start level music
+  if (soundOn) audioBg.play();
   // Hide start button
   btnStart.style.display = "none";
   // Make stop button visible
@@ -116,6 +129,11 @@ function startGame() {
 
   function showGameOver() {
     // Stop background music
+    if (soundOn) {
+      audioBg.pause();
+      audioLose.play();
+    }
+
     // Stop timeout
     clearTimeout(timer);
     // Make overlay visible
@@ -124,13 +142,13 @@ function startGame() {
     // Check users score and assign end text
     switch (true) {
       case score < 10:
-        endText = "If you don't SPLASH, you won't evolve.";
+        endText = "Come on, you can do this!";
         break;
       case score > 9 && score < 20:
-        endText = "HARDEN for now, things will get better.";
+        endText = "If all else fails, use fire!";
         break;
       case score > 19:
-        endText = "Never let your EMBER burn out.";
+        endText = "Congratulations!";
     }
 
     // Display player's final score
