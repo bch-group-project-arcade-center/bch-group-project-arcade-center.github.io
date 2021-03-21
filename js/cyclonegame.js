@@ -38,7 +38,7 @@ let highscore = sessionStorage.getItem("highscore")
   : 0;
 
 // Bg Music
-let audioBg = new Audio("./music/cyclone/title-screen.mp3");
+audioBg = new Audio("./music/cyclone/title-screen.mp3");
 let audioGame = new Audio("./music/cyclone/game-music.mp3");
 
 //elements

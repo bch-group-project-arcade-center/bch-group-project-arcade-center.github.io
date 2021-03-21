@@ -1,12 +1,15 @@
 let score = 0;
 let numOfGames = 0;
+// Bg Music
+audioBg = new Audio("./music/jackpot/title-screen.mp3");
+let audioSpin = new Audio("./music/jackpot/wheelspin.wav");
 
 function jackpot() {
   numOfGames++;
   let thisRound = 0;
   const WHEEL_COUNT = 3;
   const RESULT_OPTIONS = 6; // Counting from 0
-
+  if (soundOn) audioSpin.play();
   let slotCounter = 0;
   let counter = 0;
 
@@ -96,26 +99,32 @@ function jackpot() {
       // If all numbers are 0s, announce jackpot
       score += 300;
       thisRound = 300;
+      audioWin.play();
     } else if (oneCounter === WHEEL_COUNT) {
       // If all numbers are 1s, announce smaller jackpot
       score += 100;
       thisRound = 100;
+      audioWin.play();
     } else if (twoCounter === WHEEL_COUNT || threeCounter === WHEEL_COUNT) {
       // If all numbers are all 2s or all 3s, annnouce prize
       score += 15;
       thisRound = 15;
+      audioWin.play();
     } else if (fourCounter === WHEEL_COUNT || fiveCounter === WHEEL_COUNT) {
       // If all numbers are all 4s or all 5s, annnouce prize
       score += 8;
       thisRound = 8;
+      audioWin.play();
     } else if (sixCounter === 2) {
       // If there are 2 pokeballs, announce prize
       score += 6;
       thisRound = 6;
+      audioWin.play();
     } else if (sixCounter === 1) {
       // If there is 1 pokeballs, announce prize
       score += 2;
       thisRound = 2;
+      audioWin.play();
     } else {
       // If player doesn't win anything, tell them to try again
       thisRound = 0;

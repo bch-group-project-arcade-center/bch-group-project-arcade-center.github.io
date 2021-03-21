@@ -22,7 +22,7 @@ let highscore = sessionStorage.getItem("highscore")
   : 0;
 
 // Bg Music
-let audioBg = new Audio("./music/speedgame/title-screen.mp3");
+audioBg = new Audio("./music/speedgame/title-screen.mp3");
 let audioBgEasy = new Audio("./music/speedgame/easy.mp3");
 let audioBgMedium = new Audio("./music/speedgame/medium.mp3");
 let audioBgHard = new Audio("./music/speedgame/hard.mp3");
