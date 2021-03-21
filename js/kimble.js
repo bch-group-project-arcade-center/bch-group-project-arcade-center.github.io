@@ -62,7 +62,6 @@ document.addEventListener(
 document.addEventListener(
   "dragenter",
   function (event) {
-    // highlight potential drop target when the draggable element enters it
     if (event.target.className == "place") {
       event.target.style.background = "purple";
     }
@@ -962,3 +961,19 @@ shareBtnTwitter.addEventListener("click", function () {
       encodeURIComponent(`Play a fun game of Kimble on ${currentURL}`)
   );
 });
+
+/*mobile version*/
+
+let windowsize = window.matchMedia("(max-width: 550px)");
+MobilePositions(windowsize);
+document.addEventListener("resize", MobilePositions);
+
+function MobilePositions(x) {
+  if (x.matches) {
+    document.getElementById("field").style.display = "";
+    alert("Please while playing turn your device horizontally");
+    window.location.reload();
+  } else {
+    document.getElementById("field").style.display = "";
+  }
+}
