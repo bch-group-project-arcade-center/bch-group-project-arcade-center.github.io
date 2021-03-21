@@ -8,7 +8,6 @@ document.addEventListener(
   function (event) {
     // store a ref. on the dragged elem
     dragged = event.target;
-    console.log(dragged);
 
     // make it half transparent
     event.target.style.opacity = 0.7;
@@ -807,9 +806,8 @@ const GetPlayers = () => {
     return checkcolor.indexOf(item) != idx;
   });
   if (isDuplicate) {
-    console.log(
-      "Items are duplicated and here we need popup HTML CSS and function to put pieces and players on the field"
-    );
+    alert("Two players cannot have the same color");
+    // return;
   } else {
     document.getElementById("popup-players").style.display = "none";
     field.style.bottom = "0";
