@@ -1,9 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --primary-color-1: #4c11ac;
   --primary-color-2: #8f6cf2;
@@ -29,7 +23,35 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Fredoka One", cursive;
-  flex-flow: row wrap;
+  flex-direction: column;
+}
+
+section {
+  opacity: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  height: auto;
+  margin-bottom: 0;
+}
+
+#overlay {
+  display: none;
+}
+
+.section_divider2 {
+  margin-top: 50px;
+}
+
+.big_box_body {
+  width: auto;
+  flex: 5;
 }
 
 /*POP-UP*/
@@ -38,29 +60,30 @@ label {
   margin: 10px;
 }
 
-select option[value="red"] {
+.red {
   background: var(--goalred-color);
 }
 
-select option[value="blue"] {
+.blue {
   background: var(--goalblue-color);
 }
 
-select option[value="yellow"] {
+.yellow {
   background: var(--goalyellow-color);
 }
 
-select option[value="green"] {
+.green {
   background: var(--goalgreen-color);
 }
 
-select#color1,
+/* select#color1,
 select#color2,
 select#color3,
 select#color4 {
-  /* position: relative; */
-  background: rgba(30, 6, 250, 0.698);
+   position: relative; 
+  background-color: rgba(30, 6, 250, 0.698);
   width: 70px;
+  height: 70px;
   border-radius: 50px;
   border-color: var(--main-font-color);
   border-width: 2px;
@@ -70,9 +93,9 @@ select#color4 {
   justify-content: left;
   font-family: var(--kimble-font);
   margin: 10px;
-}
+} */
 
-input#player1,
+/* input#player1,
 input#player2,
 input#player3,
 input#player4 {
@@ -80,17 +103,17 @@ input#player4 {
   border-style: none;
   font-size: 1.5rem;
   margin: 10px;
-}
+} */
 
-#popup-players {
+/* #popup-players {
   min-height: 400px;
-  visibility: hidden;
+  visibility: visible;
   background: var(--popup-color);
   border-radius: 50px;
   padding: 1.5rem;
   z-index: 1;
   position: absolute;
-}
+} */
 
 #field {
   background-image: url("/bch-group-project-arcade-center.github.io/images/Static-field.png");
@@ -101,104 +124,7 @@ input#player4 {
   background-repeat: no-repeat;
   /* background-position: center; */
   position: relative;
-}
-/*cube*/
-
-#cube {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/dicecube_k.png");
-  width: 40px;
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  right: 250px;
-  top: 230px;
-  display: block;
-  animation-name: fall;
-  animation-duration: 2s;
-  animation-delay: 1s;
-}
-
-@keyframes fall {
-  from {
-    top: 0px;
-  }
-  to {
-    top: 250px;
-  }
-}
-/*@keyframes fall {
-  0% {
-    left: 250px;
-    top: 0px;
-  }
-  100% {
-    left: 250px;
-    top: 250px;
-  }
-}*/
-
-#cube1 {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/cube-1.jpg");
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-  animation: none;
-}
-#cube2 {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/cube-2.jpg");
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-  animation: none;
-}
-#cube3 {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/cube-3.png");
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-  animation: none;
-}
-#cube4 {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/cube-4.jpg");
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-  animation: none;
-}
-#cube5 {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/cube-5.jpg");
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-  animation: none;
-}
-#cube6 {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/cube-6.jpg");
-  height: 40px;
-  max-width: 100%;
-  max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: none;
-  animation: none;
+  bottom: 300px;
 }
 
 #turns {
@@ -209,18 +135,93 @@ input#player4 {
   height: 186px;
   z-index: 999;
 }
+#popup-players {
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 2rem;
+  display: none;
+  z-index: 990;
+  position: relative;
+}
+#popup-winner {
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 2rem;
+  display: none;
+  position: relative;
+  top: 200px;
+
+  z-index: 999;
+}
+
+#startnewgame {
+  padding: 1rem;
+}
+
+#playersboard {
+  background-color: #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  padding: 1rem 0 1rem 4rem;
+  display: none;
+  width: 180%;
+  right: 30%;
+
+  position: relative;
+}
+#playersboard div:first-child {
+  color: #403dcf;
+  margin-right: 1rem;
+}
+
 .redturn {
   background-image: url("/images/redturnkimble.png");
   background-size: cover;
+  box-shadow: 0 0 30px 2px #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 .blueturn {
-  background-image: url("/images/blueturnkimble.png");
+  box-shadow: 0 0 30px 2px #100bf4;
+  border: 2px solid #100bf4;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 .yellowturn {
-  background-image: url("/images/yellowturnkimble.png");
+  box-shadow: 0 0 30px 2px #fff35c;
+  border: 2px solid #fff35c;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 .greenturn {
-  background-image: url("/images/greenturnkimble.png");
+  box-shadow: 0 0 30px 2px #03da03;
+  border: 2px solid #03da03;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
 }
 
 .place {
@@ -312,6 +313,9 @@ input#player4 {
   position: absolute;
   left: 57px;
   top: 375px;
+}
+#goalbase {
+  font-size: 20px;
 }
 
 #goalred1 {
@@ -460,7 +464,7 @@ input#player4 {
 }
 #dice {
   background-image: url("/bch-group-project-arcade-center.github.io/images/Dice.png");
-
+  cursor: pointer;
   width: 80px;
   height: 80px;
   max-width: 100%;
@@ -475,6 +479,7 @@ input#player4 {
 }
 
 /*Pieces*/
+
 .repiece {
   background-image: url("/bch-group-project-arcade-center.github.io/images/redpiece.png");
   border: 2px solid #e8dede;
@@ -817,7 +822,108 @@ input#player4 {
   left: 101px;
   top: 135px;
 }
+/******************Dice Cube******************/
 
+/*styling for Scene*/
+.scene {
+  width: 50px;
+  height: 50px;
+  margin: 230px 230px;
+  perspective: 200px;
+}
+
+/*styling for 3D Cube*/
+.cube {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+/*styling for 3D Cube transforms / animations on face select (on roll)*/
+.cube.show-1 {
+  transform: translateZ(-25px) rotateY(0deg);
+}
+.cube.show-2 {
+  transform: translateZ(-25px) rotateY(-180deg);
+}
+.cube.show-3 {
+  transform: translateZ(-25px) rotateY(-90deg);
+}
+.cube.show-4 {
+  transform: translateZ(-25px) rotateY(90deg);
+}
+.cube.show-5 {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+.cube.show-6 {
+  transform: translateZ(-25px) rotateX(90deg);
+}
+
+/*universal style for cube faces */
+.cube__face {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/*individual styling for each numbers face */
+.cube__face--1 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--3 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--2 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--4 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--5 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--6 {
+  background: white;
+  opacity: 0.75;
+}
+
+.cube__face--1 {
+  transform: rotateY(0deg) translateZ(25px);
+}
+.cube__face--2 {
+  transform: rotateY(180deg) translateZ(25px);
+}
+.cube__face--3 {
+  transform: rotateY(90deg) translateZ(25px);
+}
+.cube__face--4 {
+  transform: rotateY(-90deg) translateZ(25px);
+}
+.cube__face--5 {
+  transform: rotateX(90deg) translateZ(25px);
+}
+.cube__face--6 {
+  transform: rotateX(-90deg) translateZ(25px);
+}
+
+label {
+  margin-right: 10px;
+}
 /**************** Mobile support ****************/
 @media (max-width: 375px) {
   .container {
@@ -827,7 +933,7 @@ input#player4 {
     justify-content: center;
   }
 
-  #popup-players {
+  /* #popup-players {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -835,7 +941,7 @@ input#player4 {
     justify-items: center;
     left: auto;
     top: auto;
-  }
+  } */
 }
 
 @media (max-width: 576px) {
@@ -846,7 +952,7 @@ input#player4 {
     justify-content: center;
   }
 
-  #popup-players {
+  /* #popup-players {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -854,7 +960,7 @@ input#player4 {
     justify-items: center;
     left: auto;
     top: auto;
-  }
+  } */
 }
 @media (max-width: 1024px) {
   .container {
@@ -864,7 +970,7 @@ input#player4 {
     justify-content: center;
   }
 
-  #popup-players {
+  /* #popup-players {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -872,5 +978,5 @@ input#player4 {
     justify-items: center;
     left: auto;
     top: auto;
-  }
+  } */
 }
