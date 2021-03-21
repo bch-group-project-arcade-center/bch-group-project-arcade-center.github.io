@@ -7,7 +7,7 @@
 
     <!-- Open Graph Meta tag for sharing on social media -->
 
-    <meta property="og:title" content="Play Arcade center's Speed Game" />
+    <meta property="og:title" content="Play Arcade center's Kimble" />
     <meta
       property="og:description"
       content="Become a champion in Kimble Game!"
@@ -139,12 +139,15 @@
         <div class="big_box">
           <div class="big_box_header">
             <div id="info_button" class="info_button button_hover">i</div>
+            <section id="playersboard">
+              <div class="playesboard-header"><h3>Active Players</h3></div>
+            </section>
           </div>
           <div class="big_box_body">
-            <section id="popup-players">
+            <section id="popup-players" class="popup_base pop_small">
               <form>
-                <div>
-                  <label for="player1">Nickname of player1</label>
+                <div class="user-input">
+                  <label for="player1">Nickname of player 1</label>
                   <input
                     type="text"
                     name="player1"
@@ -153,7 +156,7 @@
                     required
                   />
                 </div>
-                <div>
+                <div class="user-input">
                   <label for="color1">Choose color</label>
                   <select name="color1" id="color1" required>
                     <option value="" selected disabled hidden>Select</option>
@@ -163,8 +166,8 @@
                     <option value="green">Green</option>
                   </select>
                 </div>
-                <div>
-                  <label for="player2">Nickname of player2</label>
+                <div class="user-input">
+                  <label for="player2">Nickname of player 2</label>
                   <input
                     type="text"
                     name="player2"
@@ -173,7 +176,7 @@
                     required
                   />
                 </div>
-                <div>
+                <div class="user-input">
                   <label for="color2">Choose color</label>
                   <select name="color2" id="color2" required>
                     <option value="" selected disabled hidden>Select</option>
@@ -183,8 +186,8 @@
                     <option value="green">Green</option>
                   </select>
                 </div>
-                <div>
-                  <label for="player3">Nickname of player3</label>
+                <div class="user-input">
+                  <label for="player3">Nickname of player 3</label>
                   <input
                     type="text"
                     name="player3"
@@ -192,7 +195,7 @@
                     maxlength="200"
                   />
                 </div>
-                <div>
+                <div class="user-input">
                   <label for="color3">Choose color</label>
                   <select name="color3" id="color3">
                     <option value="" selected disabled hidden>Select</option>
@@ -202,8 +205,8 @@
                     <option value="green">Green</option>
                   </select>
                 </div>
-                <div>
-                  <label for="player4">Nickname of player4</label>
+                <div class="user-input">
+                  <label for="player4">Nickname of player 4</label>
                   <input
                     type="text"
                     name="player4"
@@ -211,7 +214,7 @@
                     maxlength="200"
                   />
                 </div>
-                <div>
+                <div class="user-input">
                   <label for="color4">Choose color</label>
                   <select name="color4" id="color4">
                     <option value="" selected disabled hidden>Select</option>
@@ -221,16 +224,23 @@
                     <option value="green">Green</option>
                   </select>
                 </div>
-                <button type="submit">Play Game</button>
+                <button type="submit" class="gamepage_button">Play Game</button>
                 <p id="result"></p>
               </form>
             </section>
-            <section id="popup-winner">
+            <section id="popup-winner" class="popup_base pop_small">
               <h2 id="winnertext"></h2>
-              <button id="startnewgame">Start new game</button>
-            </section>
-            <section id="playersboard">
-              <div>Active Players</div>
+              <button id="startnewgame" class="gamepage_button">
+                Start new game
+              </button>
+              <div class="share-btn">
+                <button id="shareBtnFB" class="share-fb">
+                  <i class="fab fa-facebook"></i> Share
+                </button>
+                <button id="shareBtnTwitter" class="share-twitter">
+                  <i class="fab fa-twitter"></i> Share
+                </button>
+              </div>
             </section>
             <div class="container">
               <section id="field">
@@ -539,6 +549,7 @@
       src="https://kit.fontawesome.com/44b85a61db.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/index_script.js"></script>
     <script src="js/kimble.js"></script>
   </body>
 </html>

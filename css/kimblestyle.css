@@ -1,21 +1,15 @@
 :root {
-  --primary-color-1: #4c11ac;
-  --primary-color-2: #8f6cf2;
-  --primary-color-3: #200d54;
-  --main-font-color: white;
   --popup-color: #72c0f8f2;
   --goalred-color: #ff0000;
   --goalblue-color: #100bf4;
   --goalgreen-color: #008000;
   --goalyellow-color: #ffc700;
-  --menu-header-font: "Baloo Da 2", cursive;
-  --content-font: "Baloo Paaji 2", cursive;
   --kimble-font: "Fredoka One", cursive;
   --background-url: url(/images/index/test_space_invader_transparency10.png);
 }
 
-body {
-  background-color: var(--primary-color-3);
+main {
+  padding-bottom: 30px;
 }
 
 .container {
@@ -36,22 +30,16 @@ section {
   padding-bottom: 0;
 }
 
-footer {
-  height: auto;
-  margin-bottom: 0;
-}
-
 #overlay {
   display: none;
 }
 
-.section_divider2 {
-  margin-top: 50px;
+.popup_base {
+  visibility: visible;
 }
 
 .big_box_body {
-  width: auto;
-  flex: 5;
+  position: relative;
 }
 
 /*POP-UP*/
@@ -118,13 +106,12 @@ input#player4 {
 #field {
   background-image: url("/images/Static-field.png");
   width: 535px;
-  max-width: 100%;
-  max-height: 100%;
+  /* max-width: 100%; */
+  /* max-height: 100%; */
   height: 541px;
   background-repeat: no-repeat;
   /* background-position: center; */
   position: relative;
-  bottom: 300px;
 }
 
 #turns {
@@ -136,29 +123,37 @@ input#player4 {
   z-index: 999;
 }
 #popup-players {
-  background-color: #fff;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  padding: 2rem;
   display: none;
   z-index: 990;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 5%;
+}
+.user-input select,
+.user-input input {
+  padding: 0.2rem;
+  min-width: 50%;
+}
+
+#popup-players button {
+  display: inline-block;
 }
 #popup-winner {
-  background-color: #fff;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
   padding: 2rem;
   display: none;
-  position: relative;
-  top: 200px;
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 999;
 }
 
@@ -167,22 +162,21 @@ input#player4 {
 }
 
 #playersboard {
-  background-color: #fff;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  padding: 1rem 0 1rem 4rem;
+  color: #200d54;
+  background-color: white;
   display: none;
-  width: 180%;
-  right: 30%;
-
-  position: relative;
+  width: 80%;
+  max-width: 250px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #eee;
+  border-radius: 5px;
 }
-#playersboard div:first-child {
-  color: #403dcf;
-  margin-right: 1rem;
+
+.playesboard-header {
+  color: white;
+  background-color: #200d54;
 }
 
 .redturn {
@@ -824,42 +818,15 @@ input#player4 {
 }
 
 /**************** Mobile support ****************/
-@media (max-width: 375px) {
-  .container {
-    min-width: 560px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+@media (max-width: 756px) {
+  #popup-players {
+    width: 80%;
   }
 
-  /* #popup-players {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    justify-items: center;
-    left: auto;
-    top: auto;
-  } */
-}
-
-@media (max-width: 576px) {
-  .container {
-    min-width: 560px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .user-input input {
+    min-width: 100%;
   }
-
-  /* #popup-players {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    justify-items: center;
-    left: auto;
-    top: auto;
-  } */
 }
 @media (max-width: 1024px) {
   .container {
@@ -868,14 +835,4 @@ input#player4 {
     align-items: center;
     justify-content: center;
   }
-
-  /* #popup-players {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    justify-items: center;
-    left: auto;
-    top: auto;
-  } */
 }
