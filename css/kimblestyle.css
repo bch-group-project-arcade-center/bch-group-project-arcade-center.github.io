@@ -1,9 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --primary-color-1: #4c11ac;
   --primary-color-2: #8f6cf2;
@@ -29,7 +23,35 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Fredoka One", cursive;
-  flex-flow: row wrap;
+  flex-direction: column;
+}
+
+section {
+  opacity: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+footer {
+  height: auto;
+  margin-bottom: 0;
+}
+
+#overlay {
+  display: none;
+}
+
+.section_divider2 {
+  margin-top: 50px;
+}
+
+.big_box_body {
+  width: auto;
+  flex: 5;
 }
 
 /*POP-UP*/
@@ -54,11 +76,11 @@ label {
   background: var(--goalgreen-color);
 }
 
-select#color1,
+/* select#color1,
 select#color2,
 select#color3,
 select#color4 {
-  /* position: relative; */
+   position: relative; 
   background-color: rgba(30, 6, 250, 0.698);
   width: 70px;
   height: 70px;
@@ -71,9 +93,9 @@ select#color4 {
   justify-content: left;
   font-family: var(--kimble-font);
   margin: 10px;
-}
+} */
 
-input#player1,
+/* input#player1,
 input#player2,
 input#player3,
 input#player4 {
@@ -81,9 +103,9 @@ input#player4 {
   border-style: none;
   font-size: 1.5rem;
   margin: 10px;
-}
+} */
 
-#popup-players {
+/* #popup-players {
   min-height: 400px;
   visibility: visible;
   background: var(--popup-color);
@@ -91,7 +113,7 @@ input#player4 {
   padding: 1.5rem;
   z-index: 1;
   position: absolute;
-}
+} */
 
 #field {
   background-image: url("/images/Static-field.png");
@@ -101,7 +123,8 @@ input#player4 {
   height: 541px;
   background-repeat: no-repeat;
   /* background-position: center; */
-  position: absolute;
+  position: relative;
+  bottom: 300px;
 }
 
 #turns {
@@ -111,6 +134,7 @@ input#player4 {
   width: 110px;
   height: 186px;
   z-index: 999;
+}
 #popup-players {
   background-color: #fff;
   border-radius: 25px;
@@ -120,7 +144,9 @@ input#player4 {
   -o-border-radius: 25px;
   padding: 2rem;
   display: none;
-  }
+  z-index: 990;
+  position: relative;
+}
 #popup-winner {
   background-color: #fff;
   border-radius: 25px;
@@ -130,8 +156,12 @@ input#player4 {
   -o-border-radius: 25px;
   padding: 2rem;
   display: none;
+  position: relative;
+  top: 200px;
+
+  z-index: 999;
 }
-  
+
 #startnewgame {
   padding: 1rem;
 }
@@ -143,15 +173,19 @@ input#player4 {
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
-  padding: 2rem;
+  padding: 1rem 0 1rem 4rem;
   display: none;
+  width: 180%;
+  right: 30%;
+
+  position: relative;
 }
 #playersboard div:first-child {
   color: #403dcf;
+  margin-right: 1rem;
 }
 
 .redturn {
-
   background-image: url("/images/redturnkimble.png");
   background-size: cover;
   box-shadow: 0 0 30px 2px #ff0000;
@@ -282,8 +316,6 @@ input#player4 {
 }
 #goalbase {
   font-size: 20px;
-  border: 1px solid var(--main-font-color);
-  color: var(--main-font-color);
 }
 
 #goalred1 {
@@ -449,7 +481,7 @@ input#player4 {
 /*Pieces*/
 
 .repiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/redpiece.png");
+  background-image: url("/images/redpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -481,7 +513,7 @@ input#player4 {
   top: 61px;
 }
 .bluepiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/bluepiece1.png");
+  background-image: url("/images/bluepiece1.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -515,7 +547,7 @@ input#player4 {
 }
 
 .yellowpiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/yellowpiece.png");
+  background-image: url("/images/yellowpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -549,7 +581,7 @@ input#player4 {
 }
 
 .greenpiece {
-  background-image: url("/bch-group-project-arcade-center.github.io/images/greenpiece.png");
+  background-image: url("/images/greenpiece.png");
   border: 2px solid #e8dede;
   box-sizing: border-box;
   width: 2rem;
@@ -800,7 +832,7 @@ input#player4 {
     justify-content: center;
   }
 
-  #popup-players {
+  /* #popup-players {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -808,7 +840,7 @@ input#player4 {
     justify-items: center;
     left: auto;
     top: auto;
-  }
+  } */
 }
 
 @media (max-width: 576px) {
@@ -819,7 +851,7 @@ input#player4 {
     justify-content: center;
   }
 
-  #popup-players {
+  /* #popup-players {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -827,7 +859,7 @@ input#player4 {
     justify-items: center;
     left: auto;
     top: auto;
-  }
+  } */
 }
 @media (max-width: 1024px) {
   .container {
@@ -837,7 +869,7 @@ input#player4 {
     justify-content: center;
   }
 
-  #popup-players {
+  /* #popup-players {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -845,5 +877,5 @@ input#player4 {
     justify-items: center;
     left: auto;
     top: auto;
-  }
+  } */
 }
