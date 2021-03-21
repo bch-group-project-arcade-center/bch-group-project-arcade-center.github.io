@@ -150,8 +150,10 @@ input#player4 {
 #popup-winner {
   padding: 2rem;
   display: none;
-  position: relative;
-  top: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 999;
 }
 
@@ -160,12 +162,21 @@ input#player4 {
 }
 
 #playersboard {
-  background-color: chartreuse;
+  color: #200d54;
+  background-color: white;
   display: none;
+  width: 80%;
+  max-width: 250px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #eee;
+  border-radius: 5px;
 }
-#playersboard div:first-child {
-  color: #403dcf;
-  margin-right: 1rem;
+
+.playesboard-header {
+  color: white;
+  background-color: #200d54;
 }
 
 .redturn {

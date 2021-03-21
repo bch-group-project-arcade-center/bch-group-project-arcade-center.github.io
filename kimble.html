@@ -140,7 +140,7 @@
           <div class="big_box_header">
             <div id="info_button" class="info_button button_hover">i</div>
             <section id="playersboard">
-              <div>Active Players</div>
+              <div class="playesboard-header"><h3>Active Players</h3></div>
             </section>
           </div>
           <div class="big_box_body">
@@ -228,11 +228,19 @@
                 <p id="result"></p>
               </form>
             </section>
-            <section id="popup-winner" class="popup_base">
+            <section id="popup-winner" class="popup_base pop_small">
               <h2 id="winnertext"></h2>
               <button id="startnewgame" class="gamepage_button">
                 Start new game
               </button>
+              <div class="share-btn">
+                <button id="shareBtnFB" class="share-fb">
+                  <i class="fab fa-facebook"></i> Share
+                </button>
+                <button id="shareBtnTwitter" class="share-twitter">
+                  <i class="fab fa-twitter"></i> Share
+                </button>
+              </div>
             </section>
             <div class="container">
               <section id="field">
@@ -541,6 +549,7 @@
       src="https://kit.fontawesome.com/44b85a61db.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/index_script.js"></script>
     <script src="js/kimble.js"></script>
   </body>
 </html>
