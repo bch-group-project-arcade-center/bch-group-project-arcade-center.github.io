@@ -387,10 +387,12 @@ a {
   height: 515px;
   height: 515px;
   visibility: hidden;
-  /* overflow-y: auto; */
+  justify-content: center;
+}
 
-  /* visibility: flex; */
-  /* overflow-y: auto; */
+.popup_title h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 #small_pop {
@@ -419,7 +421,6 @@ a {
 /****************** Footer **************/
 
 footer {
-  height: 15vh;
   background-color: var(--primary-color-1);
   color: var(--main-font-color);
   font-family: var(--content-font);
