@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/cyclonegame/gamepage_style_ver_cyclonegame.css" />
-    
-    <link rel="stylesheet" href="css/cyclonegame/cyclonegame_style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclone Arcade</title>
+    <link rel="stylesheet" href="css/gamepage_style.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
@@ -17,12 +17,11 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    
-    <title>Cyclone Arcade</title>
-  </head>
 
-  <body>
-    <!-- ************HEADER STARTS*************** -->
+
+</head>
+<body>
+
     <header id="top">
         <div class="logo">
             <a href="./index.html#top"><img src="images/index/arcade_center_logo.svg" alt="Arcade Center Logo"></a>
@@ -82,11 +81,11 @@
                             </li>
                             
                             <li class="mobile-dropdown-item">
-                                <a href="jackpot.html">Jackpot</a>
+                                <a href="/games/jackpot/index.html">Jackpot</a>
                             </li>
                             
                             <li class="mobile-dropdown-item">
-                                <a href="kimble.html">Kimble</a>
+                                <a href="/games/kimble/index.html">Kimble</a>
                             </li>
                         <!-- </ul> -->
 
@@ -98,86 +97,80 @@
         </nav>
     </header>
     <div class="section_divider"></div>
-    <!-- ************HEADER ends*************** -->
     
-    <!-- ************MAIN STARTS*************** -->
     <main>
-        <div class="section_header_wrapper">
-            <h1> <span>Cyclon Arcade</span> </h1>
-        </div>
-        <section>
-            <div class="big_box">
-                <div class="big_box_header" >
-                    <div id="info_button" class="info_button button_hover">i</div>
-                    <!-- The following two h3 headers were taken from the required game fields to display the score and the top score -->
-                    <h3 id="highScoreTitle"></h3>
-                    <h3 id="scoreTitle"></h3>
-                </div>
-                    
-                <div class="big_box_body">
-                    <section id="game">    
-                        <section id="overlay">
-                            <div class="popup">
-                                <button href="#" id="close" class="btn-text">X</button>
-                                <h2 id="resultTitle">Game Over</h2>
-                                <p id="final-score"></p>
-                                <p>Every win gives +1 score and every loss takes -1 score</p>
-                                <button class="btn-text" id="saveScore">Save score</button>
-                                <form id="saveScoreForm">
-                                    <input type="text" name="playerName" id="playerName" placeholder="Enter your name" required />
-                                    <input class="btn-text" type="button" value="Save score" id="SaveNameScore" />
-                                </form>
-                                <p id="scoreSaveMsg">Score saved!</p>
-                            </div>
-                        </section>
-                        <button class="btn-text btn" id="start-btn">start</button>
-                        <button class="btn-text btn" id="stop-btn" disabled>stop</button>
-                        
-                        <div id="bulbs"></div>
-                    </section>
-
-                    <div id="large_pop" class="popup_base pop_large">
-                        <div id="close_popup" class="popup_close button_hover">X</div>
-
-                        <div class="popup_title">
-                            <h3 id="score"> How to play?</h3>
-                        </div>
-
-                        <div class="popup_message">
-                            <h4>Game objective:</h4>
-                            <p id="popup_message">Try to stop the bulb in moving lighting bulb when it is on top of the "goal" bulb, highlighted in red color between blue lines.</p>
-
-                            <h4>Instructions:</h4>
-
-                            <p> Click the "Start" buttton to get light going and press the "Stop" button to try to stop the light on top of the goal bulb.
-                                You will be getting one point (+1) for every consecutive time you succed and one minus point (-1) for every failed attempt.
-                                
-                                Try to reach the highest score in our leaderboard by successfully stopping the bulb as many times in a row as possible.
-
-                                Good luck and have fun!
-                            </p>
-                        </div>
-
-                        </div>
-                    </div>
-
-                    <div class="big_box_footer">
-                        <!-- <button class="btn-text btn" id="start-btn">start</button>
-                        <button class="btn-text btn" id="stop-btn" disabled>stop</button> -->
-                    </div>            
-                </div>
-
+            <div class="section_header_wrapper">
+                <h1> <span>Cyclon Arcade</span> </h1>
             </div>
             
+            <section>
                 
+                    <div class="big_box">
+                        <div class="big_box_header" >
+                            <!-- <div class="info_button button_hover">i</div> -->
+                            <h2>Cyclone Arcade</h2>
+                            <h3>test h3</h3>
+                        </div>
+                        
+                        <div class="big_box_body">
+                            <p>Game container box</p>
+                            
+                            <div id="small_pop" class="popup_base pop_small">
+                                <div class="popup_close button_hover">X</div>
+
+                                <div class="popup_title">
+                                    <h3 id="score"> Score / Pop-up title</h3>
+                                </div>
+
+                                <div class="popup_message">
+                                    <p id="popup_message">Pop up message goes here</p>
+                                </div>
+
+                                <div class="share_buttons">TWITTER / FACEBOOK</div>
+
+                                <div class="popup_buttons">
+                                    <div class="gamepage_button button_hover">Save Score</div>
+                                    
+                                    <div class="gamepage_button button_hover">See Leaderboard</div>    
+    
+                                </div>
+                            </div>
+
+
+                            <div id="large_pop" class="popup_base pop_large">
+                                <div class="popup_close button_hover">X</div>
+
+                                <div class="popup_title">
+                                    <h3 id="score"> How to play?</h3>
+                                </div>
+
+                                <div class="popup_message">
+                                    <h4>Game objective:</h4>
+                                    <p id="popup_message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia in ipsum quos repudiandae dignissimos rem, tempore magnam facilis sapiente rerum, assumenda harum pariatur natus, fugiat minus magni fuga. Officiis, voluptatem.</p>
+
+                                    <h4>Instructions:</h4>
+
+                                    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque quod quaerat ducimus dolor assumenda magni exercitationem adipisci expedita, sapiente repellendus optio dicta doloremque excepturi voluptatum consectetur deserunt. Iusto, autem inventore.</p>
+                                </div>
+   
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="big_box_footer">
+                            <div class="gamepage_button button_hover">Start Game</div>
+                            <div class="gamepage_button button_hover">Stop Game</div>
+                        </div>
+
+                        
+                    </div>
+                
+            </section>
             
-
-
-        </section>
     </main>
-    <!-- ************MAIN ENDS*************** -->
-
-    <!-- ************FOOTER STARTS*************** -->
     <div class="section_divider"></div>
     <footer>
         <div class="left_box">
@@ -216,10 +209,9 @@
         </div>
 
     </footer>
-
-        <script src="js/cyclonegame.js"></script>
-        <script src="js/index_script.js"></script>
-    </body>
-    </html>
-
-    <!-- TM 180321-1451 -->
+    <!-- <div class="section_divider"><i class="far fa-copyright"></i></div> -->
+    
+    <script src="js/index_script.js"></script>
+    <script src="js/gamepage_script.js"></script>
+</body>
+</html>
