@@ -7,8 +7,7 @@ let finalScore = document.getElementById("final-score");
 let btnClose = document.getElementById("close");
 let btnStart = document.getElementById("start");
 let btnStop = document.getElementById("stop");
-let audioBg, audioEnd;
-// let audioLvlChange = new Audio("./music/click.mp3");
+
 let levels = document.querySelectorAll("input[type=radio]");
 let sessionStorage = window.sessionStorage;
 //group project additions
@@ -16,46 +15,32 @@ let localStorage = window.localStorage;
 let playerNameInput = document.getElementById("playerName");
 let btnSaveNameScore = document.getElementById("SaveNameScore");
 let btnSaveScore = document.getElementById("saveScore");
-
+let score;
 // Get highscore from session storage
 let highscore = sessionStorage.getItem("highscore")
   ? parseInt(sessionStorage.getItem("highscore"))
   : 0;
 
+// Bg Music
+audioBg = new Audio("./music/speedgame/title-screen.mp3");
+let audioBgEasy = new Audio("./music/speedgame/easy.mp3");
+let audioBgMedium = new Audio("./music/speedgame/medium.mp3");
+let audioBgHard = new Audio("./music/speedgame/hard.mp3");
+
 // Display highscore
 displayHighscore.textContent = highscore;
-// Get sound option from session storage, unless sound is set to false, set sound on
-// let soundOn = sessionStorage.getItem("sound") == "false" ? false : true;
-let soundOn = false;
-
-let btnSoundOn = document.getElementById("soundOn");
-let btnSoundOff = document.getElementById("soundOff");
-
-// Display volume icon matching soundOn
-if (soundOn) {
-  // Show sound on btn
-  btnSoundOn.style.display = "block";
-} else {
-  // Show sound off btn
-  btnSoundOff.style.display = "block";
-}
-
-// Play click sound whenever level is changed if sound is on
-levels.forEach((level) => {
-  level.addEventListener("change", () => {
-    if (soundOn) audioLvlChange.play();
-  });
-});
 
 function startGame() {
   let lastActive, active, endText, speed, minSpeed, maxSkip, speedUp, timer;
-  let score = 0;
   let counter = 0;
+  score = 0;
 
   // Check level setting
   document.querySelectorAll("input[type=radio]").forEach((level) => {
     if (level.checked == true) levelSet = level.value;
   });
+
+  if (soundOn) audioBg.pause();
 
   // Set speed, minSpeed, maxSkip, bg music
   switch (levelSet) {
@@ -64,24 +49,26 @@ function startGame() {
       minSpeed = 250;
       maxSkip = 5;
       speedUp = 20;
+      audioBg = audioBgEasy;
       break;
     case "1":
       speed = 1000;
       minSpeed = 200;
       maxSkip = 3;
       speedUp = 30;
+      audioBg = audioBgMedium;
       break;
     case "2":
       speed = 900;
       minSpeed = 150;
       maxSkip = 1;
       speedUp = 40;
+      audioBg = audioBgHard;
       break;
   }
 
-  // Start background music if sound is on
+  // Start level music
   if (soundOn) audioBg.play();
-
   // Hide start button
   btnStart.style.display = "none";
   // Make stop button visible
@@ -142,26 +129,27 @@ function startGame() {
 
   function showGameOver() {
     // Stop background music
-    // audioBg.pause();
+    if (soundOn) {
+      audioBg.pause();
+      audioLose.play();
+    }
+
     // Stop timeout
     clearTimeout(timer);
     // Make overlay visible
     overlay.style.visibility = "visible";
     popup.style.visibility = "visible";
-    // Check users score, set ending audio and assign end text
+    // Check users score and assign end text
     switch (true) {
       case score < 10:
-        endText = "If you don't SPLASH, you won't evolve.";
+        endText = "Come on, you can do this!";
         break;
       case score > 9 && score < 20:
-        endText = "HARDEN for now, things will get better.";
+        endText = "If all else fails, use fire!";
         break;
       case score > 19:
-        endText = "Never let your EMBER burn out.";
+        endText = "Congratulations!";
     }
-
-    // Play ending audio if sound is on
-    if (soundOn) audioEnd.play();
 
     // Display player's final score
     finalScore.textContent = `Your final score is ${score}. ${endText}`;
@@ -199,8 +187,6 @@ function startGame() {
 
     // Add event listener to close button
     btnClose.addEventListener("click", () => {
-      // Store sound setting
-      // sessionStorage.setItem("sound", `${soundOn}`);
       // Store score if it's greater than current highscore
       if (score > highscore) sessionStorage.setItem("highscore", `${score}`);
       // Hide save score btn
@@ -214,32 +200,12 @@ function startGame() {
 // Add event listener to start button
 btnStart.addEventListener("click", startGame);
 
-// Toggle levels setting on click
-document
-  .getElementById("btnSettings")
-  .addEventListener("click", () =>
-    document.querySelector(".levels-setting").classList.toggle("responsive")
+/** Sharing on Twitter **/
+let shareBtnTwitter = document.getElementById("shareBtnTwitter");
+shareBtnTwitter.addEventListener("click", function () {
+  let message = score ? `my score of ${score}` : "me";
+  makePopupPage(
+    "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(`Try to beat ${message} on ${currentURL}`)
   );
-
-// If sound is on...
-btnSoundOn.addEventListener("click", () => {
-  // Set sound on to false
-  soundOn = false;
-  // Pause bg music if playing
-  // if (audioBg) audioBg.pause();
-  // Hide sound on btn
-  btnSoundOn.style.display = "none";
-  // Show sound off btn
-  btnSoundOff.style.display = "block";
-});
-
-// If sound if off...
-btnSoundOff.addEventListener("click", () => {
-  soundOn = true;
-  // Resume bg music if paused
-  // if (audioBg) audioBg.play();
-  // Show sound on btn
-  btnSoundOn.style.display = "block";
-  // Hide sound off btn
-  btnSoundOff.style.display = "none";
 });

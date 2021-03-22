@@ -693,4 +693,15 @@
 <path d="M129.957 44.1176V33.5294H124.652V30.8824H129.957V25.5882H135.261V30.8824H140.565V33.5294H135.261V44.1176H129.957Z" fill="white"/>
 <path d="M145.87 44.1176V41.4706H143.217V33.5294H145.87V30.8824H159.13V33.5294H161.783V38.8235H148.522V41.4706H159.13V44.1176H145.87ZM148.522 36.1765H156.478V33.5294H148.522V36.1765Z" fill="white"/>
 <path d="M172.391 33.5294H175.043V36.1765H172.391V44.1176H167.087V30.8824H172.391V33.5294ZM183 30.8824V33.5294H175.043V30.8824H183Z" fill="white"/>
+<rect x="168" y="47" width="3" height="3" fill="#FFFF00"/>
+<rect x="173" y="47" width="4" height="3" fill="#0BC61D"/>
+<rect x="179" y="47" width="4" height="3" fill="#C20BC6"/>
+<rect x="159" y="47" width="6" height="3" fill="#FF0000"/>
+<rect x="159" y="47" width="6" height="3" fill="#FF0000"/>
+<rect x="144" y="47" width="13" height="3" fill="#FF0000"/>
+<rect x="144" y="47" width="13" height="3" fill="#FFB800"/>
+<rect x="46" y="30" width="3" height="3" fill="#FF0000"/>
+<rect x="46" y="30" width="3" height="3" fill="#FFB800"/>
+<rect x="14" y="30" width="3" height="3" fill="#FF0000"/>
+<rect x="14" y="30" width="3" height="3" fill="#FF0000"/>
 </svg>

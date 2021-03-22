@@ -1,0 +1,846 @@
+:root {
+  --popup-color: #72c0f8f2;
+  --goalred-color: #ff0000;
+  --goalblue-color: #100bf4;
+  --goalgreen-color: #008000;
+  --goalyellow-color: #ffc700;
+  --kimble-font: "Fredoka One", cursive;
+  --background-url: url(/images/index/test_space_invader_transparency10.png);
+}
+
+main {
+  padding-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fredoka One", cursive;
+  flex-direction: column;
+}
+
+section {
+  opacity: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+#overlay {
+  display: none;
+}
+
+.popup_base {
+  visibility: visible;
+}
+
+.big_box_body {
+  position: relative;
+}
+
+/*POP-UP*/
+
+label {
+  margin: 10px;
+}
+
+.red {
+  background: var(--goalred-color);
+}
+
+.blue {
+  background: var(--goalblue-color);
+}
+
+.yellow {
+  background: var(--goalyellow-color);
+}
+
+.green {
+  background: var(--goalgreen-color);
+}
+
+/* select#color1,
+select#color2,
+select#color3,
+select#color4 {
+   position: relative; 
+  background-color: rgba(30, 6, 250, 0.698);
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  border-color: var(--main-font-color);
+  border-width: 2px;
+  border-style: solid;
+  color: var(--main-font-color);
+  align-items: center;
+  justify-content: left;
+  font-family: var(--kimble-font);
+  margin: 10px;
+} */
+
+/* input#player1,
+input#player2,
+input#player3,
+input#player4 {
+  border-radius: 5px;
+  border-style: none;
+  font-size: 1.5rem;
+  margin: 10px;
+} */
+
+/* #popup-players {
+  min-height: 400px;
+  visibility: visible;
+  background: var(--popup-color);
+  border-radius: 50px;
+  padding: 1.5rem;
+  z-index: 1;
+  position: absolute;
+} */
+
+#field {
+  background-image: url("/images/Static-field.png");
+  width: 535px;
+  /* max-width: 100%; */
+  /* max-height: 100%; */
+  height: 541px;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  position: relative;
+  background-size: cover;
+}
+
+#turns {
+  position: relative;
+  left: 320px;
+  top: -115px;
+  width: 110px;
+  height: 186px;
+  z-index: 999;
+}
+#popup-players {
+  display: none;
+  z-index: 990;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 5%;
+}
+.user-input select,
+.user-input input {
+  padding: 0.2rem;
+  min-width: 50%;
+}
+
+#popup-players button {
+  display: inline-block;
+}
+#popup-winner {
+  padding: 2rem;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+#startnewgame {
+  padding: 1rem;
+}
+
+#playersboard {
+  color: #200d54;
+  background-color: white;
+  display: none;
+  width: 80%;
+  max-width: 250px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #eee;
+  border-radius: 5px;
+}
+
+.playesboard-header {
+  color: white;
+  background-color: #200d54;
+}
+
+.redturn {
+  background-image: url("/images/redturnkimble.png");
+  background-size: cover;
+  box-shadow: 0 0 30px 2px #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.blueturn {
+  box-shadow: 0 0 30px 2px #100bf4;
+  border: 2px solid #100bf4;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.yellowturn {
+  box-shadow: 0 0 30px 2px #fff35c;
+  border: 2px solid #fff35c;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.greenturn {
+  box-shadow: 0 0 30px 2px #03da03;
+  border: 2px solid #03da03;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.place {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, #faf4f4 65.62%, #e0dcdc 100%);
+  border: 1px solid var(--main-font-color);
+  box-sizing: border-box;
+  box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+#red1 {
+  position: absolute;
+  left: 58px;
+  top: 140px;
+}
+#red2 {
+  position: absolute;
+  left: 78px;
+  top: 108px;
+}
+#red3 {
+  position: absolute;
+  left: 104px;
+  top: 81px;
+}
+#red4 {
+  position: absolute;
+  left: 135px;
+  top: 61px;
+}
+#blue1 {
+  position: absolute;
+  left: 364px;
+  top: 60px;
+}
+#blue2 {
+  position: absolute;
+  left: 397px;
+  top: 81px;
+}
+#blue3 {
+  position: absolute;
+  left: 422px;
+  top: 105px;
+}
+#blue4 {
+  position: absolute;
+  left: 442px;
+  top: 137px;
+}
+#yellow1 {
+  position: absolute;
+  left: 444px;
+  top: 376px;
+}
+#yellow2 {
+  position: absolute;
+  left: 421px;
+  top: 409px;
+}
+#yellow3 {
+  position: absolute;
+  left: 395px;
+  top: 435px;
+}
+#yellow4 {
+  position: absolute;
+  left: 363px;
+  top: 453px;
+}
+#green1 {
+  position: absolute;
+  left: 133px;
+  top: 452px;
+}
+#green2 {
+  position: absolute;
+  left: 101px;
+  top: 431px;
+}
+#green3 {
+  position: absolute;
+  left: 76px;
+  top: 405px;
+}
+#green4 {
+  position: absolute;
+  left: 57px;
+  top: 375px;
+}
+#goalbase {
+  font-size: 20px;
+}
+.mob-pad {
+  padding: 4px 0 0 9px;
+}
+
+#goalred1 {
+  position: absolute;
+  left: 136px;
+  top: 139px;
+  background: var(--goalred-color);
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalred2 {
+  position: absolute;
+  left: 157px;
+  top: 163px;
+  background: var(--goalred-color);
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalred3 {
+  position: absolute;
+  left: 178px;
+  top: 187px;
+  background: var(--goalred-color);
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalred4 {
+  position: absolute;
+  left: 200px;
+  top: 210px;
+  background: var(--goalred-color);
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#goalblue1 {
+  position: absolute;
+  left: 368px;
+  top: 143px;
+  background: var(--goalblue-color);
+  transform: rotate(225deg);
+  box-shadow: none;
+}
+#goalblue2 {
+  position: absolute;
+  left: 345px;
+  top: 168px;
+  background: var(--goalblue-color);
+  transform: rotate(225deg);
+  box-shadow: none;
+}
+#goalblue3 {
+  position: absolute;
+  left: 322px;
+  top: 190px;
+  background: var(--goalblue-color);
+  transform: rotate(225deg);
+  box-shadow: none;
+}
+#goalblue4 {
+  position: absolute;
+  left: 299px;
+  top: 213px;
+  background: var(--goalblue-color);
+  transform: rotate(225deg);
+  box-shadow: none;
+}
+#goalyellow1 {
+  position: absolute;
+  left: 360px;
+  top: 373px;
+  background: var(--goalyellow-color);
+  transform: rotate(320deg);
+  box-shadow: none;
+}
+#goalyellow2 {
+  position: absolute;
+  left: 337px;
+  top: 351px;
+  background: var(--goalyellow-color);
+  transform: rotate(320deg);
+  box-shadow: none;
+}
+#goalyellow3 {
+  position: absolute;
+  left: 314px;
+  top: 329px;
+  background: var(--goalyellow-color);
+  transform: rotate(320deg);
+  box-shadow: none;
+}
+#goalyellow4 {
+  position: absolute;
+  left: 290px;
+  top: 306px;
+  background: var(--goalyellow-color);
+  transform: rotate(320deg);
+  box-shadow: none;
+}
+#goalgreen1 {
+  position: absolute;
+  left: 134px;
+  top: 366px;
+  background: var(--goalgreen-color);
+  transform: rotate(50deg);
+  box-shadow: none;
+}
+#goalgreen2 {
+  position: absolute;
+  left: 156px;
+  top: 343px;
+  background: var(--goalgreen-color);
+  transform: rotate(50deg);
+  box-shadow: none;
+}
+#goalgreen3 {
+  position: absolute;
+  left: 179px;
+  top: 321px;
+  background: var(--goalgreen-color);
+  transform: rotate(50deg);
+  box-shadow: none;
+}
+#goalgreen4 {
+  position: absolute;
+  left: 200px;
+  top: 298px;
+  background: var(--goalgreen-color);
+  transform: rotate(50deg);
+  box-shadow: none;
+}
+#dice {
+  background-image: url("/images/Dice.png");
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  max-width: 100%;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 230px;
+  top: 230px;
+  text-align: center;
+  font-size: 40px;
+}
+
+/*Pieces*/
+
+.repiece {
+  background-image: url("/images/redpiece.png");
+  border: 2px solid #e8dede;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+#redpiece1 {
+  position: absolute;
+  left: 58px;
+  top: 140px;
+}
+#redpiece2 {
+  position: absolute;
+  left: 78px;
+  top: 108px;
+}
+#redpiece3 {
+  position: absolute;
+  left: 104px;
+  top: 81px;
+}
+#redpiece4 {
+  position: absolute;
+  left: 135px;
+  top: 61px;
+}
+.bluepiece {
+  background-image: url("/images/bluepiece1.png");
+  border: 2px solid #e8dede;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-size: cover;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#bluepiece1 {
+  position: absolute;
+  left: 364px;
+  top: 60px;
+}
+#bluepiece2 {
+  position: absolute;
+  left: 397px;
+  top: 81px;
+}
+#bluepiece3 {
+  position: absolute;
+  left: 422px;
+  top: 105px;
+}
+#bluepiece4 {
+  position: absolute;
+  left: 442px;
+  top: 137px;
+}
+
+.yellowpiece {
+  background-image: url("/images/yellowpiece.png");
+  border: 2px solid #e8dede;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#yellowpiece1 {
+  position: absolute;
+  left: 444px;
+  top: 376px;
+}
+#yellowpiece2 {
+  position: absolute;
+  left: 421px;
+  top: 409px;
+}
+#yellowpiece3 {
+  position: absolute;
+  left: 395px;
+  top: 435px;
+}
+#yellowpiece4 {
+  position: absolute;
+  left: 363px;
+  top: 453px;
+}
+
+.greenpiece {
+  background-image: url("/images/greenpiece.png");
+  border: 2px solid #e8dede;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#greenpiece1 {
+  position: absolute;
+  left: 133px;
+  top: 452px;
+}
+
+#greenpiece2 {
+  position: absolute;
+  left: 101px;
+  top: 431px;
+}
+
+#greenpiece3 {
+  position: absolute;
+  left: 76px;
+  top: 405px;
+}
+#greenpiece4 {
+  position: absolute;
+  left: 57px;
+  top: 375px;
+}
+
+/*Boardpieces*/
+#redstart {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ff0000 0%,
+    rgba(255, 0, 0, 0.79) 100%
+  );
+  border: 1px solid var(--main-font-color);
+  box-sizing: border-box;
+  position: absolute;
+  left: 140px;
+  top: 100px;
+}
+
+.material-icons {
+  color: var(--main-font-color);
+}
+
+.spanrotate1 {
+  transform: rotate(324deg);
+}
+.spanrotate2 {
+  transform: rotate(54deg);
+}
+.spanrotate3 {
+  transform: rotate(139deg);
+}
+.spanrotate4 {
+  transform: rotate(228deg);
+}
+
+#redstart.material-icons {
+  transform: rotate(321deg);
+}
+#place2 {
+  position: absolute;
+  left: 180px;
+  top: 79px;
+}
+
+#place3 {
+  position: absolute;
+  left: 220px;
+  top: 67px;
+}
+#place4 {
+  position: absolute;
+  left: 260px;
+  top: 65px;
+}
+#place5 {
+  position: absolute;
+  left: 300px;
+  top: 71px;
+}
+#place6 {
+  position: absolute;
+  left: 339px;
+  top: 87px;
+}
+#place7 {
+  position: absolute;
+  left: 374px;
+  top: 109px;
+}
+
+#bluestart {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #100bf4 0%,
+    rgb(0, 0, 255, 0.788) 100%
+  );
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  position: absolute;
+  left: 402px;
+  top: 139px;
+}
+
+#bluestart.span.material-icons {
+  transform: rotate(45deg);
+}
+
+#place9 {
+  position: absolute;
+  left: 425px;
+  top: 175px;
+}
+#place10 {
+  position: absolute;
+  left: 438px;
+  top: 214px;
+}
+#place11 {
+  position: absolute;
+  left: 443px;
+  top: 256px;
+}
+
+#place12 {
+  position: absolute;
+  left: 439px;
+  top: 298px;
+}
+#place13 {
+  position: absolute;
+  left: 425px;
+  top: 338px;
+}
+#place14 {
+  position: absolute;
+  left: 402px;
+  top: 374px;
+}
+#yellowstart {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ffc700 0%,
+    rgb(255, 199, 0, 0.88) 100%
+  );
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  position: absolute;
+  left: 372px;
+  top: 407px;
+}
+
+#yellowstart.material-icons {
+  transform: rotate(141deg);
+}
+
+#place16 {
+  position: absolute;
+  left: 335px;
+  top: 430px;
+}
+#place17 {
+  position: absolute;
+  left: 295px;
+  top: 445px;
+}
+#place18 {
+  position: absolute;
+  left: 253px;
+  top: 450px;
+}
+#place19 {
+  position: absolute;
+  left: 211px;
+  top: 445px;
+}
+#place20 {
+  position: absolute;
+  left: 170px;
+  top: 432px;
+}
+#place21 {
+  position: absolute;
+  left: 132px;
+  top: 410px;
+}
+#greenstart {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 128, 0, 0.6) 0%,
+    #008000 100%
+  );
+  position: absolute;
+  left: 101px;
+  top: 375px;
+}
+
+#greenstart.material-icons {
+  transform: rotate(225deg);
+}
+
+#place23 {
+  position: absolute;
+  left: 78px;
+  top: 340px;
+}
+#place24 {
+  position: absolute;
+  left: 62px;
+  top: 300px;
+}
+#place25 {
+  position: absolute;
+  left: 58px;
+  top: 258px;
+}
+#place26 {
+  position: absolute;
+  left: 62px;
+  top: 215px;
+}
+#place27 {
+  position: absolute;
+  left: 78px;
+  top: 175px;
+}
+#place28 {
+  position: absolute;
+  left: 101px;
+  top: 135px;
+}
+
+/**************** Mobile support ****************/
+
+@media (max-width: 756px) {
+  #popup-players {
+    width: 80%;
+  }
+
+  .user-input input {
+    min-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  #field {
+    display: none;
+  }
+  .user-input {
+    margin: 0 0;
+  }
+  .big_box {
+    width: auto;
+  }
+}
+@media (max-width: 350px) {
+  .big_box {
+    width: 113%;
+  }
+}
