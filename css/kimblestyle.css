@@ -112,6 +112,7 @@ input#player4 {
   background-repeat: no-repeat;
   /* background-position: center; */
   position: relative;
+  background-size: cover;
 }
 
 #turns {
@@ -311,13 +312,15 @@ input#player4 {
 #goalbase {
   font-size: 20px;
 }
+.mob-pad {
+  padding: 4px 0 0 9px;
+}
 
 #goalred1 {
   position: absolute;
   left: 136px;
   top: 139px;
   background: var(--goalred-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
 }
@@ -326,7 +329,6 @@ input#player4 {
   left: 157px;
   top: 163px;
   background: var(--goalred-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
 }
@@ -335,7 +337,6 @@ input#player4 {
   left: 178px;
   top: 187px;
   background: var(--goalred-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
 }
@@ -344,7 +345,6 @@ input#player4 {
   left: 200px;
   top: 210px;
   background: var(--goalred-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(135deg);
   box-shadow: none;
 }
@@ -353,7 +353,6 @@ input#player4 {
   left: 368px;
   top: 143px;
   background: var(--goalblue-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
 }
@@ -362,7 +361,6 @@ input#player4 {
   left: 345px;
   top: 168px;
   background: var(--goalblue-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
 }
@@ -371,7 +369,6 @@ input#player4 {
   left: 322px;
   top: 190px;
   background: var(--goalblue-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
 }
@@ -380,7 +377,6 @@ input#player4 {
   left: 299px;
   top: 213px;
   background: var(--goalblue-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(225deg);
   box-shadow: none;
 }
@@ -389,7 +385,6 @@ input#player4 {
   left: 360px;
   top: 373px;
   background: var(--goalyellow-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
 }
@@ -398,7 +393,6 @@ input#player4 {
   left: 337px;
   top: 351px;
   background: var(--goalyellow-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
 }
@@ -407,7 +401,6 @@ input#player4 {
   left: 314px;
   top: 329px;
   background: var(--goalyellow-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
 }
@@ -416,7 +409,6 @@ input#player4 {
   left: 290px;
   top: 306px;
   background: var(--goalyellow-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(320deg);
   box-shadow: none;
 }
@@ -425,7 +417,6 @@ input#player4 {
   left: 134px;
   top: 366px;
   background: var(--goalgreen-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
 }
@@ -434,7 +425,6 @@ input#player4 {
   left: 156px;
   top: 343px;
   background: var(--goalgreen-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
 }
@@ -443,7 +433,6 @@ input#player4 {
   left: 179px;
   top: 321px;
   background: var(--goalgreen-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
 }
@@ -452,7 +441,6 @@ input#player4 {
   left: 200px;
   top: 298px;
   background: var(--goalgreen-color);
-  padding: 4px 0 0px 9px;
   transform: rotate(50deg);
   box-shadow: none;
 }
@@ -480,6 +468,7 @@ input#player4 {
   box-sizing: border-box;
   width: 2rem;
   height: 2rem;
+  background-size: cover;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -513,6 +502,7 @@ input#player4 {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+  background-size: cover;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -546,6 +536,7 @@ input#player4 {
   box-sizing: border-box;
   width: 2rem;
   height: 2rem;
+  background-size: cover;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -580,6 +571,7 @@ input#player4 {
   box-sizing: border-box;
   width: 2rem;
   height: 2rem;
+  background-size: cover;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -817,6 +809,109 @@ input#player4 {
   top: 135px;
 }
 
+/******************Dice Cube******************/
+
+/*styling for Scene*/
+.scene {
+  width: 25px;
+  height: 25px;
+  margin: 250px;
+  perspective: 200px;
+}
+
+/*styling for 3D Cube*/
+.cube {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+/*styling for 3D Cube transforms / animations on face select (on roll)*/
+.cube.show-1 {
+  transform: translateZ(-25px) rotateY(0deg);
+}
+.cube.show-2 {
+  transform: translateZ(-25px) rotateY(-180deg);
+}
+.cube.show-3 {
+  transform: translateZ(-25px) rotateY(-90deg);
+}
+.cube.show-4 {
+  transform: translateZ(-25px) rotateY(90deg);
+}
+.cube.show-5 {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+.cube.show-6 {
+  transform: translateZ(-25px) rotateX(90deg);
+}
+
+/*universal style for cube faces */
+.cube__face {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/*individual styling for each numbers face */
+.cube__face--1 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--3 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--2 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--4 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--5 {
+  background: white;
+  opacity: 0.75;
+}
+.cube__face--6 {
+  background: white;
+  opacity: 0.75;
+}
+
+.cube__face--1 {
+  transform: rotateY(0deg) translateZ(13px);
+}
+.cube__face--2 {
+  transform: rotateY(180deg) translateZ(13px);
+}
+.cube__face--3 {
+  transform: rotateY(90deg) translateZ(13px);
+}
+.cube__face--4 {
+  transform: rotateY(-90deg) translateZ(13px);
+}
+.cube__face--5 {
+  transform: rotateX(90deg) translateZ(13px);
+}
+.cube__face--6 {
+  transform: rotateX(-90deg) translateZ(13px);
+}
+
+label {
+  margin-right: 10px;
+}
+
 /**************** Mobile support ****************/
 
 @media (max-width: 756px) {
@@ -830,9 +925,25 @@ input#player4 {
 }
 @media (max-width: 1024px) {
   .container {
-    min-width: 560px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  #field {
+    display: none;
+  }
+  .user-input {
+    margin: 0 0;
+  }
+  .big_box {
+    width: auto;
+  }
+}
+@media (max-width: 350px) {
+  .big_box {
+    width: 113%;
   }
 }
