@@ -33,6 +33,9 @@ section {
 #overlay {
   display: none;
 }
+.pop_large {
+  height: auto;
+}
 
 .popup_base {
   visibility: visible;

@@ -127,6 +127,16 @@ let currentPlayerIndex;
 let currentPlayer;
 let firstTurn = true;
 let field = document.getElementById("field");
+let overlay = document.getElementById("overlay");
+let info = document.getElementById("info_button");
+
+info.addEventListener("click", function () {
+  overlay.style.display = "block";
+});
+
+document.getElementById("close_popup").addEventListener("click", function () {
+  overlay.style.display = "none";
+});
 
 const ShowPopupplayers = () => {
   document.getElementById("popup-players").style.display = "block";
@@ -924,14 +934,14 @@ startnewgame.addEventListener("click", function () {
   window.location.reload();
 });
 
-const GoHome = () => {
-  currentPlayer.piecesId.forEach((el) => {
-    el.style.left != currentPlayer.homebasePos;
-  });
-
-  const intersection = currentPlayer.piecesId.filter((element) =>
-    currentPlayer.homebaseID.includes(element)
-  );
+const GoHome = (x) => {
+  console.log(currentPlayer.homebasePos()[x].left);
+  document.getElementById(` ${currentPlayer.piecesId[x]}`).style.left = `${
+    currentPlayer.homebasePos()[x].left
+  }`;
+  document.getElementById(`${currentPlayer.piecesId[x]}`).style.top = `${
+    currentPlayer.homebasePos()[x].top
+  }`;
 };
 
 const EatMe = () => {};
