@@ -184,7 +184,6 @@ input#player4 {
 }
 
 .redturn {
-  background-image: url("/images/redturnkimble.png");
   background-size: cover;
   box-shadow: 0 0 30px 2px #ff0000;
   border: 2px solid #ff0000;
@@ -447,20 +446,46 @@ input#player4 {
   transform: rotate(50deg);
   box-shadow: none;
 }
+.dice-container,
 #dice {
-  background-image: url("/images/Dice.png");
   cursor: pointer;
   width: 80px;
   height: 80px;
   max-width: 100%;
   max-height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
   right: 230px;
   top: 230px;
-  text-align: center;
-  font-size: 40px;
+  border-radius: 16px;
+  position: absolute;
+}
+
+#dice {
+  z-index: 3;
+}
+
+.dice-container {
+  background-color: #ddd;
+}
+
+.dice-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  right: 10px;
+  top: 10px;
+  box-shadow: 0 0 0 1px #999, 0 0 0 2px #ddd, 0 0 0 3px #999;
+  background-color: #2396bf40;
+  background: linear-gradient(
+    135deg,
+    #2396bf40,
+    #0d5b7740 45%,
+    #00496140 10%,
+    #00496140
+  );
+  border-radius: 50%;
+  z-index: 2;
 }
 
 /*Pieces*/
@@ -816,8 +841,8 @@ input#player4 {
 
 /*styling for Scene*/
 .scene {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 250px;
   perspective: 200px;
 }
@@ -828,7 +853,7 @@ input#player4 {
   height: 25px;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(-100px);
+  transform: translateZ(-50px);
   transition: transform 1s;
 }
 
@@ -855,8 +880,8 @@ input#player4 {
 /*universal style for cube faces */
 .cube__face {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border: 1px solid black;
   line-height: 25px;
   font-size: 22px;
@@ -867,29 +892,13 @@ input#player4 {
 }
 
 /*individual styling for each numbers face */
-.cube__face--1 {
-  background: white;
-  opacity: 0.75;
-}
-.cube__face--3 {
-  background: white;
-  opacity: 0.75;
-}
-.cube__face--2 {
-  background: white;
-  opacity: 0.75;
-}
-.cube__face--4 {
-  background: white;
-  opacity: 0.75;
-}
-.cube__face--5 {
-  background: white;
-  opacity: 0.75;
-}
+.cube__face--1,
+.cube__face--2,
+.cube__face--3,
+.cube__face--4,
+.cube__face--5,
 .cube__face--6 {
   background: white;
-  opacity: 0.75;
 }
 
 .cube__face--1 {
@@ -931,6 +940,12 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  #playersboard {
+    align-items: stretch;
   }
 }
 
