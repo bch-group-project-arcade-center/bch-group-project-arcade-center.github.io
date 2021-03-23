@@ -1,3 +1,8 @@
+// Bg Music
+audioBg = new Audio("./music/kimble/title-screen.mp3");
+let audioBgGame = document.getElementById("bg-audio");
+audioBgGame.loop = true;
+
 let dragged;
 
 /* events fired on the draggable target */
@@ -826,6 +831,11 @@ const GetPlayers = () => {
     document.querySelector(
       "#playersboard div:nth-child(2)"
     ).style.background = `${player1.boardcolor()}`;
+    // Bg music
+    if (soundOn) {
+      audioBg.pause();
+      audioBgGame.play();
+    }
   }
 };
 
@@ -957,6 +967,8 @@ const CheckWinner = () => {
         document.getElementById(
           "winnertext"
         ).textContent = `${currentPlayer.nickname} WON! CONGRATULATIONS`;
+        audioBgGame.pause();
+        audioWin.play();
       }
       console.log("Already in win pos: ", winner.length);
     }

@@ -60,7 +60,20 @@ let audioBg;
 let audioWin = new Audio("./music/player-wins.mp3");
 let audioLose = new Audio("./music/player-loses.wav");
 
-let soundOn = localStorage.getItem("sound") == "false" ? false : true;
+let soundOn =
+  localStorage.getItem("sound") == "false" ||
+  window.location.pathname == "/index.html"
+    ? false
+    : true;
+
+if (
+  window.location.pathname == "/index.html" ||
+  window.location.pathname == "/about.html" ||
+  window.location.pathname == "/contact.html"
+) {
+  audioBg = new Audio("./music/title.mp3");
+}
+
 // Display volume icon matching soundOn
 if (soundOn) {
   // Show sound on btn
@@ -95,14 +108,6 @@ btnSoundOff?.addEventListener("click", () => {
   // Save setting to local storage
   localStorage.setItem("sound", "true");
 });
-
-if (
-  window.location.pathname == "/index.html" ||
-  window.location.pathname == "/about.html" ||
-  window.location.pathname == "/contact.html"
-) {
-  audioBg = new Audio("./music/title.mp3");
-}
 
 window.addEventListener("DOMContentLoaded", (event) => {
   if (audioBg && soundOn) audioBg.play();

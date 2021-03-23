@@ -212,3 +212,13 @@ btnClose.addEventListener("click", () => {
 
 // Start game code when start button is pressed
 document.getElementById("start-btn").addEventListener("click", cycloneArcade);
+
+/** Sharing on Twitter **/
+let shareBtnTwitter = document.getElementById("shareBtnTwitter");
+shareBtnTwitter.addEventListener("click", function () {
+  let message = score / numOfGames ? `my score of ${score}` : "me";
+  makePopupPage(
+    "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(`Try to beat ${message} on ${currentURL}`)
+  );
+});
