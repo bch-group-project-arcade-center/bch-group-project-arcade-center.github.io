@@ -143,40 +143,11 @@ section {
   opacity: 100%;
   max-width: 1200px;
   min-height: 600px;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around; */
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 30px;
 }
-
-/* NOT USED IN GAME PAGES */
-/* .box {
-  background-color: var(--primary-color-2);
-  width: 450px;
-  height: 220px;
-  border-radius: 25px;
-  border-color: var(--primary-color-2);
-  border-width: 3px;
-  border-style: solid;
-  color: var(--main-font-color);
-  margin: 1rem;
-  padding: 1rem;
-  display: flex;
-  align-items: flex-end;
-  box-shadow: 0px 0px 10px rgb(104, 101, 101);
-  box-shadow: inset 0 0 150px var(--primary-color-2);
-
-} */
-
-/* .box:hover {
-  box-shadow: inset 0 0 500px var(--primary-color-2);
-} */
-
-/* Big box is the container for the game area */
 
 .big_box {
   background-color: var(--primary-color-3);
@@ -220,41 +191,10 @@ section {
   justify-content: center;
 }
 
-/* NOT USED IN GAME PAGES */
-/*  
-.card1 {
-  background-size: 150%;
-  background-position-x: -80px;
-  background-image: url(https://cdn.globalauctionplatform.com/41bc8b56-664a-4b07-9273-a65001689645/7781f344-876a-456f-c9db-1fc002e77d80/540x360.jpg);
-}
-
-.card2 {
-  background-size: 90%;
-  background-position-x: 70px;
-
-  background-image: url(/images/index/cyclone_pixel.png);
-  background-repeat: no-repeat;
-}
-
-.card3 {
-  background-size: 130%;
-  background-position-x: -60px;
-  background-position-y: -50px;
-  background-image: url(/images/index/jackpot_pixel.png);
-}
-
-.card4 {
-  background-size: 100%;
-  background-position-x: 0px;
-  background-image: url(/images/index/kimble_pixel.png);
-}
-*/
-
 /* ------- Button styles ----------
 These are the styles of the game page buttons: start game, stop game, save score, see leaderboard, information-instructions, popup close.
 */
 .gamepage_button {
-  /* position:relative; */
   background-color: var(--primary-color-2);
   width: 200px;
   height: 40px;
@@ -419,11 +359,6 @@ a {
   /* change the value of display to 'flex' to show the small popup */
   display: none;
 }
-
-/* --- NOT IN USE ATM ---
-#large_pop {
-  display: none;
-} */
 
 /* This class is added to the large popup to display it */
 .show {
