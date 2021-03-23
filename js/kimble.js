@@ -968,7 +968,7 @@ const CheckWinner = () => {
           "winnertext"
         ).textContent = `${currentPlayer.nickname} WON! CONGRATULATIONS`;
         audioBgGame.pause();
-        audioWin.play();
+        if (soundOn) audioWin.play();
       }
       console.log("Already in win pos: ", winner.length);
     }
