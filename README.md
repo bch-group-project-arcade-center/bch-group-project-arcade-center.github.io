@@ -38,7 +38,7 @@ Laurie LIM
 
 Alireza KESHMIRY
 
-- [LinkedIn]https://www.linkedin.com/in/alireza-keshmiry-63193979)
+- [LinkedIn](https://www.linkedin.com/in/alireza-keshmiry-63193979)
 - [Github](https://github.com/ark13da)
 
 Alfonso ORTIZ PALMA JUNCO
