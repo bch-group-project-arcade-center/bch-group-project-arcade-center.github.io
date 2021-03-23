@@ -461,6 +461,8 @@ input#player4 {
   top: 230px;
   text-align: center;
   font-size: 40px;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 /*Pieces*/
@@ -818,7 +820,7 @@ input#player4 {
 .scene {
   width: 25px;
   height: 25px;
-  margin: 250px;
+  margin: 255px;
   perspective: 200px;
 }
 
