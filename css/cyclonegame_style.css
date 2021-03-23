@@ -1,26 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* body {
-  font-family: "Press Start 2P", cursive;
-  background-color: blueviolet;
-  color: white;
-  
-} */
-
-/* .container {
-  
- 
-  margin: 0 auto;
-  
-} */
 #game {
   position: relative;
   text-align: center;
-  /* margin-left: -80px; */
+}
+
+.gameboard {
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 10px gold, inset 0 0 0 20px white,
+    inset 0 0 0 40px #4c11ac, inset 0 0 0 50px yellow, inset 0 0 0 65px #8f6cf2,
+    inset 0 0 0 75px yellow;
+}
+
+.neon {
+  position: absolute;
+  border-radius: 50%;
+  height: 150px;
+  width: 120px;
+}
+
+.blueNeon {
+  bottom: 18%;
+  right: 50%;
+  transform: translateX(50%);
+  box-shadow: 0 0 20px 5px #2356ff, inset 0 0 20px 5px #2356ff;
+  border: 10px solid #426dfb;
+}
+
+.redNeon {
+  left: 23%;
+  bottom: 44%;
+  transform: rotate(120deg);
+
+  box-shadow: 0 0 20px 5px red, inset 0 0 20px 5px red;
+  border: 10px solid tomato;
+}
+
+.greenNeon {
+  right: 23%;
+  bottom: 44%;
+  transform: rotate(240deg);
+  box-shadow: 0 0 20px 5px limegreen, inset 0 0 20px 5px limegreen;
+  border: 10px solid #39ff14;
+}
+
+.off {
+  box-shadow: 0 0 10px slategrey, inset 0 0 10px slategrey;
+  border: 10px solid lightslategrey;
 }
 
 #bulbs {
@@ -33,22 +63,6 @@
   position: relative;
 }
 
-/* Original bulb class */
-/* .bulb {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  background-color: blue;
-  margin: 5px;
-  display: inline-block;
-  border-radius: 50%;
-  -webkit-transition: background-color 0.1s ease-out;
-  -moz-transition: background-color 0.1s ease-out;
-  -o-transition: background-color 0.1s ease-out;
-  transition: background-color 0.1s ease-out;
-} */
-
-/* NEW CSS */
 .bulb {
   display: inline-block;
   position: absolute;
@@ -65,7 +79,6 @@
   transition: background-color 0.1s ease-out;
 }
 
-/* Original bulb chosen class */
 .bulb.chosen {
   background-color: red;
   box-shadow: 0 0 20px 5px red;
@@ -94,6 +107,10 @@ input[type="number"] {
   direction: rtl;
 }
 
+#back_to_games {
+  margin-top: 5rem;
+}
+
 /*group project addition */
 
 #overlay {
@@ -109,19 +126,6 @@ input[type="number"] {
   visibility: hidden;
   z-index: 2;
 }
-/* COPY OF ORIGINAL OVERLAY SETTINGS
-#overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  z-index:2;
-} */
 
 .popup {
   background-color: #200d54;
@@ -140,21 +144,6 @@ input[type="number"] {
   padding: 2%;
   color: rgb(255, 255, 255);
 }
-/* COPY OF POPUP ORIGINAL SETTINGS
-.popup {
-  background-color: white;
-  border-radius: 15px;
-  width: 90vw;
-  height: 50vh;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  padding: 2%;
-  color: black;
-} */
 
 .btn-text2 {
   font-family: "Baloo Da 2", cursive;

@@ -1,3 +1,17 @@
+// Neon lights
+
+let neonIndex = 0;
+let neonlights = document.querySelectorAll("#neonLights div");
+let blinkingNeons = setInterval(() => {
+  neonlights[neonIndex % 3].classList.toggle("off");
+  neonIndex++;
+  neonlights[neonIndex % 3].classList.toggle("off");
+}, 180);
+
+setTimeout(() => {
+  clearInterval(blinkingNeons);
+}, 100000);
+
 /**        START OF EXTRA CODE TO STYLE BULBS        */
 /**
  * You don't have to care about this fn unless you want to
@@ -59,6 +73,12 @@ scoreTitle.textContent = `Score ${score}`;
 
 // Game code
 const cycloneArcade = () => {
+  // Turn on all neons
+  clearInterval(blinkingNeons);
+  neonlights.forEach((neon) => {
+    neon.classList.remove("off");
+  });
+
   // Prevent start button from being pressed again
   document.getElementById("start-btn").disabled = true;
   // Allow user to press the stop button
@@ -161,7 +181,7 @@ const cycloneArcade = () => {
       let newSpeed = currentSpeed - 10;
       sessionStorage.setItem("blinkspeed", `${newSpeed}`);
       gameResultWin();
-      audioWin.play();
+      if (soundOn) audioWin.play();
     } else {
       if (score > 0) {
         let currentScore = score;
@@ -171,7 +191,7 @@ const cycloneArcade = () => {
       } else {
         gameOver();
       }
-      audioLose.play();
+      if (soundOn) audioLose.play();
     }
   };
 
