@@ -429,7 +429,7 @@ footer a {
   }
 
   #large_screen_menu {
-    visibility: hidden;
+    display: none;
   }
 
   nav.responsive ul {
@@ -448,7 +448,6 @@ footer a {
 
   nav {
     display: flex;
-    flex-direction: row-reverse;
   }
 
   .box {
