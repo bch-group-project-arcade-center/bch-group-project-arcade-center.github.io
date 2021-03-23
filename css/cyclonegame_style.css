@@ -180,3 +180,58 @@ input[type="number"] {
 #scoreSaveMsg {
   visibility: hidden;
 }
+
+@media (max-width: 576px) {
+  .bulb {
+    height: 25px;
+    width: 25px;
+    margin: 0.5rem;
+  }
+
+  .bulb.chosen {
+    background-color: red;
+    box-shadow: 0 0 10px 0px red;
+  }
+
+  .bulb.active {
+    background-color: #fff35c;
+
+    box-shadow: 0 0 20px 5px #fff35c;
+  }
+
+  #game {
+    position: relative;
+    text-align: center;
+    max-width: 250px;
+    /* margin-left: -80px; */
+  }
+
+  #bulbs {
+    top: 230px;
+    margin: 0 auto;
+    /* right: 15px; */
+    height: 25px;
+    width: 25px;
+    left: -15px;
+    position: relative;
+  }
+
+  .gameboard {
+    width: 420px;
+    height: 420px;
+    top: 160px;
+  }
+
+  .neon {
+    width: 80px;
+    height: 100px;
+  }
+
+  .blueNeon {
+    bottom: 23%;
+  }
+
+  .popup {
+    width: 80vw;
+  }
+}
