@@ -42,35 +42,35 @@
 }
 
 .result-0 {
-  background-image: url("../jackpot/img/7.png");
+  background-image: url("../images/7.png");
 }
 
 .result-1 {
-  background-image: url("../jackpot/img/r.png");
+  background-image: url("../images/r.png");
 }
 
 .result-2 {
-  background-image: url("../jackpot/img/pikachu.png");
+  background-image: url("../images/pikachu.png");
 }
 
 .result-3 {
-  background-image: url("../jackpot/img/duck.png");
+  background-image: url("../images/duck.png");
 }
 
 .result-4 {
-  background-image: url("../jackpot/img/magnet.png");
+  background-image: url("../images/magnet.png");
 }
 
 .result-5 {
-  background-image: url("../jackpot/img/shell.png");
+  background-image: url("../images/shell.png");
 }
 
 .result-6 {
-  background-image: url("../jackpot/img/pokeball.png");
+  background-image: url("../images/pokeball.png");
 }
 
 .spinning {
-  background-image: url("../jackpot/img/spinning.gif");
+  background-image: url("../images/spinning.gif");
 }
 .user-input {
   transform: rotateX(27deg) scaleY(1.075);
