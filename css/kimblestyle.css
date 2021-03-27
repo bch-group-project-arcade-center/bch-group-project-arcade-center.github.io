@@ -314,9 +314,9 @@ input#player4 {
 #goalbase {
   font-size: 20px;
 }
-.mob-pad {
+/* .mob-pad {
   padding: 4px 0 0 9px;
-}
+} */
 
 #goalred1 {
   position: absolute;
@@ -841,7 +841,6 @@ input#player4 {
 
 /*styling for Scene*/
 .scene {
-
   width: 30px;
   height: 30px;
   margin: 250px;
